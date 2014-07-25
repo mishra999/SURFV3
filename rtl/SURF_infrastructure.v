@@ -23,13 +23,20 @@ module SURF_infrastructure(
 		output [3:0] TREF_N,
 		
 		output clk33_o,
+		output clk100_o,
 		output clk125_o,
+		
 		output [3:0] HOLD,
 		output CMD
     );
 
 	// The clk125 should be shoved through a DCM at 
 	// some point relatively soon.
+
+	reg [3:0] reset = 4'b0111;
+	always @(posedge clk33_o) reset <= {reset[2:0],1'b0};
+	
+	clk100_wizard u_clk100(.CLKIN_IN(clk33_o),.RST_IN(reset[3]),.CLKFX_OUT(clk100_o));
 
 	parameter REF_CLOCK = "33MHZ";
 	wire [3:0] TREF;
@@ -43,6 +50,8 @@ module SURF_infrastructure(
 							  .CE(1'b1),.R(1'b0),.S(1'b0),
 							  .Q(LCLK));
 	IBUFDS u_cmd_ibufds(.I(CMD_P),.IB(CMD_N),.O(CMD));
+	
+	
 	generate
 		genvar i;
 		for (i=0;i<4;i=i+1) begin : LAB		

@@ -67,6 +67,7 @@ module MESSv2( input        clk_i,
 		     .clk(clk_i),
 		     .wr_en(event_wr),
 		     .rd_en(clr_evt),
+			  .rst(clr_all),
 		     .empty(event_fifo_empty));
    
    // These generate the address outputs for the lab and HK data.
@@ -126,7 +127,7 @@ module MESSv2( input        clk_i,
    assign register_data[4] = {{28{1'b0}},
 			      event_fifo_empty,
 			      event_fifo_out[33:32],
-			      event_fifo_empty && lab_ready_i };
+			      !event_fifo_empty && lab_ready_i };
    assign register_data[5] = event_fifo_out[31:0];
    assign register_data[6] = {{30{1'b0}},clr_evt,clr_all};   
    assign register_data[7] = lab_counter;
@@ -134,28 +135,29 @@ module MESSv2( input        clk_i,
    wire 		     terminate_read = (state == LAB_RD 
 					       || state == HK_RD 
 					       || state == REG_RD);   
-   wire 		     nready_in = nads_q;
+	// negative logic. If *either* nADSq or nRDq is
+	// asserted, keep ready low.
+   wire 		     nready_in = nads_q && nrd_q;
    wire 		     ldo_oeb_in = wnr_q && !terminate_read;   
-
-   reg [31:0] 		     write_data = {32{1'b0}};
-   reg 			     wr_data = 0;   
    
    assign nBTERM = 1'b1;   
 
    always @(posedge clk_i) begin : REGISTER_LOGIC
-      if (!nads_q && wnr_q) write_data <= ldi_q;
-      wr_data <= (!nads_q && wnr_q);
-
-      if ((state == REG_WR) && wr_data) begin
-	 if (la_q[2:0] == 3'd2) hk_counter <= write_data;
-	 if (la_q[2:0] == 3'd3) lab_counter <= write_data;
-	 if (la_q[2:0] == 3'd6) clr_evt <= write_data[0];
-	 if (la_q[2:0] == 3'd6) clr_all <= write_data[1];
+      if (state == REG_WR) begin
+		 if (la_q[2:0] == 3'd2) hk_counter <= ldi_q;
+		 if (la_q[2:0] == 3'd3) lab_counter <= ldi_q;
       end      
+		if ((state == REG_WR) && la_q[2:0] == 3'd6) clr_all <= ldi_q[0];
+		else clr_all <= 0;
+		
+		if ((state == REG_WR) && la_q[2:0] == 3'd6) clr_evt <= ldi_q[1];
+		else clr_evt <= 0;
 
       // Dumb HK/LAB counter increment. Fix this for bursted reads.
       if (state == HK_RD) hk_counter <= hk_counter + 1;
-      if (state == LAB_RD) lab_counter <= lab_counter + 1;      
+
+		if (clr_evt) lab_counter <= {11{1'b0}};
+      else if (state == LAB_RD) lab_counter <= lab_counter + 1;      
    end
    
    always @(posedge clk_i) begin : IOB_LOGIC_P
@@ -164,7 +166,7 @@ module MESSv2( input        clk_i,
       ncs2_q <= nCS2;
       ncs3_q <= nCS3;
       ldi_q <= LD;
-      la_q <= LA;      
+      la_q <= LA[7:2];      
 		nrd_q <= nRD;
 	end
 	
@@ -174,31 +176,31 @@ module MESSv2( input        clk_i,
    
    always @(posedge clk_i) begin : FSM_LOGIC
       case (state)
-	IDLE: if (!nads_q) begin
-	   if (wnr_q) begin
-	      if (!ncs3_q) state <= HK_WR;
-	      else if (!ncs2_q) state <= LAB_WR;
-	      else state <= REG_WR;
-	   end else begin
-	      if (!ncs3_q) state <= HK_RD;
-	      else if (!ncs2_q) state <= LAB_RD;
-	      else state <= REG_RD;
-	   end
-	end // if (!nads_q)
-	LAB_WR: state <= IDLE;
-	HK_WR: state <= IDLE;
-	REG_WR: state <= IDLE;
-	LAB_RD: state <= IDLE;
-	HK_RD: state <= IDLE;
-	REG_RD: state <= IDLE;
-	default: state <= IDLE;
+			IDLE: if (!nads_q) begin
+				if (wnr_q) begin
+					if (!ncs2_q) state <= HK_WR;
+					else if (!ncs3_q) state <= LAB_WR;
+					else state <= REG_WR;
+				end else begin
+					if (!ncs2_q) state <= HK_RD;
+					else if (!ncs3_q) state <= LAB_RD;
+					else state <= REG_RD;
+				end
+			end // if (!nads_q)
+			LAB_WR: state <= IDLE;
+			HK_WR: state <= IDLE;
+			REG_WR: state <= IDLE;
+			LAB_RD: state <= IDLE;
+			HK_RD: state <= IDLE;
+			REG_RD: state <= IDLE;
+			default: state <= IDLE;
       endcase // case (state)
    end // block: FSM_LOGIC
       
    assign ldo_in_sel = {ncs3_q, ncs2_q};
    assign ldo_in[0] = lab_dat_i;
-   assign ldo_in[1] = hk_dat_mux;
-   assign ldo_in[2] = lab_dat_i;
+   assign ldo_in[1] = lab_dat_i;
+   assign ldo_in[2] = hk_dat_mux;
    assign ldo_in[3] = register_data_mux;
    assign ldo_in_mux = ldo_in[ldo_in_sel];
 	
@@ -206,7 +208,7 @@ module MESSv2( input        clk_i,
    assign rfp_addr_o = hk_counter[4:0];
    assign dac_addr_o = hk_counter[4:0];
 
-   assign lab_addr_o = {event_fifo_out[1:0],lab_counter};
+   assign lab_addr_o = {event_fifo_out[33:32],lab_counter};
 
    assign clr_all_o = clr_all;
       
@@ -231,8 +233,8 @@ module MESSv2( input        clk_i,
 	assign debug_o[7] = event_fifo_empty;
 	assign debug_o[8] = event_wr;
 	assign debug_o[9] = clr_evt;
-	assign debug_o[10 +: 4] = event_id[3:0];
-	assign debug_o[14 +: 16] = ldo_in_mux;
+	assign debug_o[10 +: 4] = la_q[3:0];
+	assign debug_o[14 +: 16] = ldi_q[15:0];
 	assign debug_o[30] = cmd_i;
 	assign debug_o[31] = nrd_q;
 	assign debug_o[32] = lab_ready_i;

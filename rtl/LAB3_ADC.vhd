@@ -43,7 +43,10 @@ architecture BEHAVIORAL of LAB3_ADC is
    --STATES
    type state_type is (
 			IDLE, 
-			CLR_GCC,
+			CLR_GCC_1,
+			CLR_GCC_2,
+			CLR_GCC_3,
+			WAIT_STEP,
 			RUNNING,
 			ADC_DONE_ACTIVE
 			); 
@@ -86,19 +89,28 @@ begin
 					iADC_Done 			<= '0';
 
 					if(START = '1') then
-						iRamp 	<= '1';
 						iGCCLR 	<= '1';
-						STATE 	<= CLR_GCC;
+						STATE 	<= CLR_GCC_1;
 					end if;
 
 				--------------------------------				
-				WHEN CLR_GCC =>
-						iGCCLR	<= '0';
+				WHEN CLR_GCC_1 =>
+						iGCCLR	<= '1';
+						STATE <= CLR_GCC_2;				WHEN CLR_GCC_2 =>
+						
+						iGCCLR	<= '1';
+						
+						STATE <= CLR_GCC_3;
+				WHEN CLR_GCC_3 =>
+						iGCCLR	<= '1';
+						STATE <= WAIT_STEP;
+				WHEN WAIT_STEP =>
+						iGCCLR	<= '0';
+						iRamp 	<= '1';
 						STATE <= RUNNING;
-
 				--------------------------------		
 				WHEN RUNNING =>
-					if(count < 4096) then											
+					if(count < 8192) then											
 						count <= count + 1;
 					else
 						count <= 0;

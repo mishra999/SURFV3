@@ -12,7 +12,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 module LAB_TOPv2(
 			 input 		 clk_i,
-			 input 		 clk125_i,
+			 input 		 clk100_i,
 			 input		 rst_i,
 			 input [3:0] hold_i,
 			 input [3:0] digitize_i,
@@ -67,7 +67,8 @@ module LAB_TOPv2(
 			 // [12:11] select which LAB is being read out.
 			 input [12:0] addr_i,
 			 output [31:0] dat_o,
-			 output 		  done_o
+			 output 		  done_o,
+			 output [34:0] debug_o
     );
 
 	wire [3:0] 			lab_readout;
@@ -90,6 +91,8 @@ module LAB_TOPv2(
    wire [3:0] 		    RCO;
    wire [11:0] 		    DAT[3:0];	      
 
+	wire [34:0] lab_debug[3:0];
+
 	integer j;
 	always @(posedge clk_i) begin
 		for (j=0;j<4;j=j+1) begin
@@ -105,18 +108,21 @@ module LAB_TOPv2(
    generate
       genvar 		    i;
       for (i=0;i<4;i=i+1) begin : LAB
-			 wire digitize_125;
-			 wire readout_125;
+			 wire digitize_100;
+			 wire readout_100;
+			 wire read_done_100;
+			 flag_sync u_read_done_sync(.clkA(clk_i),.in_clkA(readout_done[i]),
+												 .clkB(clk100_i),.out_clkB(read_done_100));
 			 flag_sync u_digitize_sync(.clkA(clk_i),.in_clkA(digitize_i[i]),
-									.clkB(clk125_i),.out_clkB(digitize_125));
-			 LAB3_ADC u_adc(.WCLK(clk125_i),
-								 .START(digitize_125),
-								 .RAMP(RAMP[i]),
-								 .GCK(GCK[i]),
-								 .GCCLR(GCCLR[i]),
-								 .ADC_Done(readout_125));
-			 flag_sync u_readout_sync(.clkA(clk125_i),.in_clkA(readout_125),
+									.clkB(clk100_i),.out_clkB(digitize_100));
+			 flag_sync u_readout_sync(.clkA(clk100_i),.in_clkA(readout_100),
 									.clkB(clk_i),.out_clkB(lab_readout[i]));
+			 lab_adc_test u_test(.clk_i(clk100_i),
+										.start_i(digitize_100),
+										.done_o(readout_100),
+										.CLR(GCCLR[i]),
+										.RAMP(RAMP[i]),
+										.GCK(GCK[i]));
 			 LAB_CTRL_v2 u_lab(.clk_i(clk_i),
 						.rst_i(rst_i),
 						.readout_i(lab_readout[i]),
@@ -132,7 +138,8 @@ module LAB_TOPv2(
 						.CS(CS[i]),
 						.HITBUS(HITBUS[i]),
 						.RCO(RCO[i]),
-						.DAT(DAT[i]));
+						.DAT(DAT[i]),
+						.debug_o(lab_debug[i]));
 			 LAB_RAM_v2 u_ram(.clk_i(clk_i),
 					  .dat_i(lab_dat[i]),
 					  .waddr_i(lab_addr[i]),
@@ -152,7 +159,7 @@ module LAB_TOPv2(
 	assign A_RAMP = RAMP[ 0 ];
 	assign A_GCK = GCK[ 0 ];
 	assign A_GCCLR = GCCLR[ 0 ];
-
+	
    assign B_SELMAIN = SELMAIN[ 1 ]; 
    assign B_SELTAIL = SELTAIL[ 1 ]; 
    assign B_S = S[ 1 ];             
@@ -193,5 +200,7 @@ module LAB_TOPv2(
 	assign B_NRUN = hold_i[1];
 	assign C_NRUN = hold_i[2];
 	assign D_NRUN = hold_i[3];
+
+	assign debug_o = lab_debug[0];
 
 endmodule

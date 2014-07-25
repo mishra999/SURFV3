@@ -96,6 +96,7 @@ module TOP_v38(
 	// Global clocks.
 	
 	wire clk33;
+	wire clk100;
 	wire clk125;
 
 	// Clock output.
@@ -109,17 +110,6 @@ module TOP_v38(
 	// TURF HOLD inputs
 	wire [3:0] HOLD;
 
-	SURF_infrastructure #(.REF_CLOCK("125MHZ")) u_infrastructure( .clk33_o(clk33),
-																					 .clk125_o(clk125),
-																					 .CLK125_P(CLK125_P),.CLK125_N(CLK125_N),
-																					 .LCLK(LCLK),
-																					 .BCLKO(BCLKO),
-																					 .CMD_P(CMD_P),.CMD_N(CMD_N),.CMD(command),
-																					 .HOLD_P(HOLD_P),.HOLD_N(HOLD_N),.HOLD(HOLD),
-																					 .TREF_P(TREF_P),.TREF_N(TREF_N));
-																					 
-													 
-
 	// Global reset.
 	
 	wire clr_all;
@@ -129,17 +119,24 @@ module TOP_v38(
 	wire [12:0] 	lab_addr;
 	wire [31:0] 	lab_dat;
 	wire 				lab_ready;
+
+
+	SURF_infrastructure #(.REF_CLOCK("125MHZ")) u_infrastructure( .clk33_o(clk33),
+																					 .clk100_o(clk100),
+																					 .clk125_o(clk125),
+																					 .CLK125_P(CLK125_P),.CLK125_N(CLK125_N),
+																					 .LCLK(LCLK),
+																					 .BCLKO(BCLKO),
+																					 .CMD_P(CMD_P),.CMD_N(CMD_N),.CMD(command),
+																					 .HOLD_P(HOLD_P),.HOLD_N(HOLD_N),.HOLD(HOLD),
+																					 .TREF_P(TREF_P),.TREF_N(TREF_N));
 	
 
-	// CALSNH = VCC
-	// RSS = VCC
-	// TCS = GND
-	assign CALSNH = {4{1'b1}};
-	assign RSS = {4{1'b1}};
-	assign TCS = {4{1'b0}};
+	wire [34:0] lab_debug;
 
+	// LAB readout and memory.
 	LAB_TOPv2 u_labtop( .clk_i(clk33),
-							  .clk125_i(clk125),
+							  .clk100_i(clk100),
 							  .rst_i(clr_all),
 							  .hold_i(HOLD),
 							  .digitize_i(lab_digitize),
@@ -192,10 +189,14 @@ module TOP_v38(
 							  .D_S(D_S),
 							  .D_HITBUS(D_HITBUS),
 							  .D_RCO(D_RCO),
-							  .D_DAT(D_DAT)		
+							  .D_DAT(D_DAT),
+							  .debug_o(lab_debug)
 		);
+
+	// MESS debugging.
 	wire [34:0] debug;
 	wire [4:0] rfp_addr;
+	// PLX/register interface
 	MESSv2 u_mess(		  .clk_i(clk33),
 							  .cmd_i(command),
 							  .lab_dat_i(lab_dat),
@@ -218,8 +219,18 @@ module TOP_v38(
 							  .nBTERM(nBTERM),
 							  .debug_o(debug)
 	);
+	
+	// ChipScope debugging cores.
 	wire [35:0] ila_control;
 	cs_icon u_icon(.CONTROL0(ila_control));
 	cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug));
+
+	// Unused LAB test crap.
+	// CALSNH = VCC
+	// RSS = VCC
+	// TCS = GND
+	assign CALSNH = {4{1'b1}};
+	assign RSS = {4{1'b1}};
+	assign TCS = {4{1'b0}};
 	
 endmodule
