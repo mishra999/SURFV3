@@ -29,6 +29,20 @@ module TOP_v38(
 		input CMD_N,
 		input [3:0] HOLD_P,
 		input [3:0] HOLD_N,
+		input REF_P,
+		input REF_N,
+	
+		input [7:0] A1TC,
+		input [7:0] A2TC,
+		input [7:0] A3TC,
+		input [7:0] A4TC,
+		input [7:0] VTRG_A1TC,
+		input [7:0] VTRG_A2TC,
+		input [7:0] VTRG_A3TC,
+		input [7:0] VTRG_A4TC,
+		
+		output [7:0] L1_P,
+		output [7:0] L1_N,
 		
 		// LAB innputs.
 		output 		 A_GCK,
@@ -87,6 +101,10 @@ module TOP_v38(
 		output		 D_TREF_P,
 		output		 D_TREF_N,
 		
+		output SCLK,
+		output NSYNC,
+		output [7:0] DIN,
+		
 		// Unuseds.
 		output [3:0] CALSNH,
 		output [3:0] TCS,
@@ -98,7 +116,9 @@ module TOP_v38(
 	wire clk33;
 	wire clk100;
 	wire clk125;
-
+	wire clk250;
+	wire clk250b;
+	
 	// Clock output.
 	wire [3:0] TREF_P;
 	wire [3:0] TREF_N;
@@ -106,6 +126,9 @@ module TOP_v38(
 	assign B_TREF_P = TREF_P[1]; assign B_TREF_N = TREF_N[1];
 	assign C_TREF_P = TREF_P[2]; assign C_TREF_N = TREF_N[2];
 	assign D_TREF_P = TREF_P[3]; assign D_TREF_N = TREF_N[3];
+	
+	// Reference pulse from TURF.
+	wire REF;
 	
 	// TURF HOLD inputs
 	wire [3:0] HOLD;
@@ -120,18 +143,82 @@ module TOP_v38(
 	wire [31:0] 	lab_dat;
 	wire 				lab_ready;
 
+	// Trigger inputs.
+	// These are NOT individual antennas. They're individual SHORT inputs.
+	// At some point in the long, distant past, they were individual antennas.
+	wire [7:0] ANT_A;
+	wire [7:0] ANT_B;
+	wire [7:0] ANT_C;
+	wire [7:0] ANT_D;
+	wire [31:0] trig_scaler_path;
 
+	// Trigger outputs.
+	wire [3:0] L1;
+	// Uh... stuff, I guess.
+	wire [31:0] CR;
+	// Mask register, I guess?
+	wire [31:0] short_mask;
+	// Some monitoring stuff that I have no idea what it does.
+	wire [7:0] mon_scaler;
+	wire L1MON2;
+	wire L1MON3;
+	wire L1MON4;
+	
 	SURF_infrastructure #(.REF_CLOCK("125MHZ")) u_infrastructure( .clk33_o(clk33),
 																					 .clk100_o(clk100),
 																					 .clk125_o(clk125),
+																					 .clk250_o(clk250),
+																					 .clk250b_o(clk250b),
+																					 .clr_all_i(clr_all),
 																					 .CLK125_P(CLK125_P),.CLK125_N(CLK125_N),
 																					 .LCLK(LCLK),
 																					 .BCLKO(BCLKO),
 																					 .CMD_P(CMD_P),.CMD_N(CMD_N),.CMD(command),
 																					 .HOLD_P(HOLD_P),.HOLD_N(HOLD_N),.HOLD(HOLD),
-																					 .TREF_P(TREF_P),.TREF_N(TREF_N));
-	
+																					 .TREF_P(TREF_P),.TREF_N(TREF_N),
+																					 .REF_P(REF_P),.REF_N(REF_N),.REF(REF),
+																					 .L1_P(L1_P),.L1_N(L1_N),.L1(L1));
+	// Trigger infrastructure.
+	Trig_RX u_trigger_rx(.A1TC(A1TC),.A2TC(A2TC),.A3TC(A3TC),.A4TC(A4TC),
+								.VTRG_A1TC(VTRG_A1TC),.VTRG_A2TC(VTRG_A2TC),.VTRG_A3TC(VTRG_A3TC),.VTRG_A4TC(VTRG_A4TC),
+								.out_for_scaler(trig_scaler_path),
+								.ANT_A(ANT_A),.ANT_B(ANT_B),.ANT_C(ANT_C),.ANT_D(ANT_D));
+	// Trigger.
+	Level1_Trigger level1trigger(.ANT_A(ANT_A),.ANT_B(ANT_B),.ANT_C(ANT_C),.ANT_D(ANT_D),
+									 .ANT_A_for_scalers(trig_scaler_path[0 +: 8]),
+									 .ANT_B_for_scalers(trig_scaler_path[8 +: 8]),
+									 .ANT_C_for_scalers(trig_scaler_path[16 +: 8]),
+									 .ANT_D_for_scalers(trig_scaler_path[24 +: 8]),
+									 .CLK(clk33),.CLR_ALL(clr_all),.REFPULSE(REF),								 
+									 .L1(L1),
+									 .mask_pass(short_mask),
+									 .CR(CR),
+									 .MONSCALER(mon_scaler),
+									 .MON2(L1MON2),
+									 .MON3(L1MON3),
+									 .MON4(L1MON4),
+									 .CLK125(clk125),
+									 .CLK250(clk250),
+									 .CLK250_180(clk250b));									 
 
+	reg mon_bit = 0;
+	reg mon_bit_clk33 = 0;
+	reg mon_bit_clear = 0;
+	always @(posedge clk250) begin
+		if (CR[8]) mon_bit <= 1;
+		else if (mon_bit_clear) mon_bit <= 0;
+	end
+	always @(posedge clk33) begin
+		mon_bit_clk33 <= mon_bit;
+		mon_bit_clear <= mon_bit_clk33;
+	end
+	
+	wire [34:0] td_debug;
+	assign td_debug[0] = mon_bit_clear;
+	assign td_debug[1 +: 8] = DIN;
+	assign td_debug[9] = SCLK;
+	assign td_debug[10] = NSYNC;
+	
 	wire [34:0] lab_debug;
 
 	// LAB readout and memory.
@@ -193,6 +280,26 @@ module TOP_v38(
 							  .debug_o(lab_debug)
 		);
 
+	wire dac_wr;
+	wire dac_busy;
+	wire dac_update;
+	wire [4:0] dac_waddr;
+	wire [4:0] dac_raddr;
+	wire [15:0] dac_dat_in;
+	wire [15:0] dac_dat_out;
+	DAC_CTRL_v3 u_dacs( 	.clk_i(clk33),
+								.dac_we_i(dac_wr),
+								.busy_o(dac_busy),
+								.dac_waddr_i(dac_waddr),
+								.dac_dat_i(dac_dat_in),
+								.dac_raddr_i(dac_raddr),
+								.dac_dat_o(dac_dat_out),
+								.update_i(dac_update),
+								.SCLK(SCLK),
+								.NSYNC(NSYNC),
+								.DIN(DIN));
+								
+
 	// MESS debugging.
 	wire [34:0] debug;
 	wire [4:0] rfp_addr;
@@ -207,6 +314,16 @@ module TOP_v38(
 							  .rfp_dat_i(rfp_addr),
 							  .rfp_addr_o(rfp_addr),
 							  .clr_all_o(clr_all),
+
+							  .dac_waddr_o(dac_waddr),
+							  .dac_raddr_o(dac_raddr),
+							  .dac_wr_o(dac_wr),
+							  .dac_update_o(dac_update),
+							  .dac_busy_i(dac_busy),
+							  .dac_dat_i(dac_dat_out),
+							  .dac_dat_o(dac_dat_in),
+							  
+							  .short_mask_o(short_mask),
 							  
 							  .nADS(nADS),
 							  .WnR(WnR),
@@ -222,7 +339,9 @@ module TOP_v38(
 	
 	// ChipScope debugging cores.
 	wire [35:0] ila_control;
+	(* BOX_TYPE = "black_box" *)
 	cs_icon u_icon(.CONTROL0(ila_control));
+	(* BOX_TYPE = "black_box" *)
 	cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug));
 
 	// Unused LAB test crap.

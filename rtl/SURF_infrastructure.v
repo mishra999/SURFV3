@@ -21,10 +21,25 @@ module SURF_infrastructure(
 		input [3:0] HOLD_N,
 		output [3:0] TREF_P,
 		output [3:0] TREF_N,
+		input REF_P,
+		input REF_N,
+		output REF,
+		output [3:0] L1_P,
+		output [3:0] L1_N,
+		input [3:0] L1,
+		
+		input clr_all_i,
+		
+		input ps_en_i,
+		input ps_incdec_i,
+		output psdone_o,
+		output pslimit_o,
 		
 		output clk33_o,
 		output clk100_o,
 		output clk125_o,
+		output clk250_o,
+		output clk250b_o,
 		
 		output [3:0] HOLD,
 		output CMD
@@ -34,10 +49,21 @@ module SURF_infrastructure(
 	// some point relatively soon.
 
 	reg [3:0] reset = 4'b0111;
-	always @(posedge clk33_o) reset <= {reset[2:0],1'b0};
+	always @(posedge clk33_o) reset <= {reset[2:0],clr_all_i};
+	wire [7:0] status;
 	
 	clk100_wizard u_clk100(.CLKIN_IN(clk33_o),.RST_IN(reset[3]),.CLKFX_OUT(clk100_o));
-
+	clkwiz u_clk125(.CLKIN_IN(clk125_o),
+						 .PSCLK_IN(clk33_o),
+						 .PSEN_IN(ps_en_i),
+						 .PSINCDEC_IN(ps_incdec_i),
+						 .RST_IN(reset),
+						 .CLK2X_OUT(clk250_o),
+						 .CLK2X180_OUT(clk250b_o),
+						 .STATUS_OUT(status),
+						 .LOCKED_OUT(),
+						 .PSDONE_OUT(psdone_o));
+	assign pslimit_o = status[0];
 	parameter REF_CLOCK = "33MHZ";
 	wire [3:0] TREF;
 	wire clk125_to_bufg;
@@ -50,11 +76,13 @@ module SURF_infrastructure(
 							  .CE(1'b1),.R(1'b0),.S(1'b0),
 							  .Q(LCLK));
 	IBUFDS u_cmd_ibufds(.I(CMD_P),.IB(CMD_N),.O(CMD));
+	IBUFDS u_ref_ibufds(.I(REF_P),.IB(REF_N),.O(REF));
 	
 	
 	generate
 		genvar i;
 		for (i=0;i<4;i=i+1) begin : LAB		
+			OBUFDS u_l1_obuf(.I(L1[i]),.O(L1_P[i]),.OB(L1_N[i]));
 			if (REF_CLOCK == "33MHZ") begin : CLK33
 				FDDRRSE u_refp(.C0(clk33_o),.C1(~clk33_o),
 									.D0(1'b1),.D1(1'b0),

@@ -118,6 +118,7 @@ module LAB_TOPv2(
 			 flag_sync u_readout_sync(.clkA(clk100_i),.in_clkA(readout_100),
 									.clkB(clk_i),.out_clkB(lab_readout[i]));
 			 lab_adc_test u_test(.clk_i(clk100_i),
+										.read_done_i(read_done_100),
 										.start_i(digitize_100),
 										.done_o(readout_100),
 										.CLR(GCCLR[i]),

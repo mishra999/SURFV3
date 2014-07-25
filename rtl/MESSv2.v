@@ -13,7 +13,8 @@ module MESSv2( input        clk_i,
 	       output 	     nBTERM,
 
 	       output 	     clr_all_o, 
-	       
+
+			 output [31:0] short_mask_o,
 	       
 	       input [31:0]  lab_dat_i,
 	       input 	     lab_ready_i,
@@ -22,8 +23,15 @@ module MESSv2( input        clk_i,
 	       output [12:0] lab_addr_o,
 	       input [15:0]  rfp_dat_i,
 	       output [4:0]  rfp_addr_o,
+
+			 output 			dac_update_o,
+			 input 			dac_busy_i,
+			 output 			dac_wr_o,
+			 output [4:0]  dac_waddr_o,
+			 output [15:0] dac_dat_o,
 	       input [15:0]  dac_dat_i,
-	       output [4:0]  dac_addr_o,
+	       output [4:0]  dac_raddr_o,
+			 
 	       input [15:0]  scal_dat_i,
 	       output [4:0]  scal_addr_o,
 			 output [34:0] debug_o
@@ -35,6 +43,9 @@ module MESSv2( input        clk_i,
 	// Clears.
    reg 		     clr_all = 0;   
    reg 		     clr_evt = 0;
+	reg 			  update_dac = 0;
+	// Mask register.
+	reg [31:0]	  short_mask = {32{1'b0}};
 	
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 7;
@@ -62,6 +73,7 @@ module MESSv2( input        clk_i,
    // The LAB_RAM here uses 3 block RAMs to generate
    // a 3072x16 RAM with a 1536x32 readout port.
    // This means we use 12 block RAMs in total.
+	(* BOX_TYPE = "black_box" *)
    event_fifo u_fifo(.din(event_fifo_in),
 		     .dout(event_fifo_out),
 		     .clk(clk_i),
@@ -129,8 +141,8 @@ module MESSv2( input        clk_i,
 			      event_fifo_out[33:32],
 			      !event_fifo_empty && lab_ready_i };
    assign register_data[5] = event_fifo_out[31:0];
-   assign register_data[6] = {{30{1'b0}},clr_evt,clr_all};   
-   assign register_data[7] = lab_counter;
+   assign register_data[6] = {{28{1'b0}},dac_busy_i,update_dac,clr_evt,clr_all};   
+   assign register_data[7] = short_mask;
    
    wire 		     terminate_read = (state == LAB_RD 
 					       || state == HK_RD 
@@ -152,6 +164,11 @@ module MESSv2( input        clk_i,
 		
 		if ((state == REG_WR) && la_q[2:0] == 3'd6) clr_evt <= ldi_q[1];
 		else clr_evt <= 0;
+
+		if ((state == REG_WR) && la_q[2:0] == 3'd6) update_dac <= ldi_q[2];
+		else update_dac <= 0;
+
+		if ((state == REG_WR) && la_q[2:0] == 3'd7) short_mask <= ldi_q;		
 
       // Dumb HK/LAB counter increment. Fix this for bursted reads.
       if (state == HK_RD) hk_counter <= hk_counter + 1;
@@ -206,7 +223,7 @@ module MESSv2( input        clk_i,
 	
    assign scal_addr_o = hk_counter[4:0];
    assign rfp_addr_o = hk_counter[4:0];
-   assign dac_addr_o = hk_counter[4:0];
+   assign dac_raddr_o = hk_counter[4:0];
 
    assign lab_addr_o = {event_fifo_out[33:32],lab_counter};
 
@@ -224,6 +241,13 @@ module MESSv2( input        clk_i,
    endgenerate   
 
 	assign nREADY = nready_q;
+
+	assign dac_waddr_o = la_q;
+	assign dac_wr_o = (state == HK_WR);
+	assign dac_dat_o = ldi_q;
+	assign dac_update_o = update_dac;
+	
+	assign short_mask_o = short_mask;
 	
 	assign debug_o[0] = nads_q;
 	assign debug_o[1] = ncs2_q;
