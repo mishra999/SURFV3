@@ -346,11 +346,25 @@ module TOP_v38(
 	
 	// ChipScope debugging cores.
 	wire [35:0] ila_control;
-	(* BOX_TYPE = "black_box" *)
-	cs_icon u_icon(.CONTROL0(ila_control));
-	(* BOX_TYPE = "black_box" *)
-	cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug));
+	wire [35:0] vio_control;
+	wire [7:0] vio_async_in;
+	wire [34:0] debug_muxer;
+	SURF_debug_multiplexer u_mux(.in0(debug),
+										  .in1(lab_debug),
+										  .in2(td_debug),
+										  .in3(lab_debug),
+										  .clk_i(clk33),
+										  .sel_i(vio_async_in[1:0]),
+										  .out(debug_muxer));
+										  
 
+	(* BOX_TYPE = "black_box" *)
+	cs_icon u_icon(.CONTROL0(ila_control),.CONTROL1(vio_control));
+	(* BOX_TYPE = "black_box" *)
+	cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug_muxer));
+	(* BOX_TYPE = "black_box" *)
+	cs_vio u_vio(.CONTROL(vio_control),.ASYNC_OUT(vio_async_in));
+	
 	// Unused LAB test crap.
 	// CALSNH = VCC
 	// RSS = VCC

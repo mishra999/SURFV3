@@ -293,14 +293,14 @@ NET "D_S<7>"  LOC = "AA10"  | DRIVE = 6;
 NET "D_SELMAIN"  LOC = "U11" | DRIVE = 6; 
 NET "D_SELTAIL"  LOC = "AB10" | DRIVE = 6; 
 
-#NET "DIN<1>"  LOC = "A12"  ; 
-#NET "DIN<2>"  LOC = "E16"  ; 
-#NET "DIN<3>"  LOC = "F12"  ; 
-#NET "DIN<4>"  LOC = "F13"  ; 
-#NET "DIN<5>"  LOC = "F16"  ; 
-#NET "DIN<6>"  LOC = "F17"  ; 
-#NET "DIN<7>"  LOC = "E13"  ; 
-#NET "DIN<8>"  LOC = "F14"  ; 
+NET "DIN<0>"  LOC = "A12"  ; 
+NET "DIN<1>"  LOC = "E16"  ; 
+NET "DIN<2>"  LOC = "F12"  ; 
+NET "DIN<3>"  LOC = "F13"  ; 
+NET "DIN<4>"  LOC = "F16"  ; 
+NET "DIN<5>"  LOC = "F17"  ; 
+NET "DIN<6>"  LOC = "E13"  ; 
+NET "DIN<7>"  LOC = "F14"  ; 
 
 #NET "GPIO<0>"  LOC = "V22"  ; 
 #NET "GPIO<1>"  LOC = "U18"  ; 
@@ -362,8 +362,8 @@ NET "nCS3"  LOC = "U20"  ;
 #NET "MON1"  LOC = "R19"  ; 
 #NET "MON2"  LOC = "R22"  ; 
 #NET "MON3"  LOC = "P19"  ; 
-#NET "NDSYNC"  LOC = "C22"  ; 
-#NET "SCLK"  LOC = "A10"  ; 
+NET "NSYNC"  LOC = "C22"  ; 
+NET "SCLK"  LOC = "A10"  ; 
 #NET "TCHAN_S0N"  LOC = "K21"  ; 
 #NET "TCHAN_S0P"  LOC = "K22"  ; 
 
