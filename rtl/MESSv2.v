@@ -49,10 +49,10 @@ module MESSv2( input        clk_i,
 	
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 7;
-	localparam [7:0] VER_DAY = 23;
+	localparam [7:0] VER_DAY = 25;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 0;
+	localparam [7:0] VER_REV = 1;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 	

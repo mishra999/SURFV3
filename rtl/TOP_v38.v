@@ -213,12 +213,6 @@ module TOP_v38(
 		mon_bit_clear <= mon_bit_clk33;
 	end
 	
-	wire [34:0] td_debug;
-	assign td_debug[0] = mon_bit_clear;
-	assign td_debug[1 +: 8] = DIN;
-	assign td_debug[9] = SCLK;
-	assign td_debug[10] = NSYNC;
-	
 	wire [34:0] lab_debug;
 
 	// LAB readout and memory.
@@ -280,6 +274,7 @@ module TOP_v38(
 							  .debug_o(lab_debug)
 		);
 
+
 	wire dac_wr;
 	wire dac_busy;
 	wire dac_update;
@@ -287,6 +282,18 @@ module TOP_v38(
 	wire [4:0] dac_raddr;
 	wire [15:0] dac_dat_in;
 	wire [15:0] dac_dat_out;
+
+	wire [34:0] td_debug;
+	assign td_debug[0] = mon_bit_clear;
+	assign td_debug[1 +: 8] = DIN;
+	assign td_debug[9] = SCLK;
+	assign td_debug[10] = NSYNC;
+	assign td_debug[11] = dac_wr;
+	assign td_debug[12 +: 12] = dac_dat_in;
+	assign td_debug[24 +: 4] = dac_waddr;
+	assign td_debug[28] = dac_update;
+	assign td_debug[29] = dac_busy;
+
 	DAC_CTRL_v3 u_dacs( 	.clk_i(clk33),
 								.dac_we_i(dac_wr),
 								.busy_o(dac_busy),
