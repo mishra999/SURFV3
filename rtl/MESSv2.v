@@ -11,6 +11,9 @@ module MESSv2( input        clk_i,
 	       input 	     nRD,
 	       output 	     nREADY,
 	       output 	     nBTERM,
+			
+			 // Header crap.
+			 input 		  [5:0] board_id_i,			 
 
 	       output 	     clr_all_o, 
 
@@ -34,6 +37,9 @@ module MESSv2( input        clk_i,
 			 
 	       input [15:0]  scal_dat_i,
 	       output [4:0]  scal_addr_o,
+			 output 			scal_rd_o,
+			 input [15:0]  refpulse_cnt_i,
+			 
 			 output [34:0] debug_o
 	       );
    wire 		     event_wr;
@@ -46,13 +52,19 @@ module MESSv2( input        clk_i,
 	reg 			  update_dac = 0;
 	// Mask register.
 	reg [31:0]	  short_mask = {32{1'b0}};
+	// Header crap.
+	reg [3:0]	  event_count = {4{1'b0}};
+	reg [5:0]	  board_id = {6{1'b0}};	
+	reg [1:0]	  lab_sel = {2{1'b0}};
+	wire [15:0] header;
+	wire [15:0] scal_header;
 	
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 7;
-	localparam [7:0] VER_DAY = 25;
+	localparam [7:0] VER_DAY = 26;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 2;
+	localparam [7:0] VER_REV =3;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 	
@@ -104,7 +116,11 @@ module MESSv2( input        clk_i,
    reg 			     nready_q = 1;   
    (* IOB = "TRUE" *)
    reg 			     nrd_q = 1;
+
+	reg 				  ready_regs_or_hk = 0;
    
+	reg [31:0]		  regs_or_hk = {32{1'b0}};
+	
    localparam FSM_BITS = 3;   
    localparam [FSM_BITS-1:0] IDLE = 0;
    localparam [FSM_BITS-1:0] LAB_WR = 1;
@@ -122,9 +138,14 @@ module MESSv2( input        clk_i,
    wire [31:0] 		     hk_dat_mux;
    // Scalers first, then DAC, then RFP.
    wire [31:0] 		     hk_dat[3:0];
-   assign hk_dat[0] = scal_dat_i;
-   assign hk_dat[1] = dac_dat_i;
-   assign hk_dat[2] = rfp_dat_i;
+
+	// Generate header
+	assign header	= {{3'b000},ncs3_q,lab_sel,board_id,event_count};   
+	assign scal_header = (hk_counter[3]) ? refpulse_cnt_i : header;
+
+	assign hk_dat[0] = {scal_header,scal_dat_i};
+   assign hk_dat[1] = {header,dac_dat_i};
+   assign hk_dat[2] = {header,rfp_dat_i};
    assign hk_dat[3] = dac_dat_i;   
    assign hk_dat_mux = hk_dat[hk_counter[6:5]];
    
@@ -146,15 +167,26 @@ module MESSv2( input        clk_i,
    
    wire 		     terminate_read = (state == LAB_RD 
 					       || state == HK_RD 
-					       || state == REG_RD);   
-	// negative logic. If *either* nADSq or nRDq is
-	// asserted, keep ready low.
-   wire 		     nready_in = nads_q && nrd_q;
+					       || state == REG_RD);
+	// LAB reads come right after nads_q.
+	// Register or HK are a cycle delayed.
+	wire ready = (!nads_q && !ncs3_q) || ready_regs_or_hk || !nrd_q;
+   wire 		     nready_in = !ready;
    wire 		     ldo_oeb_in = wnr_q && !terminate_read;   
    
    assign nBTERM = 1'b1;   
 
    always @(posedge clk_i) begin : REGISTER_LOGIC
+		regs_or_hk <= (ncs2_q) ? register_data_mux : hk_dat_mux;
+
+		ready_regs_or_hk <= (!nads_q && ncs3_q);
+
+		board_id <= board_id_i;
+		lab_sel <= event_fifo_out[33:32];
+
+		if (clr_all) event_count <= {4{1'b0}};
+		else if (clr_evt) event_count <= event_count + 1;
+
       if (state == REG_WR) begin
 		 if (la_q[2:0] == 3'd2) hk_counter <= ldi_q;
 		 if (la_q[2:0] == 3'd3) lab_counter <= ldi_q;
@@ -213,13 +245,17 @@ module MESSv2( input        clk_i,
 			default: state <= IDLE;
       endcase // case (state)
    end // block: FSM_LOGIC
-      
+
+	assign ldo_in_mux = (ncs3_q) ? regs_or_hk : lab_dat_i;
+	
+/*
    assign ldo_in_sel = {ncs3_q, ncs2_q};
    assign ldo_in[0] = lab_dat_i;
    assign ldo_in[1] = lab_dat_i;
    assign ldo_in[2] = hk_dat_mux;
    assign ldo_in[3] = register_data_mux;
    assign ldo_in_mux = ldo_in[ldo_in_sel];
+*/
 	
    assign scal_addr_o = hk_counter[4:0];
    assign rfp_addr_o = hk_counter[4:0];
@@ -248,6 +284,8 @@ module MESSv2( input        clk_i,
 	assign dac_update_o = update_dac;
 	
 	assign short_mask_o = short_mask;
+
+	assign scal_rd_o = (state == HK_RD) && (hk_counter[6:5] == 2'b00);
 	
 	assign debug_o[0] = nads_q;
 	assign debug_o[1] = ncs2_q;

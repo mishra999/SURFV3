@@ -32,12 +32,7 @@ end Level1_Trigger;
 architecture BEHAVIORAL of Level1_Trigger is
    signal NqCLK     : std_logic;
    signal qCLK      : std_logic;
-   component CLK_264MHz
-      port ( MCLK    : in    std_logic; 
-             Clr_all : in    std_logic; 
-             PCLK    : out   std_logic; 
-             NPCLK   : out   std_logic);
-   end component;
+ 
    
 	
 component TURF_Processor_ANITA3 

@@ -32,30 +32,18 @@ end TURF_Processor_ANITA3;
 
 architecture BEHAVIORAL of TURF_Processor_ANITA3 is
    attribute BOX_TYPE   : string ;
-   signal ANT1        : std_logic_vector (3 downto 0);
-   signal ANT1SCALER  : std_logic_vector (3 downto 0);
-   signal ANT2        : std_logic_vector (3 downto 0);
-   signal ANT2SCALER  : std_logic_vector (3 downto 0);
-   signal ANT3        : std_logic_vector (3 downto 0);
-   signal ANT3SCALER  : std_logic_vector (3 downto 0);
-   signal ANT4        : std_logic_vector (3 downto 0);
-   signal ANT4SCALER  : std_logic_vector (3 downto 0);
-	
-   signal MON_SCALER2 : std_logic_vector (7 downto 0);
-   signal MON_SCALER3 : std_logic_vector (7 downto 0);
-   signal XLXN_514    : std_logic;
-   signal XLXN_515    : std_logic;
-   signal XLXN_516    : std_logic;
-   signal XLXN_518    : std_logic;
-   signal XLXN_536    : std_logic;
-   signal XLXN_537    : std_logic;
-   signal XLXN_538    : std_logic;
-   signal XLXN_539    : std_logic;
-   signal XLXN_542    : std_logic;
-   signal XLXN_580    : std_logic_vector (3 downto 0);
-   signal XLXN_581    : std_logic_vector (3 downto 0);
-   signal XLXN_582    : std_logic_vector (3 downto 0);
-   signal XLXN_583    : std_logic_vector (3 downto 0);
+--   signal ANT1        : std_logic_vector (3 downto 0);
+--   signal ANT1SCALER  : std_logic_vector (3 downto 0);
+--   signal ANT2        : std_logic_vector (3 downto 0);
+--   signal ANT2SCALER  : std_logic_vector (3 downto 0);
+--   signal ANT3        : std_logic_vector (3 downto 0);
+--   signal ANT3SCALER  : std_logic_vector (3 downto 0);
+--   signal ANT4        : std_logic_vector (3 downto 0);
+--   signal ANT4SCALER  : std_logic_vector (3 downto 0);
+--	
+--   signal MON_SCALER2 : std_logic_vector (7 downto 0);
+--   signal MON_SCALER3 : std_logic_vector (7 downto 0);
+ 
    component ANITA3_L1_TRIGGER_PIPE
       port ( REF_PULSE  : in    std_logic; 
              CLK        : in    std_logic; 
@@ -74,13 +62,28 @@ architecture BEHAVIORAL of TURF_Processor_ANITA3 is
              T1  : in    std_logic; 
              T2  : in    std_logic);
    end component;
-   
+ 
+   component NewSCALERSHOT
+      port ( CLK : in    std_logic; 
+             T1   : in   std_logic; 
+             O  : out    std_logic);
+   end component;
+	
    component REFPULSECOUNT
       port ( REF  : in    std_logic; 
              MCLK : in    std_logic; 
              PCLK : in    std_logic; 
              CNT  : out   std_logic);
    end component;
+	
+	
+	component SignalStretcher 
+		port(
+			clk250 : in std_logic;
+			clk33 : in std_logic;
+			L1_250MHz : in std_logic;
+			L1_pulsed_33MHz: out std_logic);
+	end component;
 	
    signal MON_SCALER : std_logic_vector(3 downto 0);
    signal ANT_SCALER: std_logic_vector(11 downto 0);
@@ -91,6 +94,7 @@ architecture BEHAVIORAL of TURF_Processor_ANITA3 is
    signal TOP : std_logic_vector(3 downto 0);
    signal ANTENNA : std_logic_vector(11 downto 0);
    signal L1 : std_logic_vector(3 downto 0);
+   signal L1_pulsed_33MHz : std_logic_vector(3 downto 0);
 	
 	signal mask_pass_to_trigger : std_logic_vector (11 downto 0); 			 			 
 
@@ -175,6 +179,15 @@ begin
 			TRIGGER_PULSE=>TRIGGER_PULSE(i*3+2 downto i*3));
 	end generate;
 	
+	 L1_stretchers: for i in 0 to 3 generate
+		L1_stretcher: SignalStretcher port map(
+				clk250 => qCLK,
+				clk33 => MCLK,
+				L1_250MHz => L1(i),
+				L1_pulsed_33MHz => L1_pulsed_33MHz(i)
+    );
+	end generate;
+	
 	ANT_1 <= L1(0);
 	ANT_2 <= L1(1);
 	ANT_3 <= L1(2);
@@ -182,24 +195,36 @@ begin
 	
 	-- Note: CR1 is still reference pulse scaler
 	   
-   REFPULSECOUNT_u : REFPULSECOUNT
-      port map (MCLK=>MCLK,
-                PCLK=>qCLK,
-                REF=>REFPULSE,
-                CNT=>CR(0));
+--   REFPULSECOUNT_u : REFPULSECOUNT
+--      port map (MCLK=>MCLK,
+--                PCLK=>qCLK,
+--                REF=>REFPULSE,
+--                CNT=>CR(0));
    
-	CR(4 downto 1) <= MON_SCALER;
+	process(MCLK)
+	begin
+		if rising_edge(MCLK) then
+			CR(0)<=REFPULSE;
+		end if;
+	end process;
+	
+	CR(4 downto 1) <= L1_pulsed_33MHz;
 	CR(16 downto 5) <= ANT_SCALER;
    CR(31 downto 17) <= (others => '0');
-
-   scalershots: for i in 0 to 11 generate
-		sclsht: SCALERSHOT
+--
+--   scalershots: for i in 0 to 11 generate
+--		sclsht: SCALERSHOT
+--      port map (CLK=>MCLK,
+--                T1=>ANTENNA(i),
+----                T2=>TRIGGER_PULSE(i),
+--                T2=>ANTENNA(i),
+--					 O=>ANT_SCALER(i));
+--	end generate;
+   
+  scalershots: for i in 0 to 11 generate
+		sclsht: NewSCALERSHOT
       port map (CLK=>MCLK,
                 T1=>ANTENNA(i),
---                T2=>TRIGGER_PULSE(i),
-                T2=>ANTENNA(i),
 					 O=>ANT_SCALER(i));
 	end generate;
-   
-
 end BEHAVIORAL;

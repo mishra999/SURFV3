@@ -21,6 +21,8 @@ module TOP_v38(
 		output nREADY,
 		output nBTERM,
 		
+		input [5:0] BAD,
+		
 		input BCLKO,
 		output LCLK,
 		input CLK125_P,
@@ -41,8 +43,8 @@ module TOP_v38(
 		input [7:0] VTRG_A3TC,
 		input [7:0] VTRG_A4TC,
 		
-		output [7:0] L1_P,
-		output [7:0] L1_N,
+		output [3:0] L1_P,
+		output [3:0] L1_N,
 		
 		// LAB innputs.
 		output 		 A_GCK,
@@ -154,7 +156,7 @@ module TOP_v38(
 
 	// Trigger outputs.
 	wire [3:0] L1;
-	// Uh... stuff, I guess.
+	// Scalers, with creative mapping.
 	wire [31:0] CR;
 	// Mask register, I guess?
 	wire [31:0] short_mask;
@@ -200,18 +202,6 @@ module TOP_v38(
 									 .CLK125(clk125),
 									 .CLK250(clk250),
 									 .CLK250_180(clk250b));									 
-
-	reg mon_bit = 0;
-	reg mon_bit_clk33 = 0;
-	reg mon_bit_clear = 0;
-	always @(posedge clk250) begin
-		if (CR[8]) mon_bit <= 1;
-		else if (mon_bit_clear) mon_bit <= 0;
-	end
-	always @(posedge clk33) begin
-		mon_bit_clk33 <= mon_bit;
-		mon_bit_clear <= mon_bit_clk33;
-	end
 	
 	wire [34:0] lab_debug;
 
@@ -283,16 +273,11 @@ module TOP_v38(
 	wire [15:0] dac_dat_in;
 	wire [15:0] dac_dat_out;
 
+
 	wire [34:0] td_debug;
-	assign td_debug[0] = mon_bit_clear;
-	assign td_debug[1 +: 8] = DIN;
-	assign td_debug[9] = SCLK;
-	assign td_debug[10] = NSYNC;
-	assign td_debug[11] = dac_wr;
-	assign td_debug[12 +: 12] = dac_dat_in;
-	assign td_debug[24 +: 4] = dac_waddr;
-	assign td_debug[28] = dac_update;
-	assign td_debug[29] = dac_busy;
+	
+	assign td_debug[16:0] = CR[16:0];
+	assign td_debug[34:17] = {18{1'b0}};
 
 	DAC_CTRL_v3 u_dacs( 	.clk_i(clk33),
 								.dac_we_i(dac_wr),
@@ -305,7 +290,18 @@ module TOP_v38(
 								.SCLK(SCLK),
 								.NSYNC(NSYNC),
 								.DIN(DIN));
-								
+						
+	wire [4:0] 	scal_addr;
+	wire 			scal_rd;
+	wire [15:0] scal_dat_out;
+	wire [15:0] refpulse_cnt;
+	
+	SCALER_TOPv2 u_scalers( .clk33_i(clk33),
+									.scal_i(CR[16:0]),
+									.scal_addr_i(scal_addr),
+									.scal_rd_i(scal_rd),
+									.scal_dat_o(scal_dat_out),
+									.refpulse_cnt_o(refpulse_cnt));
 
 	// MESS debugging.
 	wire [34:0] debug;
@@ -329,8 +325,14 @@ module TOP_v38(
 							  .dac_busy_i(dac_busy),
 							  .dac_dat_i(dac_dat_out),
 							  .dac_dat_o(dac_dat_in),
-							  
+	
+							  .scal_addr_o(scal_addr),
+							  .scal_rd_o(scal_rd),
+							  .scal_dat_i(scal_dat_out),
+							  .refpulse_cnt_i(refpulse_cnt),
+	
 							  .short_mask_o(short_mask),
+							  .board_id_i(BAD),
 							  
 							  .nADS(nADS),
 							  .WnR(WnR),
