@@ -141,7 +141,7 @@ module MESSv2( input        clk_i,
 
 	// Generate header
 	assign header	= {{3'b000},ncs3_q,lab_sel,board_id,event_count};   
-	assign scal_header = (hk_counter[3]) ? refpulse_cnt_i : header;
+	assign scal_header = (hk_counter[4]) ? refpulse_cnt_i : header;
 
 	assign hk_dat[0] = {scal_header,scal_dat_i};
    assign hk_dat[1] = {header,dac_dat_i};

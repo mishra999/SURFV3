@@ -20,7 +20,8 @@ module SCALER_CLOCK_v2(
 	reg [15:0] counter = {16{1'b0}};
 	reg khz_clk = 0;
 	always @(posedge clk33_i) begin
-		counter <= counter + 1;
+		if (khz_clk) counter <= {16{1'b0}};
+		else counter <= counter + 1;
 		khz_clk <= (counter == MATCH);
 	end
 	

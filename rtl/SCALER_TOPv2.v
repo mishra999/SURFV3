@@ -91,7 +91,7 @@ module SCALER_TOPv2(
 		
 		if (updating) 
 			scaler_ram[{scaler_bank,scaler_addr_count}] <= {ref_pulse_count,scaler_data_out[scaler_addr_count]};
-		scaler_out <= scaler_ram[{!scaler_bank,scaler_addr_count}];
+		scaler_out <= scaler_ram[{!scaler_bank,scal_addr_i}];
 
 
 		// Once we start reading, we won't switch banks to present
