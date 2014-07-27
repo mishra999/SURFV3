@@ -106,8 +106,8 @@ NET "HOLD_N<1>"  LOC = "J21"  ;
 NET "HOLD_P<1>"  LOC = "J22" | TNM = "HOLDB" ; 
 NET "HOLD_N<2>"  LOC = "K17"  ; 
 NET "HOLD_P<2>"  LOC = "K18" | TNM = "HOLDC" ; 
-NET "HOLD_N<3>"  LOC = "L21"  ; 
-NET "HOLD_P<3>"  LOC = "L22" | TNM = "HOLDD" ; 
+NET "HOLD_N<3>"  LOC = "K19"  ; 
+NET "HOLD_P<3>"  LOC = "K20" | TNM = "HOLDD" ; 
 
 NET "A_CS<0>"  LOC = "D8"    | DRIVE = 6; 
 NET "A_CS<1>"  LOC = "E8"    | DRIVE = 6; 
@@ -217,7 +217,7 @@ NET "BAD<5>"  LOC = "T18" |PULLUP  |IOSTANDARD = LVCMOS25 ;
 NET "BCLKO"  LOC = "AB12"  | PERIOD = 30 ns HIGH 50%; 
 NET "nBTERM"  LOC = "V20"  ; 
 #NET "BUSYN"  LOC = "L21"  ; 
-#NET "BUSYP"  LOC = "L22"  ; 
+NET "BUSY_A"  LOC = "L22"  ; 
 
 NET "C_CS<0>"  LOC = "N5"   | DRIVE = 6; 
 NET "C_CS<1>"  LOC = "N6"   | DRIVE = 6; 

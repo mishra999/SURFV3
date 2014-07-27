@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/cygwin/home/barawn/repositories/github/firmware-surf/working/SURF_TOP_TEST_isim_beh1.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="SURF_TOP_TEST" />
+            <top_module name="glbl" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="vcomponents" />
+            <top_module name="vl_types" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="43" />
+   <wvobject fp_name="/SURF_TOP_TEST/nREADY" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nREADY</obj_property>
+      <obj_property name="ObjectShortName">nREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/nBTERM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nBTERM</obj_property>
+      <obj_property name="ObjectShortName">nBTERM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/LCLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">LCLK</obj_property>
+      <obj_property name="ObjectShortName">LCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/L1_P" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">L1_P[3:0]</obj_property>
+      <obj_property name="ObjectShortName">L1_P[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group89" type="group">
+      <obj_property name="label">LABA</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/SURF_TOP_TEST/A_GCK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_GCK</obj_property>
+         <obj_property name="ObjectShortName">A_GCK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_GCCLR" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_GCCLR</obj_property>
+         <obj_property name="ObjectShortName">A_GCCLR</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_RAMP" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_RAMP</obj_property>
+         <obj_property name="ObjectShortName">A_RAMP</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_CS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">A_CS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">A_CS[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_S" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">A_S[7:0]</obj_property>
+         <obj_property name="ObjectShortName">A_S[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_SELMAIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_SELMAIN</obj_property>
+         <obj_property name="ObjectShortName">A_SELMAIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_SELTAIL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_SELTAIL</obj_property>
+         <obj_property name="ObjectShortName">A_SELTAIL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_NRUN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_NRUN</obj_property>
+         <obj_property name="ObjectShortName">A_NRUN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_TREF_P" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_TREF_P</obj_property>
+         <obj_property name="ObjectShortName">A_TREF_P</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/A_TREF_N" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">A_TREF_N</obj_property>
+         <obj_property name="ObjectShortName">A_TREF_N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group90" type="group">
+      <obj_property name="label">LABB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/SURF_TOP_TEST/B_GCK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_GCK</obj_property>
+         <obj_property name="ObjectShortName">B_GCK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_GCCLR" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_GCCLR</obj_property>
+         <obj_property name="ObjectShortName">B_GCCLR</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_RAMP" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_RAMP</obj_property>
+         <obj_property name="ObjectShortName">B_RAMP</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_CS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">B_CS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">B_CS[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_S" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">B_S[7:0]</obj_property>
+         <obj_property name="ObjectShortName">B_S[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_SELMAIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_SELMAIN</obj_property>
+         <obj_property name="ObjectShortName">B_SELMAIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_SELTAIL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_SELTAIL</obj_property>
+         <obj_property name="ObjectShortName">B_SELTAIL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_NRUN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_NRUN</obj_property>
+         <obj_property name="ObjectShortName">B_NRUN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_TREF_P" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_TREF_P</obj_property>
+         <obj_property name="ObjectShortName">B_TREF_P</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/B_TREF_N" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">B_TREF_N</obj_property>
+         <obj_property name="ObjectShortName">B_TREF_N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group91" type="group">
+      <obj_property name="label">LABC</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/SURF_TOP_TEST/C_GCK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_GCK</obj_property>
+         <obj_property name="ObjectShortName">C_GCK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_GCCLR" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_GCCLR</obj_property>
+         <obj_property name="ObjectShortName">C_GCCLR</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_RAMP" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_RAMP</obj_property>
+         <obj_property name="ObjectShortName">C_RAMP</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_CS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">C_CS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">C_CS[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_S" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">C_S[7:0]</obj_property>
+         <obj_property name="ObjectShortName">C_S[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_SELMAIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_SELMAIN</obj_property>
+         <obj_property name="ObjectShortName">C_SELMAIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_SELTAIL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_SELTAIL</obj_property>
+         <obj_property name="ObjectShortName">C_SELTAIL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_NRUN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_NRUN</obj_property>
+         <obj_property name="ObjectShortName">C_NRUN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_TREF_P" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_TREF_P</obj_property>
+         <obj_property name="ObjectShortName">C_TREF_P</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/C_TREF_N" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">C_TREF_N</obj_property>
+         <obj_property name="ObjectShortName">C_TREF_N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group92" type="group">
+      <obj_property name="label">LABD</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/SURF_TOP_TEST/D_GCK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_GCK</obj_property>
+         <obj_property name="ObjectShortName">D_GCK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_GCCLR" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_GCCLR</obj_property>
+         <obj_property name="ObjectShortName">D_GCCLR</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_RAMP" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_RAMP</obj_property>
+         <obj_property name="ObjectShortName">D_RAMP</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_CS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">D_CS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">D_CS[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_S" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">D_S[7:0]</obj_property>
+         <obj_property name="ObjectShortName">D_S[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_SELMAIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_SELMAIN</obj_property>
+         <obj_property name="ObjectShortName">D_SELMAIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_SELTAIL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_SELTAIL</obj_property>
+         <obj_property name="ObjectShortName">D_SELTAIL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_NRUN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_NRUN</obj_property>
+         <obj_property name="ObjectShortName">D_NRUN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_TREF_P" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_TREF_P</obj_property>
+         <obj_property name="ObjectShortName">D_TREF_P</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SURF_TOP_TEST/D_TREF_N" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">D_TREF_N</obj_property>
+         <obj_property name="ObjectShortName">D_TREF_N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/uut/u_scalers/u_clk/counter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">counter[15:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/uut/u_scalers/update_scalers" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">update_scalers</obj_property>
+      <obj_property name="ObjectShortName">update_scalers</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/SCLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SCLK</obj_property>
+      <obj_property name="ObjectShortName">SCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/NSYNC" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">NSYNC</obj_property>
+      <obj_property name="ObjectShortName">NSYNC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/DIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DIN[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DIN[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/LD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">LD[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/nADS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nADS</obj_property>
+      <obj_property name="ObjectShortName">nADS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/uut/u_scalers/scaler_bank" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">scaler_bank</obj_property>
+      <obj_property name="ObjectShortName">scaler_bank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/WnR" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">WnR</obj_property>
+      <obj_property name="ObjectShortName">WnR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/nRD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nRD</obj_property>
+      <obj_property name="ObjectShortName">nRD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/LA" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LA[7:2]</obj_property>
+      <obj_property name="ObjectShortName">LA[7:2]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/nCS2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nCS2</obj_property>
+      <obj_property name="ObjectShortName">nCS2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/nCS3" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nCS3</obj_property>
+      <obj_property name="ObjectShortName">nCS3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/BAD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">BAD[5:0]</obj_property>
+      <obj_property name="ObjectShortName">BAD[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/BCLKO" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">BCLKO</obj_property>
+      <obj_property name="ObjectShortName">BCLKO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/CLK125_P" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK125_P</obj_property>
+      <obj_property name="ObjectShortName">CLK125_P</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/CMD_P" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CMD_P</obj_property>
+      <obj_property name="ObjectShortName">CMD_P</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/HOLD_P" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">HOLD_P[3:0]</obj_property>
+      <obj_property name="ObjectShortName">HOLD_P[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/REF_P" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">REF_P</obj_property>
+      <obj_property name="ObjectShortName">REF_P</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/A1TC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">A1TC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A1TC[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/A2TC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">A2TC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A2TC[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/A3TC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">A3TC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A3TC[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/A4TC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">A4TC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A4TC[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/A_HITBUS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">A_HITBUS</obj_property>
+      <obj_property name="ObjectShortName">A_HITBUS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/A_RCO" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">A_RCO</obj_property>
+      <obj_property name="ObjectShortName">A_RCO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/A_DAT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">A_DAT[11:0]</obj_property>
+      <obj_property name="ObjectShortName">A_DAT[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/B_HITBUS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">B_HITBUS</obj_property>
+      <obj_property name="ObjectShortName">B_HITBUS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/B_RCO" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">B_RCO</obj_property>
+      <obj_property name="ObjectShortName">B_RCO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/B_DAT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">B_DAT[11:0]</obj_property>
+      <obj_property name="ObjectShortName">B_DAT[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/C_HITBUS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">C_HITBUS</obj_property>
+      <obj_property name="ObjectShortName">C_HITBUS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/C_RCO" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">C_RCO</obj_property>
+      <obj_property name="ObjectShortName">C_RCO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/C_DAT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">C_DAT[11:0]</obj_property>
+      <obj_property name="ObjectShortName">C_DAT[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/D_HITBUS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">D_HITBUS</obj_property>
+      <obj_property name="ObjectShortName">D_HITBUS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/D_RCO" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">D_RCO</obj_property>
+      <obj_property name="ObjectShortName">D_RCO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SURF_TOP_TEST/D_DAT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">D_DAT[11:0]</obj_property>
+      <obj_property name="ObjectShortName">D_DAT[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

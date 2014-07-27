@@ -40,6 +40,8 @@ module MESSv2( input        clk_i,
 			 output 			scal_rd_o,
 			 input [15:0]  refpulse_cnt_i,
 			 
+			 output busy_flag_o,
+			 
 			 output [34:0] debug_o
 	       );
    wire 		     event_wr;
@@ -50,6 +52,7 @@ module MESSv2( input        clk_i,
    reg 		     clr_all = 0;   
    reg 		     clr_evt = 0;
 	reg 			  update_dac = 0;
+	reg 			  busy_flag = 0;
 	// Mask register.
 	reg [31:0]	  short_mask = {32{1'b0}};
 	// Header crap.
@@ -64,7 +67,7 @@ module MESSv2( input        clk_i,
 	localparam [7:0] VER_DAY = 26;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV =3;
+	localparam [7:0] VER_REV = 4;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 	
@@ -140,7 +143,7 @@ module MESSv2( input        clk_i,
    wire [31:0] 		     hk_dat[3:0];
 
 	// Generate header
-	assign header	= {{3'b000},ncs3_q,lab_sel,board_id,event_count};   
+	assign header	= {{3'b000},ncs2_q,lab_sel,board_id,event_count};   
 	assign scal_header = (hk_counter[4]) ? refpulse_cnt_i : header;
 
 	assign hk_dat[0] = {scal_header,scal_dat_i};
@@ -162,7 +165,7 @@ module MESSv2( input        clk_i,
 			      event_fifo_out[33:32],
 			      !event_fifo_empty && lab_ready_i };
    assign register_data[5] = event_fifo_out[31:0];
-   assign register_data[6] = {{28{1'b0}},dac_busy_i,update_dac,clr_evt,clr_all};   
+   assign register_data[6] = {busy_flag_o,{27{1'b0}},dac_busy_i,update_dac,clr_evt,clr_all};   
    assign register_data[7] = short_mask;
    
    wire 		     terminate_read = (state == LAB_RD 
@@ -199,6 +202,8 @@ module MESSv2( input        clk_i,
 
 		if ((state == REG_WR) && la_q[2:0] == 3'd6) update_dac <= ldi_q[2];
 		else update_dac <= 0;
+
+		if ((state == REG_WR) && la_q[2:0] == 3'd6) busy_flag <= ldi_q[31];
 
 		if ((state == REG_WR) && la_q[2:0] == 3'd7) short_mask <= ldi_q;		
 
@@ -264,7 +269,8 @@ module MESSv2( input        clk_i,
    assign lab_addr_o = {event_fifo_out[33:32],lab_counter};
 
    assign clr_all_o = clr_all;
-      
+   assign busy_flag_o = busy_flag;
+	
    generate
       genvar oe;
       for (oe=0;oe<32;oe=oe+1) begin : LDBUF

@@ -110,7 +110,9 @@ module TOP_v38(
 		// Unuseds.
 		output [3:0] CALSNH,
 		output [3:0] TCS,
-		output [3:0] RSS		
+		output [3:0] RSS,
+		
+		output BUSY_A
     );
 
 	// Global clocks.
@@ -306,6 +308,7 @@ module TOP_v38(
 	// MESS debugging.
 	wire [34:0] debug;
 	wire [4:0] rfp_addr;
+	wire busy_flag;
 	// PLX/register interface
 	MESSv2 u_mess(		  .clk_i(clk33),
 							  .cmd_i(command),
@@ -333,6 +336,7 @@ module TOP_v38(
 	
 							  .short_mask_o(short_mask),
 							  .board_id_i(BAD),
+							  .busy_flag_o(busy_flag),
 							  
 							  .nADS(nADS),
 							  .WnR(WnR),
@@ -375,4 +379,5 @@ module TOP_v38(
 	assign RSS = {4{1'b1}};
 	assign TCS = {4{1'b0}};
 	
+	assign BUSY_A = busy_flag;
 endmodule
