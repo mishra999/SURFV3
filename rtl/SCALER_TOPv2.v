@@ -45,7 +45,7 @@ module SCALER_TOPv2(
 	generate
 		genvar trig, ant;
 		for (trig=0;trig<4;trig=trig+1) begin : L1
-			ANITA3_scaler #(.WIDTH(16),.PRESCALE(4)) u_l1_scaler(.clk_i(clk33_i),
+			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_l1_scaler(.clk_i(clk33_i),
 																				  .pps_i(update_scalers),
 																				  .count_i(scal_i[1+trig]),
 																				  .scaler_o(scaler_data_out[12+trig]));
@@ -55,7 +55,7 @@ module SCALER_TOPv2(
 																				  .scaler_o(scaler_data_out[28+trig]));
 		end
 		for (ant=0;ant<12;ant=ant+1) begin : ANT
-			ANITA3_scaler #(.WIDTH(16),.PRESCALE(8)) u_ant_scaler(.clk_i(clk33_i),
+			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_ant_scaler(.clk_i(clk33_i),
 																					.pps_i(update_scalers),
 																					.count_i(scal_i[5+ant]),
 																					.scaler_o(scaler_data_out[ant]));

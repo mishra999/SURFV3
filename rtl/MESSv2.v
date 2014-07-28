@@ -64,10 +64,10 @@ module MESSv2( input        clk_i,
 	
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 7;
-	localparam [7:0] VER_DAY = 27;
+	localparam [7:0] VER_DAY = 28;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 5;
+	localparam [7:0] VER_REV = 7;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 	
@@ -269,7 +269,7 @@ module MESSv2( input        clk_i,
 	
    assign scal_addr_o = hk_counter[4:0];
    assign rfp_addr_o = hk_counter[4:0];
-   assign dac_raddr_o = hk_counter[4:0];
+//   assign dac_raddr_o = hk_counter[4:0];
 
    assign lab_addr_o = {event_fifo_out[33:32],lab_counter};
 
@@ -287,9 +287,12 @@ module MESSv2( input        clk_i,
       end
    endgenerate   
 
+	dac_address_remap u_remap_1(.logical_addr_i(la_q),.dac_addr_o(dac_waddr_o));
+	dac_address_remap u_remap_2(.logical_addr_i(hk_counter[4:0]),.dac_addr_o(dac_raddr_o));
+
 	assign nREADY = nready_q;
 
-	assign dac_waddr_o = la_q;
+//	assign dac_waddr_o = la_q;
 	assign dac_wr_o = (state == HK_WR);
 	assign dac_dat_o = ldi_q;
 	assign dac_update_o = update_dac;
