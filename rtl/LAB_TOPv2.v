@@ -68,6 +68,7 @@ module LAB_TOPv2(
 			 input [12:0] addr_i,
 			 output [31:0] dat_o,
 			 output 		  done_o,
+			 input	[1:0] debug_sel_i,
 			 output [34:0] debug_o
     );
 
@@ -202,6 +203,13 @@ module LAB_TOPv2(
 	assign C_NRUN = hold_i[2];
 	assign D_NRUN = hold_i[3];
 
-	assign debug_o = lab_debug[0];
+	reg [1:0] lab_debug_sel = {2{1'b0}};
+	reg [29:0] lab_debug_multiplexed = {30{1'b0}};
+	always @(posedge clk_i) begin
+		lab_debug_multiplexed <= lab_debug[lab_debug_sel][29:0];
+		lab_debug_sel <= debug_sel_i;
+	end
+
+	assign debug_o = lab_debug_multiplexed[29:0];
 
 endmodule

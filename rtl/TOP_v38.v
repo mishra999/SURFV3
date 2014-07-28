@@ -206,7 +206,7 @@ module TOP_v38(
 									 .CLK250_180(clk250b));									 
 	
 	wire [34:0] lab_debug;
-
+	wire [1:0] lab_debug_sel;
 	// LAB readout and memory.
 	LAB_TOPv2 u_labtop( .clk_i(clk33),
 							  .clk100_i(clk100),
@@ -263,6 +263,7 @@ module TOP_v38(
 							  .D_HITBUS(D_HITBUS),
 							  .D_RCO(D_RCO),
 							  .D_DAT(D_DAT),
+							  .debug_sel_i(lab_debug_sel),
 							  .debug_o(lab_debug)
 		);
 
@@ -355,6 +356,7 @@ module TOP_v38(
 	wire [35:0] vio_control;
 	wire [7:0] vio_async_in;
 	wire [34:0] debug_muxer;
+	assign lab_debug_sel = vio_async_in[3:2];
 	SURF_debug_multiplexer u_mux(.in0(debug),
 										  .in1(lab_debug),
 										  .in2(td_debug),

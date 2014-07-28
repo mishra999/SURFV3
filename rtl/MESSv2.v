@@ -64,10 +64,10 @@ module MESSv2( input        clk_i,
 	
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 7;
-	localparam [7:0] VER_DAY = 26;
+	localparam [7:0] VER_DAY = 27;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 4;
+	localparam [7:0] VER_REV = 5;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 	
@@ -142,8 +142,13 @@ module MESSv2( input        clk_i,
    // Scalers first, then DAC, then RFP.
    wire [31:0] 		     hk_dat[3:0];
 
-	// Generate header
-	assign header	= {{3'b000},ncs2_q,lab_sel,board_id,event_count};   
+	// Generate header.
+	// Low nybble is  board_id (6 bits)
+	// Then lab_sel (2 bits)
+	// Then EvtNo (4 bits)
+	// Then Dat_notHK (1 bit)
+	// Then 3 zeroes.
+	assign header	= {{3'b000},ncs2_q,event_count,lab_sel,board_id};   
 	assign scal_header = (hk_counter[4]) ? refpulse_cnt_i : header;
 
 	assign hk_dat[0] = {scal_header,scal_dat_i};
@@ -160,7 +165,7 @@ module MESSv2( input        clk_i,
    assign register_data[1] = VERSION;
    assign register_data[2] = hk_counter;
    assign register_data[3] = lab_counter;
-   assign register_data[4] = {{28{1'b0}},
+   assign register_data[4] = {header,{12{1'b0}},
 			      event_fifo_empty,
 			      event_fifo_out[33:32],
 			      !event_fifo_empty && lab_ready_i };

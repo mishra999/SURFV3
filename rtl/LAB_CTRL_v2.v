@@ -132,7 +132,7 @@ module LAB_CTRL_v2(
 	assign debug_o[14 +: 12] = dat_q;
 	assign debug_o[26] = hitbus_q;
 	assign debug_o[27] = rco_held;
-	assign debug_o[28] = delay[1];
+	assign debug_o[28] = wr_o;
 	assign debug_o[29] = done;
 	assign debug_o[34:30] = {5{1'b0}};
 endmodule
