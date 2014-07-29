@@ -107,6 +107,13 @@ module TOP_v38(
 		output NSYNC,
 		output [7:0] DIN,
 		
+		// PLX-based debug chain.
+		input MSEL,
+		input MTCK,
+		input MTMS,
+		input MTDI,
+		output MTDO,
+		
 		// Unuseds.
 		output [3:0] CALSNH,
 		output [3:0] TCS,
@@ -351,27 +358,15 @@ module TOP_v38(
 							  .debug_o(debug)
 	);
 	
-	// ChipScope debugging cores.
-	wire [35:0] ila_control;
-	wire [35:0] vio_control;
-	wire [7:0] vio_async_in;
-	wire [34:0] debug_muxer;
-	assign lab_debug_sel = vio_async_in[3:2];
+	wire [5:0] vio_out;
+	assign lab_debug_sel = vio_out[1:0];
 	SURF_debug_multiplexer u_mux(.in0(debug),
 										  .in1(lab_debug),
 										  .in2(td_debug),
 										  .in3(lab_debug),
 										  .clk_i(clk33),
-										  .sel_i(vio_async_in[1:0]),
-										  .out(debug_muxer));
-										  
-
-	(* BOX_TYPE = "black_box" *)
-	cs_icon u_icon(.CONTROL0(ila_control),.CONTROL1(vio_control));
-	(* BOX_TYPE = "black_box" *)
-	cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug_muxer));
-	(* BOX_TYPE = "black_box" *)
-	cs_vio u_vio(.CONTROL(vio_control),.ASYNC_OUT(vio_async_in));
+										  .vio_out(vio_out),
+										  .MTCK(MTCK),.MTMS(MTMS),.MTDO(MTDO),.MTDI(MTDI));
 	
 	// Unused LAB test crap.
 	// CALSNH = VCC

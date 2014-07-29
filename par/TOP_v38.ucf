@@ -304,6 +304,11 @@ NET "DIN<7>"  LOC = "F14"  ;
 
 #NET "GPIO<0>"  LOC = "V22"  ; 
 #NET "GPIO<1>"  LOC = "U18"  ; 
+NET "MSEL" LOC = "Y22" | PULLDOWN;
+NET "MTCK" LOC = "Y21" | PULLUP | CLOCK_DEDICATED_ROUTE = "FALSE" | PERIOD = 500 ns;
+NET "MTMS" LOC = "Y20" | PULLUP;
+NET "MTDI" LOC = "Y19";
+NET "MTDO" LOC = "V17";
 #NET "GPIO<4>"  LOC = "Y22"  ; 
 #NET "GPIO<5>"  LOC = "Y21"  ; 
 #NET "GPIO<6>"  LOC = "Y20"  ; 

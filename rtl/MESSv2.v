@@ -67,7 +67,7 @@ module MESSv2( input        clk_i,
 	localparam [7:0] VER_DAY = 28;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 7;
+	localparam [7:0] VER_REV = 8;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 	
@@ -158,8 +158,8 @@ module MESSv2( input        clk_i,
    assign hk_dat_mux = hk_dat[hk_counter[6:5]];
    
    wire [31:0] 		     register_data_mux;
-   wire [31:0] 		     register_data[7:0];
-   assign register_data_mux = register_data[la_q[2:0]];
+   wire [31:0] 		     register_data[15:0];
+   assign register_data_mux = register_data[la_q[3:0]];
 
    assign register_data[0] = IDENT;
    assign register_data[1] = VERSION;
