@@ -27,7 +27,8 @@ module SURF_debug_multiplexer( input [34:0] in0,
 	end
 
 	assign out = mux_reg;
-
+	// This doesn't seem to quite work - let's hold off on this for now.
+	/*
 	wire iUPDATE, iSHIFT, iRESET, iTDI, iSEL1, iDRCK1, iSEL2, iDRCK2, iCAPTURE;
 	wire iTDO2 = iTDI;
 	wire TDO;
@@ -37,18 +38,19 @@ module SURF_debug_multiplexer( input [34:0] in0,
 							  .CAPTURE(iCAPTURE),.TDO1(TDO),.TDO2(iTDO2));
 	wire jUPDATE, jSHIFT, jRESET, jTDI, jSEL1, jDRCK1, jSEL2, jDRCK2, jCAPTURE;
 	wire jTDO2 = jTDI;
+*/
 	BSCAN_SPARTAN3 u_bscan(.UPDATE(jUPDATE),.SHIFT(jSHIFT),.RESET(jRESET),
 								  .TDI(jTDI),.SEL1(jSEL1),.SEL2(jSEL2),.DRCK1(jDRCK1),.DRCK2(jDRCK2),
 								  .CAPTURE(jCAPTURE),.TDO1(TDO),.TDO2(jTDO2));
 	
 	wire UPDATE, SHIFT, RESET, TDI, SEL1, DRCK1, CAPTURE;
-	assign UPDATE = (MSEL) ? iUPDATE : jUPDATE;
-	assign SHIFT = (MSEL) ? iSHIFT : jSHIFT;
-	assign RESET = (MSEL) ? iRESET : jRESET;
-	assign TDI = (MSEL) ? iTDI : jTDI;
-	assign DRCK1 = (MSEL) ? iDRCK1 : jDRCK1;
-	assign CAPTURE = (MSEL) ? iCAPTURE : jCAPTURE;
-	assign SEL1 = (MSEL) ? iSEL1 : jSEL1;
+	assign UPDATE = jUPDATE;
+	assign SHIFT = jSHIFT;
+	assign RESET = jRESET;
+	assign TDI = jTDI;
+	assign DRCK1 = jDRCK1;
+	assign CAPTURE = jCAPTURE;
+	assign SEL1 = jSEL1;
 	(* BOX_TYPE = "black_box" *)
 	cs_icon u_icon(.CONTROL0(ila_control),.CONTROL1(vio_control),
 						.TDO_OUT(TDO),
