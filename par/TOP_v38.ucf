@@ -369,8 +369,8 @@ NET "nCS3"  LOC = "U20"  ;
 #NET "MON3"  LOC = "P19"  ; 
 NET "NSYNC"  LOC = "C22"  ; 
 NET "SCLK"  LOC = "A10"  ; 
-#NET "TCHAN_S0N"  LOC = "K21"  ; 
-#NET "TCHAN_S0P"  LOC = "K22"  ; 
+NET "REF_N"  LOC = "K21"  ; 
+NET "REF_P"  LOC = "K22"  ; 
 
 NET "CMD_N"  LOC = "L17"  ; 
 NET "CMD_P"  LOC = "L18"  ; 
