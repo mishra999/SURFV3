@@ -90,7 +90,7 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="15"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="19"/>
     </file>
-    <file xil_pn:name="../../../../Level1_Trigger.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../rtl/Level1_Trigger.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="27"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="28"/>
     </file>
