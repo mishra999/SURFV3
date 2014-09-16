@@ -68,6 +68,7 @@ module LAB_TOPv2(
 			 input [12:0] addr_i,
 			 output [31:0] dat_o,
 			 output 		  done_o,
+			 input			debug_tp_i,
 			 input	[1:0] debug_sel_i,
 			 output [34:0] debug_o
     );
@@ -141,6 +142,7 @@ module LAB_TOPv2(
 						.HITBUS(HITBUS[i]),
 						.RCO(RCO[i]),
 						.DAT(DAT[i]),
+						.debug_tp_i(debug_tp_i),
 						.debug_o(lab_debug[i]));
 			 LAB_RAM_v2 u_ram(.clk_i(clk_i),
 					  .dat_i(lab_dat[i]),

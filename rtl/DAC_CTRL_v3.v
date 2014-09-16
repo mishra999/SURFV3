@@ -65,47 +65,65 @@ module DAC_CTRL_v3( input clk_i,
 
    reg [3:0] shift_count = {4{1'b0}};
    wire [4:0] shift_count_plus_one = shift_count + 1;   
-   
+   //LM added
+	reg toggle = 1'b0;
+	reg update_d = 1'b0;
+	reg update_slow = 1'b0;
+	//LM added end
    always @(posedge clk_i) begin
-		if (update_i) updating <= 1;
-		else if (state == DONE) updating <= 0;
 	
-      case (state)
-			IDLE: if (update_i) state <= LOAD;
-			LOAD: state <= NSYNC_LOW;
-			NSYNC_LOW: state <= SHIFT_LOW;
-			SHIFT_LOW: if (shift_count_plus_one[4]) state <= SHIFT_DONE;
-						  else state <= SHIFT_HIGH;
-			SHIFT_HIGH: state <= SHIFT_LOW;
-			SHIFT_DONE: if (dac_sel_plus_one[2]) state <= DONE;
-						  else state <= LOAD;
-			DONE: state <= IDLE;
-      endcase
-      
-      if (state == SHIFT_DONE) shift_count <= {4{1'b0}};      
-      else if (state == SHIFT_HIGH) shift_count <= shift_count_plus_one;
+		toggle = ~toggle; //LM added
+//		toggle = 1'b1;
+		update_d<= update_i;
+		update_slow<= update_d | update_i;
+		if(toggle)
+		 begin
+		if (update_i) begin 
+								updating <= 1;
+						  end
+		else if (state == DONE) updating <= 0;
+		
+	   if(toggle) //LM added
+			begin
+				case (state)
+					IDLE: if (update_slow) state <= LOAD;
+		//			IDLE: if (update_i ) state <= LOAD;
+					LOAD: state <= NSYNC_LOW;
+					NSYNC_LOW: state <= SHIFT_LOW;
+					SHIFT_LOW: if (shift_count_plus_one[4]) state <= SHIFT_DONE;
+								  else state <= SHIFT_HIGH;
+					SHIFT_HIGH: state <= SHIFT_LOW;
+					SHIFT_DONE: if (dac_sel_plus_one[2]) state <= DONE;
+								  else state <= LOAD;
+					DONE: state <= IDLE;
+				endcase
+				
+				if (state == SHIFT_DONE) shift_count <= {4{1'b0}};      
+				else if (state == SHIFT_HIGH) shift_count <= shift_count_plus_one;
+				
 
-      if (update_i) updating <= 1;
-      else if (state == DONE) updating <= 0;
+				if (update_slow) updating <= 1;
+				else if (state == DONE) updating <= 0;
 
-      if (state == LOAD) nsync_reg <= 0;
-      else if ((state == SHIFT_DONE) && shift_count_plus_one[4]) 
-			nsync_reg <= 1;
-            
-      sclk_reg <= !(state == SHIFT_LOW);
-      
-      if (state == SHIFT_DONE) dac_sel <= dac_sel_plus_one;
-      for (m=0;m<8;m=m+1) begin
-			if (state == LOAD) begin
-				 dac_shift_regs[m] <= {dac_sel[1],dac_sel[0],1'b1,
-													 !(dac_sel[1] && dac_sel[0]),
-													 dac_out[m]};
-			end else if (state == SHIFT_HIGH) begin
-				dac_shift_regs[m] <= {dac_shift_regs[m][14:0],1'b0};
-			end
-      end              
-   end
-   
+				if (state == LOAD) nsync_reg <= 0;
+				else if ((state == SHIFT_DONE) && shift_count_plus_one[4]) 
+					nsync_reg <= 1;
+						
+				sclk_reg <= !(state == SHIFT_LOW);
+				
+				if (state == SHIFT_DONE) dac_sel <= dac_sel_plus_one;
+				for (m=0;m<8;m=m+1) begin
+					if (state == LOAD) begin
+						 dac_shift_regs[m] <= {dac_sel[1],dac_sel[0],1'b1,
+															 !(dac_sel[1] && dac_sel[0]),
+															 dac_out[m]};
+					end else if (state == SHIFT_HIGH) begin
+						dac_shift_regs[m] <= {dac_shift_regs[m][14:0],1'b0};
+					end
+				end      
+		   end
+     end // toggle
+   end //always
 	assign NSYNC = nsync_reg;
 	assign SCLK = sclk_reg;
 	assign dac_dat_o = dac_dat_out;

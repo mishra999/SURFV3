@@ -28,7 +28,7 @@ module LAB_CTRL_v2(
 			 output         rco_o,
 			 output 			  wr_o,
 			 output 			done_o,
-			 
+			 input 			debug_tp_i,
 			 output [34:0] debug_o
 		    );
 
@@ -119,7 +119,7 @@ module LAB_CTRL_v2(
    assign SELTAIL = seltail_q;
 
 	assign addr_o = counter_store_2[12:1];
-	assign dat_o = {2'b00,rco_o,hitbus_o,dat_q};
+	assign dat_o = (debug_tp_i) ? counter_store_2[12:1] : {2'b00,rco_o,hitbus_o,dat_q};
 	assign hitbus_o = hitbus_q;
 	assign rco_o = rco_held;
 	assign wr_o = delay[1] && counter_store_2[0];

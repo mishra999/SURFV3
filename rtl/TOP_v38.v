@@ -21,6 +21,15 @@ module TOP_v38(
 		output nREADY,
 		output nBTERM,
 		
+		
+		input [11:0] AD_D,
+		input AD_NBUSY,
+		output [2:0] ASS,
+		output AD_NCONVST, 
+		output AD_NCS, 
+		output AD_NRD, 
+
+		
 		input [5:0] BAD,
 		
 		input BCLKO,
@@ -108,11 +117,11 @@ module TOP_v38(
 		output [7:0] DIN,
 		
 		// PLX-based debug chain.
-		input MSEL,
-		input MTCK,
-		input MTMS,
-		input MTDI,
-		output MTDO,
+//		input MSEL,
+//		input MTCK,
+//		input MTMS,
+//		input MTDI,
+//		output MTDO,
 		
 		// Unuseds.
 		output [3:0] CALSNH,
@@ -175,7 +184,7 @@ module TOP_v38(
 	wire L1MON3;
 	wire L1MON4;
 	
-	SURF_infrastructure #(.REF_CLOCK("125MHZ")) u_infrastructure( .clk33_o(clk33),
+	SURF_infrastructure #(.REF_CLOCK("33MHZ")) u_infrastructure( .clk33_o(clk33),
 																					 .clk100_o(clk100),
 																					 .clk125_o(clk125),
 																					 .clk250_o(clk250),
@@ -214,6 +223,7 @@ module TOP_v38(
 	
 	wire [34:0] lab_debug;
 	wire [1:0] lab_debug_sel;
+	wire lab_testpattern_sel;
 	// LAB readout and memory.
 	LAB_TOPv2 u_labtop( .clk_i(clk33),
 							  .clk100_i(clk100),
@@ -270,6 +280,7 @@ module TOP_v38(
 							  .D_HITBUS(D_HITBUS),
 							  .D_RCO(D_RCO),
 							  .D_DAT(D_DAT),
+							  .debug_tp_i(lab_testpattern_sel),
 							  .debug_sel_i(lab_debug_sel),
 							  .debug_o(lab_debug)
 		);
@@ -312,10 +323,46 @@ module TOP_v38(
 									.scal_rd_i(scal_rd),
 									.scal_dat_o(scal_dat_out),
 									.refpulse_cnt_o(refpulse_cnt));
-
+									
+									
+	//Ben's Power monitor
+	wire [4:0] rfp_addr;
+	wire [15:0] RFPWR;
+	
+	wire [11:0] AData_debug;
+	wire [5:0] signals_debug;
+	wire [25:0] adder_debug;
+	wire [15:0] sampleCount_debug;
+	wire AD_nCS_debug;
+	wire AD_nCONVST_debug;
+	wire AD_nRD_debug;
+	wire [34:0] RFpower_debug;
+	
+   RF_Pow_Ben  u_RF_power(
+	 .AD_nBusy(AD_NBUSY),      //tells when the ADC is busy (active low)
+    .AData(AD_D), //data from external ADC chip
+    .CLK(clk33), //33MHz input CPCI clock
+	 .RAD(rfp_addr), //read address
+	 .RCLK(1'b0),
+    .MUXSel(ASS), //8 possible selections, 3 bits (output to chip) ASS
+    .RFPWR(RFPWR),    //blockram data register selected by RAD and read out by RCLK
+	 .AD_nCONVST(AD_NCONVST), //command to convert (active low)
+    .AD_nCS(AD_NCS),     //chip select, should be always on (active low)
+    .AD_nRD(AD_NRD),     //command to read (active low)
+	 //debug signal
+	  .AData_debug(AData_debug),
+	  .signals_debug(signals_debug), //5:4=sample_state, 3:2=write_state, 1=changeSig_flag, 0=changeSigHold_flag
+	  .adder_debug(adder_debug),
+	  .sampleCount_debug(sampleCount_debug),
+	  .AD_nCS_debug(AD_nCS_debug),
+	  .AD_nCONVST_debug(AD_nCONVST_debug),
+	  .AD_nRD_debug(AD_nRD_debug)
+    );
+    assign RFpower_debug[20:0] = { AD_nRD_debug, AD_nCONVST_debug, AD_nCS_debug, signals_debug, AData_debug };
+    
+	 
 	// MESS debugging.
 	wire [34:0] debug;
-	wire [4:0] rfp_addr;
 	wire busy_flag;
 	// PLX/register interface
 	MESSv2 u_mess(		  .clk_i(clk33),
@@ -324,8 +371,8 @@ module TOP_v38(
 							  .lab_ready_i(lab_ready),
 							  .lab_addr_o(lab_addr),
 							  .lab_digitize_o(lab_digitize),
-
-							  .rfp_dat_i(rfp_addr),
+//							  .rfp_dat_i(rfp_addr),
+							  .rfp_dat_i(RFPWR),
 							  .rfp_addr_o(rfp_addr),
 							  .clr_all_o(clr_all),
 
@@ -357,16 +404,29 @@ module TOP_v38(
 							  .nBTERM(nBTERM),
 							  .debug_o(debug)
 	);
-	
-	wire [5:0] vio_out;
-	assign lab_debug_sel = vio_out[1:0];
+
+	// ChipScope debugging cores.
+	wire [35:0] ila_control;
+	wire [35:0] vio_control;
+	wire [7:0] vio_async_in;
+	wire [34:0] debug_muxer;
 	SURF_debug_multiplexer u_mux(.in0(debug),
 										  .in1(lab_debug),
 										  .in2(td_debug),
-										  .in3(lab_debug),
+										  .in3(RFpower_debug),
 										  .clk_i(clk33),
-										  .vio_out(vio_out),
-										  .MTCK(MTCK),.MTMS(MTMS),.MTDO(MTDO),.MTDI(MTDI));
+										  .sel_i(vio_async_in[1:0]),
+										  .out(debug_muxer));
+	assign lab_debug_sel = vio_async_in[3:2];
+	assign lab_testpattern_sel = vio_async_in[4];
+
+	(* BOX_TYPE = "black_box" *)
+	cs_icon u_icon(.CONTROL0(ila_control),.CONTROL1(vio_control));
+	(* BOX_TYPE = "black_box" *)
+	cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug_muxer));
+	(* BOX_TYPE = "black_box" *)
+	cs_vio u_vio(.CONTROL(vio_control),.ASYNC_OUT(vio_async_in));
+	
 	
 	// Unused LAB test crap.
 	// CALSNH = VCC
