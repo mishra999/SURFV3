@@ -14,6 +14,7 @@ module TOP_v38(
 		input nADS,
 		input WnR,
 		input nRD,
+		input nWR,
 		inout [31:0] LD,
 		input [7:2] LA,
 		input nCS2,
@@ -400,6 +401,7 @@ module TOP_v38(
 							  .nCS2(nCS2),
 							  .nCS3(nCS3),
 							  .nRD(nRD),
+							  .nWR(nWR),
 							  .nREADY(nREADY),
 							  .nBTERM(nBTERM),
 							  .debug_o(debug)

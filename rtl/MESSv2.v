@@ -9,6 +9,7 @@ module MESSv2( input        clk_i,
 	       input 	     nCS2,
 	       input 	     nCS3,
 	       input 	     nRD,
+			 input		  nWR,
 	       output 	     nREADY,
 	       output 	     nBTERM,
 			
@@ -47,10 +48,10 @@ module MESSv2( input        clk_i,
 
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 9;
-	localparam [7:0] VER_DAY = 16;
+	localparam [7:0] VER_DAY = 17;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 15;
+	localparam [7:0] VER_REV = 17;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 
@@ -75,8 +76,9 @@ module MESSv2( input        clk_i,
    reg 			     nrd_q = 1;
 	(* IOB = "TRUE" *)
 	reg				  nbterm_q = 1;
-	
-	// Set high if 16-word read bursts are enabled.
+	(* IOB = "TRUE" *)
+	reg				  nwr_q = 1;
+	// Set high if bursts are enabled.
 	reg			  lab_burst_read = 0;
 	// Clears.
    reg 		     clr_all = 0;   
@@ -107,11 +109,25 @@ module MESSv2( input        clk_i,
 
    // These generate the address outputs for the lab and HK data.
    reg [6:0] 		     hk_counter = {7{1'b0}};
-   reg [10:0] 		     lab_counter = {11{1'b0}};
-	wire [11:0]		     lab_counter_plus_one = lab_counter + 1;
-	wire [4:0]			  low_lab_counter_plus_one = lab_counter[3:0] + 1;
-   // READY output for either registers or HK.
+	// The LAB counter consists of 2 segments - the page register, and the
+	// address predictor.
+	// The page register gets written progressively during the readout,
+	// and sets the 'window' that the true LAB readout space (0x00-0xFF)
+	// points to.
+	reg [4:0]			  lab_page_register = {5{1'b0}};
+	// The LAB address predictor 'predicts' the address that will be presented
+	// for each burst.
+	reg [5:0]			  lab_address_predictor = {6{1'b0}};
+	wire [6:0]			  lab_address_predictor_plus_one = lab_address_predictor + 1;
+
+	// Ready for LABs.
+	reg				  ready_lab= 0;
+   // Ready for HK/Regs.
 	reg 				  ready_regs_or_hk = 0;
+	// ready debug
+	reg				  ready_debug = 0;
+	// bterm debug
+	reg				  bterm_debug = 0;
    // Data output mux for regs/hk.
 	reg [31:0]		  regs_or_hk = {32{1'b0}};
    // Vector of housekeeping outputs: scalers first, then DAC, then RFP.
@@ -180,18 +196,16 @@ module MESSv2( input        clk_i,
 					else state <= REG_WR;
 				end else begin
 					if (!ncs2_q) state <= HK_RD;
-					else if (!ncs3_q && !lab_burst_read) state <= LAB_RD_DONE;
 					else if (!ncs3_q) state <= LAB_RD;
 					else state <= REG_RD;
 				end
 			end // if (!nads_q)
 			LAB_WR: state <= IDLE;
-			HK_WR: state <= IDLE;
-			REG_WR: state <= IDLE;
-			LAB_RD: if (low_lab_counter_plus_one[4]) state <= LAB_RD_DONE;
-			LAB_RD_DONE: state <= IDLE;
-			HK_RD: state <= IDLE;
-			REG_RD: state <= IDLE;
+			HK_WR: if (ready_regs_or_hk) state <= IDLE;
+			REG_WR: if (ready_regs_or_hk) state <= IDLE;
+			LAB_RD: if (ncs3_q || !lab_burst_read) state <= IDLE;
+			HK_RD: if (ready_regs_or_hk) state <= IDLE;
+			REG_RD: if (ready_regs_or_hk) state <= IDLE;
 			default: state <= IDLE;
       endcase // case (state)
    end // block: FSM_LOGIC
@@ -212,7 +226,7 @@ module MESSv2( input        clk_i,
    assign register_data[0] = IDENT;
    assign register_data[1] = VERSION;
    assign register_data[2] = hk_counter;
-   assign register_data[3] = {lab_burst_read,{20{1'b0}},lab_counter};
+   assign register_data[3] = {lab_burst_read,{20{1'b0}},lab_page_register,{6{1'b0}}};
    assign register_data[4] = {header,{12{1'b0}},
 			      event_fifo_empty,
 			      event_fifo_out[33:32],
@@ -226,17 +240,21 @@ module MESSv2( input        clk_i,
 	// I actually think this might be pointless: OEB can probably be straight
 	// copied from WnR. It's held quite a bit before nADS is asserted, and quite
 	// a bit after too. 
+
+/*
    wire 		     terminate_read = 
 							 (state == LAB_RD_DONE
 					       || state == HK_RD 
 					       || state == REG_RD);
-	// LAB reads come right after nads_q.
-	// Register or HK are a cycle delayed.
-	wire ready = (!nads_q && !ncs3_q) || ready_regs_or_hk || !nrd_q;
+*/
+
+	// nREADY is asserted 2 clocks after nADS. Goes low when nRD/nWR are both high.
+	wire ready = (ready_lab || ready_regs_or_hk) && (!nrd_q || !nwr_q);
    wire 		     nready_in = !ready;
-	wire bterm = (!nads_q && !ncs3_q && !lab_burst_read);
+	// Assert BTERM if nADS is low and we're not bursting from CS3 (lab_burst_read is low, or ncs3_q is high).
+	wire bterm = ((!nads_q && !ncs3_q && !lab_burst_read) || ready_regs_or_hk);
 	wire 			  nbterm_in = !bterm;
-   wire 		     ldo_oeb_in = wnr_q && !terminate_read;      
+   wire 		     ldo_oeb_in = wnr_q; // || terminate_read;
 
    SURF_command_receiver u_receiver(.clk33_i(clk_i),
 				    .rst_i(clr_all),
@@ -261,10 +279,13 @@ module MESSv2( input        clk_i,
    always @(posedge clk_i) begin : REGISTER_LOGIC
 		// Multiplex the data/housekeeping.
 		regs_or_hk <= (ncs2_q) ? register_data_mux : hk_dat_mux;
-
 		// nREADY assertion for either register data or housekeeping data.
-		ready_regs_or_hk <= (!nads_q && ncs3_q);
-
+		ready_regs_or_hk <= (state == REG_WR || state == REG_RD || state == HK_WR || state == HK_RD);
+		
+		// nREADY assertion for LABs.
+		if (!nads_q && !ncs3_q) ready_lab <= 1;
+		else if (nrd_q && nwr_q) ready_lab <= 0;
+				
 		// Board ID.
 		board_id <= board_id_i;
 		// LAB data selection.
@@ -277,8 +298,10 @@ module MESSv2( input        clk_i,
 		// Local register capture.
       if (state == REG_WR) begin
 			 if (la_q[2:0] == 3'd2) hk_counter <= ldi_q;
-			 if (la_q[2:0] == 3'd3) lab_burst_read <= ldi_q[31];
 		end
+
+		if (state == REG_WR && la_q[2:0] == 3'd3) lab_burst_read <= ldi_q[31];
+
 		if ((state == REG_WR) && la_q[2:0] == 3'd6) clr_all <= ldi_q[0];
 		else clr_all <= 0;
 		
@@ -292,14 +315,20 @@ module MESSv2( input        clk_i,
 
 		if ((state == REG_WR) && la_q[2:0] == 3'd7) short_mask <= ldi_q;		
 
+		if ((state == REG_WR) && la_q[2:0] == 3'd3) lab_page_register <= ldi_q[10:6];
+		else if (state == LAB_WR) lab_page_register <= ldi_q[10:6];
+		
 		// Simple HK counter increment. HK doesn't support bursting:
 		// I should probably have nBTERM asserted, then, or something.
       if (state == HK_RD) hk_counter <= hk_counter + 1;
 
-		// LAB counter.
-		if (clr_evt) lab_counter <= {11{1'b0}};
-      else if (!ncs3_q && (state != LAB_RD_DONE)) lab_counter <= lab_counter_plus_one;
-		else if (state == REG_WR && la_q[2:0] == 3'd3) lab_counter <= ldi_q[10:0];
+		// LAB address predictor. Updated with new address at nads_q,
+		// and then increments as long as ncs3_q is low.
+		// Data is held off for 2 clocks: nADS goes low, wait (la_q feeds BRAM), wait (BRAM data is on ldo_in_mux), data.
+		// BRAM is fed with la_q if nads_q is low, otherwise lab_address_predictor.
+		if (clr_evt) lab_address_predictor <= {6{1'b0}};
+      else if (!nads_q) lab_address_predictor <= la_q;
+		else if (!ncs3_q) lab_address_predictor <= lab_address_predictor_plus_one;
    end
    
    always @(posedge clk_i) begin : IOB_LOGIC_P
@@ -310,8 +339,10 @@ module MESSv2( input        clk_i,
       ldi_q <= LD;
       la_q <= LA[7:2];      
 		nrd_q <= nRD;
-	
+		nwr_q <= nWR;
 		ldo_mux_debug <= ldo_in_mux;
+		ready_debug <= nready_in;
+		bterm_debug <= nbterm_in;
 	end
 	
    always @(negedge clk_i) begin : IOB_LOGIC_N
@@ -325,7 +356,8 @@ module MESSv2( input        clk_i,
    assign rfp_addr_o = hk_counter[4:0];
 //   assign dac_raddr_o = hk_counter[4:0];
 
-	assign lab_addr_o[10:0] = (ncs3_q || (state == LAB_RD_DONE)) ? lab_counter : lab_counter_plus_one;
+	assign lab_addr_o[5:0] = (nads_q) ? lab_address_predictor_plus_one : la_q;
+	assign lab_addr_o[10:6] = lab_page_register;
 	assign lab_addr_o[12:11] = event_fifo_out[33:32];
 
    assign clr_all_o = clr_all;
@@ -353,12 +385,13 @@ module MESSv2( input        clk_i,
 
 	assign scal_rd_o = (state == HK_RD) && (hk_counter[6:5] == 2'b00);
 	
-	assign debug_o[0 +: 24] = ldo_mux_debug[23:0];
-	assign debug_o[24 +: 4] = lab_counter[3:0];
+	assign debug_o[0 +: 16] = ldo_mux_debug[15:0];
+	assign debug_o[16 +: 6] = la_q;
+	assign debug_o[22 +: 5] = lab_page_register;
 	assign debug_o[28] = nads_q;
-	assign debug_o[29] = ncs2_q;
+	assign debug_o[29] = ready_debug;
 	assign debug_o[30] = ncs3_q;
-	assign debug_o[31] = nrd_q;
+	assign debug_o[31] = bterm_debug;
 	assign debug_o[32 +: 3] = state;
 /*	
 	assign debug_o[0] = nads_q;
