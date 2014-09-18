@@ -350,6 +350,7 @@ module TOP_v38(
 	 .AD_nCONVST(AD_NCONVST), //command to convert (active low)
     .AD_nCS(AD_NCS),     //chip select, should be always on (active low)
     .AD_nRD(AD_NRD),     //command to read (active low)
+	 .rst_i(clr_all),
 	 //debug signal
 	  .AData_debug(AData_debug),
 	  .signals_debug(signals_debug), //5:4=sample_state, 3:2=write_state, 1=changeSig_flag, 0=changeSigHold_flag

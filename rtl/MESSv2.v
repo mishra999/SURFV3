@@ -51,7 +51,7 @@ module MESSv2( input        clk_i,
 	localparam [7:0] VER_DAY = 17;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 17;
+	localparam [7:0] VER_REV = 19;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 
@@ -148,13 +148,13 @@ module MESSv2( input        clk_i,
 	// Readout state machine.
    localparam FSM_BITS = 3;   
    localparam [FSM_BITS-1:0] IDLE = 0;
+	localparam [FSM_BITS-1:0] WAIT = 7;
    localparam [FSM_BITS-1:0] LAB_WR = 1;
    localparam [FSM_BITS-1:0] LAB_RD = 2;
    localparam [FSM_BITS-1:0] HK_WR = 3;
    localparam [FSM_BITS-1:0] HK_RD = 4;
    localparam [FSM_BITS-1:0] REG_WR = 5;
    localparam [FSM_BITS-1:0] REG_RD = 6;
-   localparam [FSM_BITS-1:0] LAB_RD_DONE = 7;
    reg [FSM_BITS-1:0] 	     state = IDLE;
 	
 	// The LAB read logic is a little complicated to support
@@ -190,22 +190,24 @@ module MESSv2( input        clk_i,
    always @(posedge clk_i) begin : FSM_LOGIC
       case (state)
 			IDLE: if (!nads_q) begin
-				if (wnr_q) begin
-					if (!ncs2_q) state <= HK_WR;
-					else if (!ncs3_q) state <= LAB_WR;
-					else state <= REG_WR;
-				end else begin
-					if (!ncs2_q) state <= HK_RD;
-					else if (!ncs3_q) state <= LAB_RD;
-					else state <= REG_RD;
-				end
-			end // if (!nads_q)
+						if (!ncs3_q) begin
+							if (wnr_q) state <= LAB_WR;
+							else state <= LAB_RD;
+						end else state <= WAIT;
+					end
+			WAIT:	if (wnr_q) begin
+						if (!ncs2_q) state <= HK_WR;
+						else state <= REG_WR;
+					end else begin
+						if (!ncs2_q) state <= HK_RD;
+						else state <= REG_RD;
+					end
 			LAB_WR: state <= IDLE;
-			HK_WR: if (ready_regs_or_hk) state <= IDLE;
-			REG_WR: if (ready_regs_or_hk) state <= IDLE;
+			HK_WR: state <= IDLE;
+			REG_WR: state <= IDLE;
 			LAB_RD: if (ncs3_q || !lab_burst_read) state <= IDLE;
-			HK_RD: if (ready_regs_or_hk) state <= IDLE;
-			REG_RD: if (ready_regs_or_hk) state <= IDLE;
+			HK_RD: state <= IDLE;
+			REG_RD: state <= IDLE;
 			default: state <= IDLE;
       endcase // case (state)
    end // block: FSM_LOGIC
@@ -280,7 +282,7 @@ module MESSv2( input        clk_i,
 		// Multiplex the data/housekeeping.
 		regs_or_hk <= (ncs2_q) ? register_data_mux : hk_dat_mux;
 		// nREADY assertion for either register data or housekeeping data.
-		ready_regs_or_hk <= (state == REG_WR || state == REG_RD || state == HK_WR || state == HK_RD);
+		ready_regs_or_hk <= (state == WAIT);
 		
 		// nREADY assertion for LABs.
 		if (!nads_q && !ncs3_q) ready_lab <= 1;
