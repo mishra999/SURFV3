@@ -145,30 +145,30 @@ NET "A_S<7>"  LOC = "D1"    | DRIVE = 6;
 NET "A_SELMAIN"  LOC = "F4"    | DRIVE = 6; 
 NET "A_SELTAIL"  LOC = "C4"    | DRIVE = 6; 
 
-#NET "AD_D0"  LOC = "M21"  ; 
-#NET "AD_D1"  LOC = "M22"  ; 
-#NET "AD_D10"  LOC = "P21"  ; 
-#NET "AD_D11"  LOC = "P22"  ; 
-#NET "AD_D2"  LOC = "N17"  ; 
-#NET "AD_D3"  LOC = "N18"  ; 
-#NET "AD_D4"  LOC = "N19"  ; 
-#NET "AD_D5"  LOC = "N20"  ; 
-#NET "AD_D6"  LOC = "N21"  ; 
-#NET "AD_D7"  LOC = "N22"  ; 
-#NET "AD_D8"  LOC = "P17"  ; 
-#NET "AD_D9"  LOC = "P18"  ; 
-#NET "AD_NBUSY"  LOC = "M17"  ; 
-#NET "AD_NCONVST"  LOC = "M19"  ; 
-#NET "AD_NCS"  LOC = "M18"  ; 
-#NET "AD_NRD"  LOC = "M20"  ; 
+NET "AD_D<0>"  LOC = "M21"  ; 
+NET "AD_D<1>"  LOC = "M22"  ; 
+NET "AD_D<10>"  LOC = "P21"  ; 
+NET "AD_D<11>"  LOC = "P22"  ; 
+NET "AD_D<2>"  LOC = "N17"  ; 
+NET "AD_D<3>"  LOC = "N18"  ; 
+NET "AD_D<4>"  LOC = "N19"  ; 
+NET "AD_D<5>"  LOC = "N20"  ; 
+NET "AD_D<6>"  LOC = "N21"  ; 
+NET "AD_D<7>"  LOC = "N22"  ; 
+NET "AD_D<8>"  LOC = "P17"  ; 
+NET "AD_D<9>"  LOC = "P18"  ; 
+NET "AD_NBUSY"  LOC = "M17"  ; 
+NET "AD_NCONVST"  LOC = "M19"  ; 
+NET "AD_NCS"  LOC = "M18"  ; 
+NET "AD_NRD"  LOC = "M20"  ; 
 
 
 NET "nADS"  LOC = "W19"  ; 
 #NET "ALE"  LOC = "V14"  ; 
 
-#NET "ASS0"  LOC = "D10"  ; 
-#NET "ASS1"  LOC = "A8"  ; 
-#NET "ASS2"  LOC = "B8"  ; 
+NET "ASS<0>"  LOC = "D10"  ; 
+NET "ASS<1>"  LOC = "A8"  ; 
+NET "ASS<2>"  LOC = "B8"  ; 
 
 NET "B_CS<0>"  LOC = "G1"   | DRIVE = 6; 
 NET "B_CS<1>"  LOC = "G2"   | DRIVE = 6; 
@@ -302,13 +302,17 @@ NET "DIN<5>"  LOC = "F17"  ;
 NET "DIN<6>"  LOC = "E13"  ; 
 NET "DIN<7>"  LOC = "F14"  ; 
 
+
+#For PLX-controlled chipscope - not connected to use "standard" chipscope modules
+#NET "MSEL" LOC = "Y22" | PULLDOWN;
+#NET "MTCK" LOC = "Y21" | PULLUP | CLOCK_DEDICATED_ROUTE = "FALSE" | PERIOD = 500 ns;
+#NET "MTMS" LOC = "Y20" | PULLUP;
+#NET "MTDI" LOC = "Y19";
+#NET "MTDO" LOC = "V17";
+
+
 #NET "GPIO<0>"  LOC = "V22"  ; 
 #NET "GPIO<1>"  LOC = "U18"  ; 
-NET "MSEL" LOC = "Y22" | PULLDOWN;
-NET "MTCK" LOC = "Y21" | PULLUP | CLOCK_DEDICATED_ROUTE = "FALSE" | PERIOD = 500 ns;
-NET "MTMS" LOC = "Y20" | PULLUP;
-NET "MTDI" LOC = "Y19";
-NET "MTDO" LOC = "V17";
 #NET "GPIO<4>"  LOC = "Y22"  ; 
 #NET "GPIO<5>"  LOC = "Y21"  ; 
 #NET "GPIO<6>"  LOC = "Y20"  ; 
@@ -489,7 +493,7 @@ INST "level1trigger/turfprocessor/ant_pipes[3].pipe/bottom_trig/FDCE_N" LOC = SL
 INST "level1trigger/turfprocessor/ant_pipes[3].pipe/BOTTOM_FDCE_P" LOC = SLICE_X118Y159;
 INST "level1trigger/turfprocessor/ant_pipes[3].pipe/BOTTOM_FDCE_N" LOC = SLICE_X118Y159;
 
-#NET "WR"  LOC = "W20"  ; 
+NET "nWR"  LOC = "W20"  ; 
 
 #PACE: Start of PACE Area Constraints
 #PACE: Start of PACE Prohibit Constraints
