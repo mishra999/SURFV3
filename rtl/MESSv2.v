@@ -48,10 +48,10 @@ module MESSv2( input        clk_i,
 
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 9;
-	localparam [7:0] VER_DAY = 17;
+	localparam [7:0] VER_DAY = 19;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 19;
+	localparam [7:0] VER_REV = 23;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 
@@ -258,9 +258,13 @@ module MESSv2( input        clk_i,
 	wire 			  nbterm_in = !bterm;
    wire 		     ldo_oeb_in = wnr_q; // || terminate_read;
 
-   SURF_command_receiver u_receiver(.clk33_i(clk_i),
+	wire 			  cmd_sample;
+	wire			  cmd_debug;
+   SURF_command_receiver_v2 u_receiver(.clk33_i(clk_i),
 				    .rst_i(clr_all),
 				    .cmd_i(cmd_i),
+					 .cmd_debug_o(cmd_debug),
+					 .sample_o(cmd_sample),
 				    .event_id_wr_o(event_wr),
 				    .event_id_buffer_o(event_id_buffer),
 				    .event_id_o(event_id),
@@ -387,35 +391,29 @@ module MESSv2( input        clk_i,
 
 	assign scal_rd_o = (state == HK_RD) && (hk_counter[6:5] == 2'b00);
 	
-	assign debug_o[0 +: 16] = ldo_mux_debug[15:0];
-	assign debug_o[16 +: 6] = la_q;
-	assign debug_o[22 +: 5] = lab_page_register;
-	assign debug_o[28] = nads_q;
-	assign debug_o[29] = ready_debug;
-	assign debug_o[30] = ncs3_q;
-	assign debug_o[31] = bterm_debug;
-	assign debug_o[32 +: 3] = state;
-/*	
+//	assign debug_o[0 +: 16] = ldo_mux_debug[15:0];
+//	assign debug_o[16 +: 6] = la_q;
+//	assign debug_o[22 +: 5] = lab_page_register;
+//	assign debug_o[28] = nads_q;
+//	assign debug_o[29] = ready_debug;
+//	assign debug_o[30] = ncs3_q;
+//	assign debug_o[31] = bterm_debug;
+//	assign debug_o[32 +: 3] = state;
+
 	assign debug_o[0] = nads_q;
 	assign debug_o[1] = ncs2_q;
 	assign debug_o[2] = ncs3_q;
 	assign debug_o[3] = wnr_q;
 	assign debug_o[4 +: 3] = state;
-	assign debug_o[7 +: 11] = lab_counter;
-	assign debug_o[18 +: 4] = lab_low_counter;
-	assign debug_o[22] = nrd_q;
-	assign debug_o[23 +: 4] = la_q;
-	assign debug_o[27 +: 4] = num_lab_reads;
 	assign debug_o[7] = event_fifo_empty;
 	assign debug_o[8] = event_wr;
 	assign debug_o[9] = clr_evt;
 	assign debug_o[10 +: 4] = la_q[3:0];
-	assign debug_o[14 +: 16] = ldi_q[15:0];
-	assign debug_o[30] = cmd_i;
-	assign debug_o[31] = nrd_q;
+	assign debug_o[14 +: 16] = event_id[31:16];
+	assign debug_o[30] = cmd_debug;
+	assign debug_o[31] = cmd_sample;
 	assign debug_o[32] = lab_ready_i;
 	assign debug_o[33] = clr_all;
-*/
 
    assign nBTERM = nbterm_q;   
 

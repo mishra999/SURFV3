@@ -75,7 +75,9 @@ module SURF_infrastructure(
 							  .D0(1'b1),.D1(1'b0),
 							  .CE(1'b1),.R(1'b0),.S(1'b0),
 							  .Q(LCLK));
-	IBUFDS u_cmd_ibufds(.I(CMD_P),.IB(CMD_N),.O(CMD));
+	// let's just try LVCMOS here.
+	assign CMD = CMD_P;
+	//IBUFDS u_cmd_ibufds(.I(CMD_P),.IB(CMD_N),.O(CMD));
 	IBUFDS u_ref_ibufds(.I(REF_P),.IB(REF_N),.O(REF));
 	
 	
