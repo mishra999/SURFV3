@@ -20,7 +20,8 @@ module SURF_command_receiver_v3(
 			      output [1:0]  event_id_buffer_o,
 			      output 	    event_id_wr_o,
 			      output [31:0] event_id_o,
-			      output [3:0]  digitize_o );
+			      output [3:0]  digitize_o,
+					output [8:0] debug_o					);
 					
 	localparam [7:0] TX_HEADER = 8'hA6;
 	
@@ -28,7 +29,7 @@ module SURF_command_receiver_v3(
    reg 					    	 cmd_in = 0;
 	reg							 cmd_in_sync = 0;
 
-   localparam FSM_BITS = 4;
+   localparam FSM_BITS = 3;
 	localparam [FSM_BITS-1:0] IDLE = 0;
 	localparam [FSM_BITS-1:0] LAB_ID = 1;
 	localparam [FSM_BITS-1:0] EVENT_ID_3 = 2;
@@ -111,5 +112,5 @@ module SURF_command_receiver_v3(
 	assign cmd_debug_o = cmd_in_sync;
 	assign event_id_wr_o = (state == DONE);
 	assign sample_o = 1'b0;
-	
+	assign debug_o = {data_available,data_out};
 endmodule
