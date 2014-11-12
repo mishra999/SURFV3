@@ -58,7 +58,8 @@ module SURF_command_receiver_v3(
 	// all commands are transmitted, then Clr_All is issued which dumps the
 	// event buffers on both the SURF and the TURF. Then triggers are re-enabled.
 	always @(posedge clk33_i) begin
-		case (state)
+		if (rst_i) state <= IDLE; 
+		else case (state)
 			IDLE: if (data_available && data_out == TX_HEADER) state <= LAB_ID;
 			LAB_ID: if (data_available) state <= EVENT_ID_3;
 			EVENT_ID_3: if (data_available) state <= EVENT_ID_2;
@@ -98,7 +99,7 @@ module SURF_command_receiver_v3(
 	uart_rx u_receiver(.serial_in(cmd_in_sync),
 							 .data_out(data_out),
 							 .read_buffer(data_available),
-							 .reset_buffer(1'b0),
+							 .reset_buffer(rst_i),
 							 .en_16_x_baud(1'b1),
 							 .buffer_data_present(data_available),
 							 .buffer_full(),
