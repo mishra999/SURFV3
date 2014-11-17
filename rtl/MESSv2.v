@@ -47,11 +47,11 @@ module MESSv2( input        clk_i,
 	       );
 
 	localparam [31:0] IDENT = "SURF";
-	localparam [3:0] VER_MONTH = 9;
-	localparam [7:0] VER_DAY = 19;
+	localparam [3:0] VER_MONTH = 11;
+	localparam [7:0] VER_DAY = 17;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 23;
+	localparam [7:0] VER_REV = 28;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 
@@ -100,11 +100,13 @@ module MESSv2( input        clk_i,
    wire 		     event_wr;
    wire [31:0] 		     event_id;
    wire [1:0] 		     event_id_buffer;
-   wire [33:0] 		     event_fifo_in;
+	wire event_id_ok;
+   wire [34:0] 		     event_fifo_in;
+	assign event_fifo_in[34] = event_id_ok;
 	assign event_fifo_in[33:32] = event_id_buffer;
 	assign event_fifo_in[31:0] = event_id;
 	
-   wire [33:0] 		     event_fifo_out;
+   wire [34:0] 		     event_fifo_out;
    wire 		     event_fifo_empty;   
 
    // These generate the address outputs for the lab and HK data.
@@ -229,7 +231,8 @@ module MESSv2( input        clk_i,
    assign register_data[1] = VERSION;
    assign register_data[2] = hk_counter;
    assign register_data[3] = {lab_burst_read,{20{1'b0}},lab_page_register,{6{1'b0}}};
-   assign register_data[4] = {header,{12{1'b0}},
+   assign register_data[4] = {header,{11{1'b0}},
+					event_fifo_out[34],
 			      event_fifo_empty,
 			      event_fifo_out[33:32],
 			      !event_fifo_empty && lab_ready_i };
@@ -260,15 +263,18 @@ module MESSv2( input        clk_i,
 
 	wire 			  cmd_sample;
 	wire			  cmd_debug;
+	wire [8:0]	  receiver_debug;
    SURF_command_receiver_v2 u_receiver(.clk33_i(clk_i),
 				    .rst_i(clr_all),
 				    .cmd_i(cmd_i),
 					 .cmd_debug_o(cmd_debug),
 					 .sample_o(cmd_sample),
+					 .event_id_ok_o(event_id_ok),
 				    .event_id_wr_o(event_wr),
 				    .event_id_buffer_o(event_id_buffer),
 				    .event_id_o(event_id),
-				    .digitize_o(lab_digitize_o));   
+				    .digitize_o(lab_digitize_o),
+					 .debug_o(receiver_debug));   
 
 	(* BOX_TYPE = "black_box" *)
    event_fifo u_fifo(.din(event_fifo_in),
@@ -408,12 +414,12 @@ module MESSv2( input        clk_i,
 	assign debug_o[7] = event_fifo_empty;
 	assign debug_o[8] = event_wr;
 	assign debug_o[9] = clr_evt;
-	assign debug_o[10 +: 4] = la_q[3:0];
-	assign debug_o[14 +: 16] = event_id[31:16];
-	assign debug_o[30] = cmd_debug;
-	assign debug_o[31] = cmd_sample;
-	assign debug_o[32] = lab_ready_i;
-	assign debug_o[33] = clr_all;
+	assign debug_o[10 +: 6] = la_q[5:0];
+	assign debug_o[16 +: 8] = event_id[7:0];
+	assign debug_o[24 +: 8] = receiver_debug[7:0];
+	assign debug_o[32] = clr_all;
+	assign debug_o[33] = lab_ready_i;
+	assign debug_o[34] = receiver_debug[8];
 
    assign nBTERM = nbterm_q;   
 

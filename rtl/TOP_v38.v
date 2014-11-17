@@ -331,13 +331,16 @@ module TOP_v38(
 	wire [15:0] RFPWR;
 	
 	wire [11:0] AData_debug;
-	wire [5:0] signals_debug;
-	wire [25:0] adder_debug;
+	wire [7:0] signals_debug;
+	wire [27:0] adder_debug;
 	wire [15:0] sampleCount_debug;
-	wire AD_nCS_debug;
+	wire AD_nBusy_debug;
 	wire AD_nCONVST_debug;
 	wire AD_nRD_debug;
+	wire rst_i_debug;
+	wire [31:0] Big_Counter_debug;
 	wire [34:0] RFpower_debug;
+	wire [4:0] convst_timer_debug;
 	
    RF_Pow_Ben  u_RF_power(
 	 .AD_nBusy(AD_NBUSY),      //tells when the ADC is busy (active low)
@@ -351,16 +354,19 @@ module TOP_v38(
     .AD_nCS(AD_NCS),     //chip select, should be always on (active low)
     .AD_nRD(AD_NRD),     //command to read (active low)
 	 .rst_i(clr_all),
-	 //debug signal
+	 //debug signals
 	  .AData_debug(AData_debug),
-	  .signals_debug(signals_debug), //5:4=sample_state, 3:2=write_state, 1=changeSig_flag, 0=changeSigHold_flag
+	  .signals_debug(signals_debug), //6:4=sample_state, 3:2=write_state, 1=changeSig_flag, 0=changeSigHold_flag
 	  .adder_debug(adder_debug),
 	  .sampleCount_debug(sampleCount_debug),
-	  .AD_nCS_debug(AD_nCS_debug),
+	  .AD_nBusy_debug(AD_nBusy_debug),
 	  .AD_nCONVST_debug(AD_nCONVST_debug),
-	  .AD_nRD_debug(AD_nRD_debug)
+	  .AD_nRD_debug(AD_nRD_debug),
+	  .rst_i_debug(rst_i_debug),
+	  .convst_timer_debug(convst_timer_debug)
     );
-    assign RFpower_debug[20:0] = { AD_nRD_debug, AD_nCONVST_debug, AD_nCS_debug, signals_debug, AData_debug };
+    assign RFpower_debug[34:0] = {adder_debug[25:23],convst_timer_debug,rfp_addr,rst_i_debug, AD_nRD_debug, AD_nCONVST_debug, AD_nBusy_debug, signals_debug[6:0], AData_debug };
+	 //adder_debug=34:32 convst_timer=32:28 rfp_addr=27:23 rst_i=22 AD_nRD=21 AD_nCONVST=20 AD_nBusy=19 signals_debug=18:12 AData_debug=11:0
     
 	 
 	// MESS debugging.

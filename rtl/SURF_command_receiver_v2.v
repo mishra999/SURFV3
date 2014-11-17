@@ -18,10 +18,12 @@ module SURF_command_receiver_v2(
 			      input 	    cmd_i,
 					output		 cmd_debug_o,
 					output		 sample_o,
+					output		 event_id_ok_o,
 			      output [1:0]  event_id_buffer_o,
 			      output 	    event_id_wr_o,
 			      output [31:0] event_id_o,
-			      output [3:0]  digitize_o );
+			      output [3:0]  digitize_o,
+					output [8:0]  debug_o);
 	localparam NCLOCK_BITS = 3;
 	localparam NWAIT_CLOCKS = 6;
    (* IOB = "TRUE" *)
@@ -93,6 +95,8 @@ module SURF_command_receiver_v2(
    assign event_id_buffer_o = buf_bit;
 	assign sample_o = counter_plus_one[NCLOCK_BITS];
 	assign cmd_debug_o = cmd_in_sync;
+	assign event_id_ok_o = 1;
+	assign debug_o = {9{1'b0}};
 endmodule // SURF_command_receiver
 
    
