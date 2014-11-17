@@ -48,10 +48,10 @@ module MESSv2( input        clk_i,
 
 	localparam [31:0] IDENT = "SURF";
 	localparam [3:0] VER_MONTH = 11;
-	localparam [7:0] VER_DAY = 12;
+	localparam [7:0] VER_DAY = 17;
 	localparam [3:0] VER_MAJOR = 3;
 	localparam [3:0] VER_MINOR = 8;
-	localparam [7:0] VER_REV = 27;
+	localparam [7:0] VER_REV = 28;
 	localparam [3:0] VER_BOARDREV = 0;
    localparam [31:0] VERSION = {VER_BOARDREV,VER_MONTH,VER_DAY,VER_MAJOR,VER_MINOR,VER_REV};
 
@@ -264,7 +264,7 @@ module MESSv2( input        clk_i,
 	wire 			  cmd_sample;
 	wire			  cmd_debug;
 	wire [8:0]	  receiver_debug;
-   SURF_command_receiver_v3 u_receiver(.clk33_i(clk_i),
+   SURF_command_receiver_v2 u_receiver(.clk33_i(clk_i),
 				    .rst_i(clr_all),
 				    .cmd_i(cmd_i),
 					 .cmd_debug_o(cmd_debug),
