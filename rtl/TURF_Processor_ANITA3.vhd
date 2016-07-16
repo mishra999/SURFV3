@@ -44,16 +44,17 @@ architecture BEHAVIORAL of TURF_Processor_ANITA3 is
 --   signal MON_SCALER2 : std_logic_vector (7 downto 0);
 --   signal MON_SCALER3 : std_logic_vector (7 downto 0);
  
-   component ANITA3_L1_TRIGGER_PIPE
+   component ANITA4_L1_TRIGGER_PIPE
       port ( REF_PULSE  : in    std_logic; 
              CLK        : in    std_logic; 
-             BOTTOM     : in    std_logic; 
-             MIDDLE     : in    std_logic; 
-             TOP        : in    std_logic; 
-				 mask_pass  : in   std_logic_vector (2 downto 0); 
-             L1         : out   std_logic; 
-             TRIGGER_PULSE : out   std_logic_vector (2 downto 0); 
-             MON_SCALER : out   std_logic);
+             BOTTOM     : in    std_logic_vector(1 downto 0); 
+             MIDDLE     : in    std_logic_vector(1 downto 0); 
+             TOP        : in    std_logic_vector(1 downto 0); 
+				 MASK       : in   std_logic_vector (2 downto 0); 
+             L1 			: OUT  std_logic_vector(2 downto 0);
+				 ANT_HITS   : OUT  std_logic_vector(5 downto 0);
+				 ONESHOTS_DEBUG : OUT std_logic_vector(2 downto 0);
+				 L2         : OUT  std_logic);
    end component;
    
    component SCALERSHOT
@@ -97,8 +98,6 @@ architecture BEHAVIORAL of TURF_Processor_ANITA3 is
    signal L1_pulsed_33MHz : std_logic_vector(3 downto 0);
 	
 	signal mask_pass_to_trigger : std_logic_vector (11 downto 0); 			 			 
-
-	
 	
 begin
 
@@ -165,18 +164,22 @@ begin
 	mask_pass_to_trigger(10) <= mask_pass(16+5);
 	mask_pass_to_trigger(11) <= mask_pass(16+7);
 	
-   ant_pipes: for i in 0 to 3 generate
-		pipe: ANITA3_L1_TRIGGER_PIPE
+   ant_pipes: for i in 0 to 1 generate
+		pipe: ANITA4_L1_TRIGGER_PIPE
       port map (
-		   CLK=>qCLK,
-			BOTTOM => BOTTOM(i),
-			MIDDLE => MIDDLE(i),
-			TOP => TOP(i),
-			mask_pass => mask_pass(i*3+2 downto i*3),
+		   CLK       =>qCLK,
+			BOTTOM(0) =>  BOTTOM(2*i),
+			BOTTOM(1) =>  BOTTOM(2*i+1),
+			MIDDLE(1) => MIDDLE(2*i+1),
+			MIDDLE(0) =>  MIDDLE(2*i),
+			TOP(1)   => TOP(2*i+1),
+			TOP(0)   => TOP(2*i),
+			MASK     => mask_pass(i*3+2 downto i*3),
          REF_PULSE=>REFPULSE,
-         L1=>L1(i),
-			MON_SCALER=>MON_SCALER(i),
-			TRIGGER_PULSE=>TRIGGER_PULSE(i*3+2 downto i*3));
+			L1 			=> open,
+			ANT_HITS    => open,
+			ONESHOTS_DEBUG => open,  --temporary!!
+         L2       =>L1(i));
 	end generate;
 	
 	 L1_stretchers: for i in 0 to 3 generate
