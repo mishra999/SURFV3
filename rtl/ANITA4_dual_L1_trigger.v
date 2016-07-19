@@ -26,7 +26,7 @@ module ANITA4_dual_L1_trigger(
 		output [3:0] trig_o
     );
 
-	localparam L0_PIPELINE_LENGTH = 3;
+	localparam L0_PIPELINE_LENGTH = 2;
 
 	//antenna-level trigger L + R. First index is phi sector.
 
@@ -58,8 +58,8 @@ module ANITA4_dual_L1_trigger(
 	
 	wire [2:0] L1_logic[1:0];
 	
-	localparam SYNC_RESET_BIT = 2; //bit in above registers used to clear
-	localparam SYNC_COINC_BIT = 1; //bit in above registers used in downstream trigger
+	localparam SYNC_RESET_BIT = 1; //bit in above registers used to clear
+	localparam SYNC_COINC_BIT = 0; //bit in above registers used in downstream trigger
 
 	localparam TOP = 2;
 	localparam MID = 1;

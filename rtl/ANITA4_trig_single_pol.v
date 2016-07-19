@@ -17,11 +17,12 @@ module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK);
 	input CLK;
 	input CLR;
 	input MASK;
-	output reg [2:0] TRIG_SYNC;
+	output reg [1:0] TRIG_SYNC;
 	
 	// reg [2:0] trig_reg = {3{1'b0}};  //note: LSB is meta-stable 
 	wire trig_latch;
-
+	wire trig_sync_meta;
+	
 	//latch on falling-edge of TRIG 
 	(* IOB = "TRUE" *)
 	FDCE_1 #(
@@ -34,16 +35,25 @@ module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK);
       .D(1'b1)         // Data input
    );	
 	
+	(* IOB = "TRUE" *)
+	FDCE #(
+		.INIT(1'b0) // Initial value of register (1'b0 or 1'b1)
+   ) FDCE_reg (
+      .Q(trig_sync_meta),  // Data output
+      .C(CLK),             // Clock input
+      .CE(1'b1),           // Clock enable input
+      .CLR(CLR),           // Asynchronous clear input
+      .D(trig_latch)       // Data input
+   );	
+	
 	//if CLR=1, set all to 0
 	always @(posedge CLK) begin
 		if (CLR)
-			TRIG_SYNC <= {3{1'b0}};
+			TRIG_SYNC <= {2{1'b0}};
 		else
-			TRIG_SYNC <= {TRIG_SYNC[1:0], trig_latch};
+			TRIG_SYNC <= {TRIG_SYNC[0], trig_sync_meta};
 			//trig_reg <= {trig_reg[1:0], trig_latch};
 		
-		//TRIG_SYNC[1:0] = trig_reg[2:1];//_SYNC[0] used for l+r coinc.
-                                     //_SYNC[1] (or SYNC delayed) used to clear
 	end	
 	
 endmodule 

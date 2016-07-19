@@ -396,6 +396,7 @@ TIMESPEC "TS_LABD" = FROM "HOLDD" TO "NRUND" 10.8 ns;
 
 # Top, right.
 INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch" LOC = SLICE_X58Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_reg" LOC = SLICE_X59Y159;
 #INST "u_trigger/ant_pipes[0].pipe/top_trig/FDCE_N" LOC = SLICE_X59Y159;
 
 #
@@ -406,6 +407,7 @@ INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch" LOC = SLICE_X58Y159;
 
 # Top, left.
 INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_latch" LOC = SLICE_X126Y116;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_reg" LOC = SLICE_X127Y116;
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/top_trig/FDCE_N" LOC = SLICE_X127Y116;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/TOP_FDCE_P" LOC = SLICE_X125Y116;
@@ -414,6 +416,7 @@ INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_latch" LOC = SLICE_X126Y116;
 ##LOC Constraint for ANT2TC5 = phi0 polV PosM -> Vertical phi 0 -> L1(0)
 #
 INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" LOC = SLICE_X126Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_reg" LOC = SLICE_X127Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/middle_trig/FDCE_N" LOC = SLICE_X127Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/MIDDLE_FDCE_P" LOC = SLICE_X125Y159;
@@ -421,7 +424,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" LOC = SLICE_X126Y159;
 #
 ##LOC Constraint for ANT2TC6 = phi0 polH PosM -> Horizontal phi 0 -> L1(2)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[2].pipe/middle_trig/FDCE_P" LOC = SLICE_X98Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/FDCE_latch" LOC = SLICE_X98Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/FDCE_reg" LOC = SLICE_X99Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/middle_trig/FDCE_N" LOC = SLICE_X99Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/MIDDLE_FDCE_P" LOC = SLICE_X100Y159;
@@ -429,7 +433,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" LOC = SLICE_X126Y159;
 #
 ##LOC Constraint for ANT2TC7 = phi0 polV PosB -> Vertical phi 0 -> L1(0)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[0].pipe/bottom_trig/FDCE_P" LOC = SLICE_X80Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/FDCE_latch" LOC = SLICE_X80Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/FDCE_reg" LOC = SLICE_X81Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/bottom_trig/FDCE_N" LOC = SLICE_X81Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/BOTTOM_FDCE_P" LOC = SLICE_X82Y159;
@@ -437,7 +442,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" LOC = SLICE_X126Y159;
 #
 ##LOC Constraint for ANT2TC8 = phi0 polH PosB -> Horizontal phi 0 -> L1(2)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[2].pipe/bottom_trig/FDCE_P" LOC = SLICE_X70Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch" LOC = SLICE_X70Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_reg" LOC = SLICE_X71Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/bottom_trig/FDCE_N" LOC = SLICE_X71Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/BOTTOM_FDCE_P" LOC = SLICE_X72Y159;
@@ -447,6 +453,7 @@ INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" LOC = SLICE_X126Y159;
 ##LOC Constraint for ANT3TC1 = phi1 polV PosT -> Vertical phi 1 -> L1(1)
 #
 INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" LOC = SLICE_X126Y129;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_reg" LOC = SLICE_X127Y129;
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/top_trig/FDCE_N" LOC = SLICE_X127Y129;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/TOP_FDCE_P" LOC = SLICE_X125Y129;
@@ -455,7 +462,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" LOC = SLICE_X126Y129;
 #
 ##LOC Constraint for ANT3TC2 = phi1 polH PosT -> Horizontal phi 1 -> L1(3)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[3].pipe/top_trig/FDCE_P" LOC = SLICE_X56Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch" LOC = SLICE_X56Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_reg" LOC = SLICE_X57Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[3].pipe/top_trig/FDCE_N" LOC = SLICE_X57Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[3].pipe/TOP_FDCE_P" LOC = SLICE_X55Y159;
@@ -465,7 +473,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" LOC = SLICE_X126Y129;
 #
 ##LOC Constraint for ANT3TC5 = phi1 polV PosM -> Vertical phi 1 -> L1(1)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[1].pipe/middle_trig/FDCE_P" LOC = SLICE_X68Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/FDCE_latch" LOC = SLICE_X68Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/FDCE_reg" LOC = SLICE_X69Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/middle_trig/FDCE_N" LOC = SLICE_X69Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/MIDDLE_FDCE_P" LOC = SLICE_X67Y159;
@@ -475,7 +484,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" LOC = SLICE_X126Y129;
 #
 ##LOC Constraint for ANT3TC6 = phi1 polH PosM -> Horizontal phi 1 -> L1(3)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[3].pipe/middle_trig/FDCE_P" LOC = SLICE_X78Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/FDCE_latch" LOC = SLICE_X78Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/FDCE_reg" LOC = SLICE_X79Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[3].pipe/middle_trig/FDCE_N" LOC = SLICE_X79Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[3].pipe/MIDDLE_FDCE_P" LOC = SLICE_X77Y159;
@@ -484,7 +494,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" LOC = SLICE_X126Y129;
 #
 ##LOC Constraint for ANT3TC7 = phi1 polV PosB -> Vertical phi 1 -> L1(1)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[1].pipe/bottom_trig/FDCE_P" LOC = SLICE_X96Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch" LOC = SLICE_X96Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch" LOC = SLICE_X97Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/bottom_trig/FDCE_N" LOC = SLICE_X97Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/BOTTOM_FDCE_P" LOC = SLICE_X95Y159;
@@ -493,7 +504,8 @@ INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" LOC = SLICE_X126Y129;
 #
 ##LOC Constraint for ANT3TC8 = phi1 polV PosB -> Horizontal phi 1 -> L1(3)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[3].pipe/bottom_trig/FDCE_P" LOC = SLICE_X116Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch" LOC = SLICE_X116Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch" LOC = SLICE_X117Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[3].pipe/bottom_trig/FDCE_N" LOC = SLICE_X117Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[3].pipe/BOTTOM_FDCE_P" LOC = SLICE_X118Y159;
