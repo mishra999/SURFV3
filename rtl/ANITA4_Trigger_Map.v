@@ -23,18 +23,18 @@ module ANITA4_Trigger_Map(
 		output [1:0] bot_rcp_o, output [1:0] bot_rcp_scaler_o
     );
 
-	assign top_lcp_o[0] = A2[0]; assign top_lcp_scaler_o[0] = A2_B[0];
-	assign top_rcp_o[0] = A2[1]; assign top_rcp_scaler_o[0] = A2_B[1];
-	assign mid_lcp_o[0] = A2[4]; assign mid_lcp_scaler_o[0] = A2_B[4];
-	assign mid_rcp_o[0] = A2[5]; assign mid_rcp_scaler_o[0] = A2_B[5];
-	assign bot_lcp_o[0] = A2[6]; assign bot_lcp_scaler_o[0] = A2_B[6];
-	assign bot_rcp_o[0] = A2[7]; assign bot_rcp_scaler_o[0] = A2_B[7];
+	assign top_rcp_o[0] = A2[0]; assign top_rcp_scaler_o[0] = A2_B[0];
+	assign top_lcp_o[0] = A2[1]; assign top_lcp_scaler_o[0] = A2_B[1];
+	assign mid_rcp_o[0] = A2[4]; assign mid_rcp_scaler_o[0] = A2_B[4];
+	assign mid_lcp_o[0] = A2[5]; assign mid_lcp_scaler_o[0] = A2_B[5];
+	assign bot_rcp_o[0] = A2[6]; assign bot_rcp_scaler_o[0] = A2_B[6];
+	assign bot_lcp_o[0] = A2[7]; assign bot_lcp_scaler_o[0] = A2_B[7];
 
-	assign top_lcp_o[1] = A3[0]; assign top_lcp_scaler_o[1] = A3_B[0];
-	assign top_rcp_o[1] = A3[1]; assign top_rcp_scaler_o[1] = A3_B[1];
-	assign mid_lcp_o[1] = A3[4]; assign mid_lcp_scaler_o[1] = A3_B[4];
-	assign mid_rcp_o[1] = A3[5]; assign mid_rcp_scaler_o[1] = A3_B[5];
-	assign bot_lcp_o[1] = A3[6]; assign bot_lcp_scaler_o[1] = A3_B[6];
-	assign bot_rcp_o[1] = A3[7]; assign bot_rcp_scaler_o[1] = A3_B[7];
+	assign top_rcp_o[1] = A3[0]; assign top_rcp_scaler_o[1] = A3_B[0];
+	assign top_lcp_o[1] = A3[1]; assign top_lcp_scaler_o[1] = A3_B[1];
+	assign mid_rcp_o[1] = A3[4]; assign mid_rcp_scaler_o[1] = A3_B[4];
+	assign mid_lcp_o[1] = A3[5]; assign mid_lcp_scaler_o[1] = A3_B[5];
+	assign bot_rcp_o[1] = A3[6]; assign bot_rcp_scaler_o[1] = A3_B[6];
+	assign bot_lcp_o[1] = A3[7]; assign bot_lcp_scaler_o[1] = A3_B[7];
 
 endmodule

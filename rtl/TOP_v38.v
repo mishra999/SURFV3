@@ -210,6 +210,7 @@ module TOP_v38(
 											  .A3(ANT_C),.A3_B(trig_scaler_path[16 +: 8]),
 											  .A4(ANT_D),.A4_B(trig_scaler_path[24 +: 8]),
 											  .clk_i(clk250),
+											  .clk100_i(clk100),
 											  .mclk_i(clk33),
 											  .REF_PULSE(REF),
 											  .TRIG(L1),

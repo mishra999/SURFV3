@@ -21,6 +21,8 @@ module TURF_Processor_ANITA4(
 		input mclk_i,
 		// Quick (250 MHz) clock.
 		input clk_i,
+		// Scaler (100 MHz) clock.
+		input clk100_i,
 		// Raw tunnel diode inputs, inverted side.
 		// These are for scalers.
 		input [7:0] A1_B,
@@ -80,12 +82,13 @@ module TURF_Processor_ANITA4(
 												.bot_rcp_o(bot_rcp),.bot_rcp_scaler_o(bot_rcp_scaler));
 
 	ANITA_L0_scalers u_scalers(.mclk_i(mclk_i),
-										 .top_lcp_i(top_lcp_scaler_i),
-										 .top_rcp_i(top_rcp_scaler_i),
-										 .mid_lcp_i(mid_lcp_scaler_i),
-										 .mid_rcp_i(mid_rcp_scaler_i),
-										 .bot_lcp_i(bot_lcp_scaler_i),
-										 .bot_rcp_i(bot_rcp_scaler_i),
+										.clk100_i(clk100_i),
+										 .top_lcp_i(top_lcp_scaler),
+										 .top_rcp_i(top_rcp_scaler),
+										 .mid_lcp_i(mid_lcp_scaler),
+										 .mid_rcp_i(mid_rcp_scaler),
+										 .bot_lcp_i(bot_lcp_scaler),
+										 .bot_rcp_i(bot_rcp_scaler),
 										 .scaler_o(scal_o[0 +: 11]));
 
 	// Phi0 trigger. The name of this is legacy: it actually generates L1s and L2s.
