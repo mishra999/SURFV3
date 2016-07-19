@@ -392,17 +392,20 @@ TIMESPEC "TS_LABD" = FROM "HOLDD" TO "NRUND" 10.8 ns;
 #LOC Constraint for ANT2TC1 = phi0 polV PosT -> Vertical phi 0 -> L1(0)
 
 #############
-##the following lines commented when switching to ANITA4 trigger: new constraints required?
+# LOC constraints.
 
-#INST "level1trigger/turfprocessor/ant_pipes[0].pipe/top_trig/FDCE_P" LOC = SLICE_X58Y159;
-#INST "level1trigger/turfprocessor/ant_pipes[0].pipe/top_trig/FDCE_N" LOC = SLICE_X59Y159;
+# Top, right.
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch" LOC = SLICE_X58Y159;
+#INST "u_trigger/ant_pipes[0].pipe/top_trig/FDCE_N" LOC = SLICE_X59Y159;
+
 #
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/TOP_FDCE_P" LOC = SLICE_X60Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/TOP_FDCE_N" LOC = SLICE_X60Y159;
 #
 ##LOC Constraint for ANT2TC2 = phi0 polH PosT -> Horizontal phi 0 -> L1(2)
-#
-#INST "level1trigger/turfprocessor/ant_pipes[2].pipe/top_trig/FDCE_P" LOC = SLICE_X126Y116;
+
+# Top, left.
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_latch" LOC = SLICE_X126Y116;
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/top_trig/FDCE_N" LOC = SLICE_X127Y116;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[2].pipe/TOP_FDCE_P" LOC = SLICE_X125Y116;
@@ -410,7 +413,7 @@ TIMESPEC "TS_LABD" = FROM "HOLDD" TO "NRUND" 10.8 ns;
 #
 ##LOC Constraint for ANT2TC5 = phi0 polV PosM -> Vertical phi 0 -> L1(0)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[0].pipe/middle_trig/FDCE_P" LOC = SLICE_X126Y159;
+INST "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" LOC = SLICE_X126Y159;
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/middle_trig/FDCE_N" LOC = SLICE_X127Y159;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[0].pipe/MIDDLE_FDCE_P" LOC = SLICE_X125Y159;
@@ -443,7 +446,7 @@ TIMESPEC "TS_LABD" = FROM "HOLDD" TO "NRUND" 10.8 ns;
 #
 ##LOC Constraint for ANT3TC1 = phi1 polV PosT -> Vertical phi 1 -> L1(1)
 #
-#INST "level1trigger/turfprocessor/ant_pipes[1].pipe/top_trig/FDCE_P" LOC = SLICE_X126Y129;
+INST "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" LOC = SLICE_X126Y129;
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/top_trig/FDCE_N" LOC = SLICE_X127Y129;
 #
 #INST "level1trigger/turfprocessor/ant_pipes[1].pipe/TOP_FDCE_P" LOC = SLICE_X125Y129;

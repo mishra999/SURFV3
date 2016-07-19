@@ -23,7 +23,7 @@ module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK);
 	wire trig_latch;
 
 	//latch on falling-edge of TRIG 
-	(* IOB = "FORCE" *)
+	(* IOB = "TRUE" *)
 	FDCE_1 #(
       .INIT(1'b0) // Initial value of register (1'b0 or 1'b1)
    ) FDCE_latch (
