@@ -384,7 +384,7 @@ NET "CLK125_P"  LOC = "L20"  | PERIOD = 8.0 ns | CLOCK_DEDICATED_ROUTE = "FALSE"
 TIMESPEC "TS_LABA" = FROM "HOLDA" TO "NRUNA" 9.7 ns;
 TIMESPEC "TS_LABB" = FROM "HOLDB" TO "NRUNB" 9.7 ns;
 TIMESPEC "TS_LABC" = FROM "HOLDC" TO "NRUNC" 9.7 ns;
-TIMESPEC "TS_LABD" = FROM "HOLDD" TO "NRUND" 10.774 ns;
+TIMESPEC "TS_LABD" = FROM "HOLDD" TO "NRUND" 10.8 ns;
 
 ####################################
 #This is with the masking done downstream

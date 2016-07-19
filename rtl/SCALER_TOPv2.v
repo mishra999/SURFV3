@@ -10,11 +10,11 @@
 // Author:
 // Author:
 ////////////////////////////////////////////////////////////////////////////////
-module SCALER_TOPv2(
+module SCALER_TOPv2 #(parameter NUM_SCALERS=22) (
 		// 33 MHz clock
 		input clk33_i,
 		// 'CR' output from trigger module
-		input [16:0] scal_i,
+		input [NUM_SCALERS-1:0] scal_i,
 		// Address from MESSv2
 		input [4:0] scal_addr_i,
 		input scal_rd_i,
@@ -24,6 +24,8 @@ module SCALER_TOPv2(
 		output [15:0] refpulse_cnt_o
     );
 
+	localparam REF_PULSE_INDEX = NUM_SCALERS-1;
+
 	wire update_scalers;
 	SCALER_CLOCK_v2 u_clk(.clk33_i(clk33_i),
 								 .khz_clk_o(update_scalers));
@@ -31,39 +33,75 @@ module SCALER_TOPv2(
 	reg [1:0] ref_pulse_reg = {2{1'b0}};
 	reg [15:0] ref_pulse_counter = {16{1'b0}};
 	reg [15:0] ref_pulse_count = {16{1'b0}};
-	reg [15:0] gated_scaler = {16{1'b0}};
-	wire [15:0] ref_pulse_in = {16{scal_i[0]}};
+	reg [NUM_SCALERS-2:0] gated_scaler = {NUM_SCALERS-1{1'b0}};
+	wire [NUM_SCALERS-2:0] ref_pulse_in = {NUM_SCALERS-1{scal_i[REF_PULSE_INDEX]}};
 	always @(posedge clk33_i) begin
-		gated_scaler <= ref_pulse_in & scal_i[16:1];
-		ref_pulse_reg <= {ref_pulse_reg[0],scal_i[0]};
+		gated_scaler <= ref_pulse_in & scal_i[0 +: NUM_SCALERS-1];
+		ref_pulse_reg <= {ref_pulse_reg[0],scal_i[REF_PULSE_INDEX]};
 
 		if (update_scalers) ref_pulse_counter <= {16{1'b0}};
 		else if (ref_pulse_reg[0] && !ref_pulse_reg[1]) ref_pulse_counter <= ref_pulse_counter + 1;
 
 		if (update_scalers) ref_pulse_count <= ref_pulse_counter;
 	end
+	
+	// ANITA4 Mapping:
+	// Scaler 0-11 are the L0 scalers (as before).
+	// Scaler 12-17 are the L1 scalers (new).
+	// Scaler 18-19 are the L2 scalers (new).
+	// Scaler 20 is the L3 scaler (new).
+	// Scaler 21 is unused (it's the refpulse).
+	// Scaler 22-27 are the gated L1 scalers (new).
+	// Scaler 28-29 are the gated L2 scalers (new).
+	// Scaler 30 is the gated L3 scaler (new).
+	// Scaler 31 is unused.
+	localparam L0_START = 0;
+	localparam NUM_L0 = 12;
+	localparam L1_START = 12;
+	localparam L1_GATED_START = 22;
+	localparam NUM_L1 = 6;
+	localparam L2_START = 18;
+	localparam L2_GATED_START = 28;
+	localparam NUM_L2 = 2;
+	localparam L3_START = 20;
+	localparam L3_GATED_START = 30;
+	localparam NUM_L3 = 1;
 	generate
-		genvar trig, ant;
-		for (trig=0;trig<4;trig=trig+1) begin : L1
+		genvar trig, ant, trig2;
+		for (trig=0;trig<NUM_L1;trig=trig+1) begin : L1
 			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_l1_scaler(.clk_i(clk33_i),
 																				  .pps_i(update_scalers),
-																				  .count_i(scal_i[1+trig]),
-																				  .scaler_o(scaler_data_out[12+trig]));
+																				  .count_i(scal_i[L1_START+trig]),
+																				  .scaler_o(scaler_data_out[L1_START+trig]));
 			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_l1_mon_scaler(.clk_i(clk33_i),
 																				  .pps_i(update_scalers),
-																				  .count_i(gated_scaler[trig]),
-																				  .scaler_o(scaler_data_out[28+trig]));
+																				  .count_i(gated_scaler[L1_START+trig]),
+																				  .scaler_o(scaler_data_out[L1_GATED_START+trig]));
 		end
-		for (ant=0;ant<12;ant=ant+1) begin : ANT
+		for (ant=0;ant<NUM_L0;ant=ant+1) begin : ANT
 			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_ant_scaler(.clk_i(clk33_i),
 																					.pps_i(update_scalers),
-																					.count_i(scal_i[5+ant]),
-																					.scaler_o(scaler_data_out[ant]));
-			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_ant_mon_scaler(.clk_i(clk33_i),
-																					.pps_i(update_scalers),
-																					.count_i(gated_scaler[4+ant]),
-																					.scaler_o(scaler_data_out[16+ant]));
+																					.count_i(scal_i[L0_START+ant]),
+																					.scaler_o(scaler_data_out[L0_START+ant]));
 		end
+		for (trig2=0;trig2<NUM_L2;trig2=trig2+1) begin : L2
+			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_L2_scaler(.clk_i(clk33_i),
+																				  .pps_i(update_scalers),
+																				  .count_i(scal_i[L2_START+trig2]),
+																				  .scaler_o(scaler_data_out[L2_START+trig2]));
+			ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_L2_mon_scaler(.clk_i(clk33_i),
+																						.pps_i(update_scalers),
+																						.count_i(gated_scaler[L2_START+trig2]),
+																						.scaler_o(scaler_data_out[L2_GATED_START+trig2]));
+		end
+		ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_L3_scaler(.clk_i(clk33_i),
+																			  .pps_i(update_scalers),
+																			  .count_i(scal_i[L3_START]),
+																			  .scaler_o(scaler_data_out[L3_START]));
+		ANITA3_scaler #(.WIDTH(16),.PRESCALE(0)) u_L3_mon_scaler(.clk_i(clk33_i),
+																			  .pps_i(update_scalers),
+																			  .count_i(gated_scaler[L3_START]),
+																			  .scaler_o(scaler_data_out[L3_GATED_START]));
 	endgenerate
 	reg scaler_bank = 0;
 	reg [31:0] scaler_ram[63:0];

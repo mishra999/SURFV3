@@ -204,6 +204,18 @@ module TOP_v38(
 								.VTRG_A1TC(VTRG_A1TC),.VTRG_A2TC(VTRG_A2TC),.VTRG_A3TC(VTRG_A3TC),.VTRG_A4TC(VTRG_A4TC),
 								.out_for_scaler(trig_scaler_path),
 								.ANT_A(ANT_A),.ANT_B(ANT_B),.ANT_C(ANT_C),.ANT_D(ANT_D));
+								
+	TURF_Processor_ANITA4 u_trigger(.A1(ANT_A),.A1_B(trig_scaler_path[0 +: 8]),
+											  .A2(ANT_B),.A2_B(trig_scaler_path[8 +: 8]),
+											  .A3(ANT_C),.A3_B(trig_scaler_path[16 +: 8]),
+											  .A4(ANT_D),.A4_B(trig_scaler_path[24 +: 8]),
+											  .clk_i(clk250),
+											  .mclk_i(clk33),
+											  .REF_PULSE(REF),
+											  .TRIG(L1),
+											  .scal_o(CR[21:0]),
+											  .mask_i(short_mask));
+/*
 	// Trigger.
 	Level1_Trigger level1trigger(.ANT_A(ANT_A),.ANT_B(ANT_B),.ANT_C(ANT_C),.ANT_D(ANT_D),
 									 .ANT_A_for_scalers(trig_scaler_path[0 +: 8]),
@@ -221,7 +233,7 @@ module TOP_v38(
 									 .CLK125(clk125),
 									 .CLK250(clk250),
 									 .CLK250_180(clk250b));									 
-	
+*/	
 	wire [34:0] lab_debug;
 	wire [1:0] lab_debug_sel;
 	wire lab_testpattern_sel;
@@ -318,8 +330,8 @@ module TOP_v38(
 	wire [15:0] scal_dat_out;
 	wire [15:0] refpulse_cnt;
 	
-	SCALER_TOPv2 u_scalers( .clk33_i(clk33),
-									.scal_i(CR[16:0]),
+	SCALER_TOPv2 #(.NUM_SCALERS(22)) u_scalers( .clk33_i(clk33),
+									.scal_i(CR[21:0]),
 									.scal_addr_i(scal_addr),
 									.scal_rd_i(scal_rd),
 									.scal_dat_o(scal_dat_out),
