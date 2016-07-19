@@ -79,7 +79,7 @@ module TURF_Processor_ANITA4(
 												.bot_lcp_o(bot_lcp),.bot_lcp_scaler_o(bot_lcp_scaler),
 												.bot_rcp_o(bot_rcp),.bot_rcp_scaler_o(bot_rcp_scaler));
 
-	ANITA4_L0_scalers u_scalers(.mclk_i(mclk_i),
+	ANITA_L0_scalers u_scalers(.mclk_i(mclk_i),
 										 .top_lcp_i(top_lcp_scaler_i),
 										 .top_rcp_i(top_rcp_scaler_i),
 										 .mid_lcp_i(mid_lcp_scaler_i),
