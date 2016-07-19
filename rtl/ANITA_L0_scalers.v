@@ -33,6 +33,7 @@ module ANITA_L0_scalers(
 	// So that's what we're doing again.
 	// The new mapping is
 	// TR, MR, BR, TR, MR, BR, TL, ML, BL, TL, ML, BL.
+	// Note like everywhere else, V->R, and H->L.
 	
 	wire [11:0] L0_all;
 
