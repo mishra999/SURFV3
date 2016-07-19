@@ -50,4 +50,14 @@ module ANITA_L0_scalers(
 	assign L0_all[10]= mid_lcp_i[1];
 	assign L0_all[11]= bot_lcp_i[1];
 	
+	generate
+		genvar i;
+		for (i=0;i<12;i=i+1) begin : L0_SCALERS
+			L0_scaler_single u_scaler_100Mhz(.clk100_i(clk100_i),
+														.mclk_i(mclk_i),
+														.trig_i(L0_all[i]),
+														.pulse_o(scaler_o[i]));
+		end
+	endgenerate
+	
 endmodule
