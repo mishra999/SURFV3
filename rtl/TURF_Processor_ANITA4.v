@@ -60,6 +60,7 @@ module TURF_Processor_ANITA4(
 	//% Mid antennas, right circular.
 	wire [1:0] mid_rcp;
 	//% Mid antennas, right circular, scaler inputs.
+	wire [1:0] mid_rcp_scaler;
 
 	//% Bot antennas, left circular.
 	wire [1:0] bot_lcp;
@@ -89,7 +90,7 @@ module TURF_Processor_ANITA4(
 										 .mid_rcp_i(mid_rcp_scaler),
 										 .bot_lcp_i(bot_lcp_scaler),
 										 .bot_rcp_i(bot_rcp_scaler),
-										 .scaler_o(scal_o[0 +: 11]));
+										 .scaler_o(scal_o[0 +: 12]));
 
 	// Phi0 trigger. The name of this is legacy: it actually generates L1s and L2s.
 	// Note: we're retaining single-channel trigger masks, but because all triggers require both LCP and RCP,

@@ -40,12 +40,15 @@ module ANITA_L0_scalers(
 	assign L0_all[0] = top_rcp_i[0];
 	assign L0_all[1] = mid_rcp_i[0];
 	assign L0_all[2] = bot_rcp_i[0];
+
 	assign L0_all[3] = top_rcp_i[1];
 	assign L0_all[4] = mid_rcp_i[1];
 	assign L0_all[5] = bot_rcp_i[1];
+
 	assign L0_all[6] = top_lcp_i[0];
 	assign L0_all[7] = mid_lcp_i[0];
 	assign L0_all[8] = bot_lcp_i[0];
+
 	assign L0_all[9] = top_lcp_i[1];
 	assign L0_all[10]= mid_lcp_i[1];
 	assign L0_all[11]= bot_lcp_i[1];
