@@ -115,10 +115,21 @@ module ANITA4_dual_L1_trigger(
 	reg [1:0] L1_top = {2{1'b0}};
 	
 	reg [MID_TOP_SR_LENGTH-1:0] mid_top_sr_0 = {MID_TOP_SR_LENGTH{1'b0}};
+	(* EQUIVALENT_REGISTER_REMOVAL = "FALSE" *)
+	reg mid_top_coincidence_0 = 0;
+
 	reg [MID_TOP_SR_LENGTH-1:0] mid_top_sr_1 = {MID_TOP_SR_LENGTH{1'b0}};
+	(* EQUIVALENT_REGISTER_REMOVAL = "FALSE" *)
+	reg mid_top_coincidence_1 = 0;
+	
 	reg [BOT_TOP_SR_LENGTH-1:0] bot_top_sr_0 = {BOT_TOP_SR_LENGTH{1'b0}};
+	(* EQUIVALENT_REGISTER_REMOVAL = "FALSE" *)
+	reg bot_top_coincidence_0 = 0;
+	
 	reg [BOT_TOP_SR_LENGTH-1:0] bot_top_sr_1 = {BOT_TOP_SR_LENGTH{1'b0}};
-		
+	(* EQUIVALENT_REGISTER_REMOVAL = "FALSE" *)
+	reg bot_top_coincidence_1 = 0;
+	
 	// Delay registers.
 	reg [1:0] mid_delay_0 = 2'b00;
 	reg [1:0] mid_delay_1 = 2'b00;
@@ -176,6 +187,11 @@ module ANITA4_dual_L1_trigger(
 		end else
 			mid_top_sr_0[MID_TOP_SR_LENGTH-1:1] <= mid_top_sr_0[MID_TOP_SR_LENGTH-2:0];
 
+		if (mid_top_sr_0[MID_TOP_SR_LENGTH-1])
+			mid_top_coincidence_0 <= 0;
+		else if (mid_delay_0[0])
+			mid_top_coincidence_0 <= 1;
+
 		if (mid_top_sr_1[MID_TOP_SR_LENGTH-1])
 			mid_top_sr_1 <= {MID_TOP_SR_LENGTH{1'b0}};
 		else if (mid_delay_1[0]) begin
@@ -183,6 +199,13 @@ module ANITA4_dual_L1_trigger(
 			mid_top_sr_1[MID_TOP_SR_LENGTH-1:1] <= mid_top_sr_1[MID_TOP_SR_LENGTH-2:0];
 		end else
 			mid_top_sr_1[MID_TOP_SR_LENGTH-1:1] <= mid_top_sr_1[MID_TOP_SR_LENGTH-2:0];
+
+		if (mid_top_sr_1[MID_TOP_SR_LENGTH-1])
+			mid_top_coincidence_1 <= 0;
+		else if (mid_delay_1[0])
+			mid_top_coincidence_1 <= 1;
+
+
 
 		// Ditto for bottom/top.
 		if (bot_top_sr_0[BOT_TOP_SR_LENGTH-1])
@@ -193,6 +216,13 @@ module ANITA4_dual_L1_trigger(
 		end else
 			bot_top_sr_0[BOT_TOP_SR_LENGTH-1:1] <= bot_top_sr_0[BOT_TOP_SR_LENGTH-2:0];
 
+		if (bot_top_sr_0[BOT_TOP_SR_LENGTH-1])
+			bot_top_coincidence_0 <= 0;
+		else if (bot_delay_0[0])
+			bot_top_coincidence_0 <= 1;
+
+
+
 		if (bot_top_sr_1[BOT_TOP_SR_LENGTH-1])
 			bot_top_sr_1 <= {BOT_TOP_SR_LENGTH{1'b0}};
 		else if (bot_delay_1[0]) begin
@@ -200,6 +230,11 @@ module ANITA4_dual_L1_trigger(
 			bot_top_sr_1[BOT_TOP_SR_LENGTH-1:1] <= bot_top_sr_1[BOT_TOP_SR_LENGTH-2:0];
 		end else
 			bot_top_sr_1[BOT_TOP_SR_LENGTH-1:1] <= bot_top_sr_1[BOT_TOP_SR_LENGTH-2:0];		
+
+		if (bot_top_sr_1[BOT_TOP_SR_LENGTH-1])
+			bot_top_coincidence_1 <= 0;
+		else if (bot_delay_1[0])
+			bot_top_coincidence_1 <= 1;
 		
 	end
 		
@@ -236,10 +271,11 @@ module ANITA4_dual_L1_trigger(
 	assign mid_sr[0] = mid_delay_0;
 	assign mid_sr[1] = mid_delay_1;
 	
-	wire [1:0] mid_coincidence_with_top = {mid_top_sr_1[0],
-														mid_top_sr_0[0]};
-	wire [1:0] bot_coincidence_with_top = {bot_top_sr_1[0],
-														bot_top_sr_0[0]};
+	wire [1:0] mid_coincidence_with_top = {mid_top_coincidence_1,
+														mid_top_coincidence_0};
+	wire [1:0] bot_coincidence_with_top = {bot_top_coincidence_1,
+														bot_top_coincidence_0};
+	reg [1:0] L2_all_reg = 2'b00;
 	(* IOB = "FORCE" *)
 	reg [1:0] L2 = {2{1'b0}};
 	wire [1:0] L2_reset;
@@ -257,11 +293,13 @@ module ANITA4_dual_L1_trigger(
 			
 			assign L2_all[L2_i] = L2_bot_mid[L2_i] || L2_top_mid[L2_i] || L2_top_bot[L2_i];
 			always @(posedge clk_i) begin : L2_PHI_REG
+				L2_all_reg[L2_i] <= L2_all[L2_i];
+			
 				if (L2_reset_sr[2]) L2[L2_i] <= 0;
-				else if (L2_all[L2_i]) L2[L2_i] <= 1;
+				else if (L2_all_reg[L2_i]) L2[L2_i] <= 1;
 				
 				if (L2_reset_sr[2]) L2_reset_sr <= {3{1'b0}};
-				else L2_reset_sr <= {L2_reset_sr[1:0],L2_all[L2_i]};
+				else L2_reset_sr <= {L2_reset_sr[1:0],L2_all_reg[L2_i]};
 			end
 			flag_sync u_L2_scaler(.in_clkA(L2_reset_sr[2]),.clkA(clk_i),
 										 .out_clkB(L2_scaler_o[L2_i]),.clkB(mclk_i));
