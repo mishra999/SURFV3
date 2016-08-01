@@ -27,6 +27,9 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
+use std.textio.all;
+use ieee.std_logic_textio.all;
+--use ieee.numeric_std.all;
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -76,6 +79,7 @@ ARCHITECTURE behavior OF ANITA4_dual_trigger_tb IS
    -- Clock period definitions
    constant clk_i_period : time := 4 ns;
 	constant mclk_i_period : time := 33.333 ns;
+
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
@@ -94,6 +98,23 @@ BEGIN
           trig_o => trig_o
         );
 
+	write_file : process(clk_i)
+		variable out_line : line;
+		variable clk_tick : integer range 1001 downto 0 := 0; 
+		variable the_line : std_logic_vector(15 downto 0);
+		file out_file     : text is out "results.txt";
+	begin
+		if rising_edge(clk_i) then
+			clk_tick := clk_tick + 1;
+			
+			--the_line(0) := std_logic(to_unsigned(clk_tick));
+			the_line(11 downto 0) := TOP_RCP & TOP_LCP & MID_RCP & MID_LCP & BOT_RCP & BOT_LCP;
+			the_line(15 downto 12):= trig_o;
+			write (out_line, the_line);
+			writeline (out_file, out_line);
+		end if;
+		
+	end process write_file;
    -- Clock process definitions
    clk_i_process :process
    begin
@@ -116,14 +137,14 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-
+		
       --wait for clk_i_period*10; 
 		wait for 8 ns;
 		BOT_LCP(0) <= '0';
 		BOT_RCP(0) <= '0';
 		MID_LCP(0) <= '1';
 		MID_RCP(0) <= '1';
-		wait for 2 ns;
+		 wait for 2 ns;
 		MID_LCP(0) <= '0';
 		MID_RCP(0) <= '0';
 		BOT_LCP(0) <= '0';
@@ -160,5 +181,5 @@ BEGIN
 
       wait;
    end process;
-
+	
 END;
