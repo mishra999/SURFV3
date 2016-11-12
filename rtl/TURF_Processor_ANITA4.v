@@ -103,7 +103,8 @@ module TURF_Processor_ANITA4(
 												  .MID_RCP(mid_rcp),
 												  .BOT_LCP(bot_lcp),
 												  .BOT_RCP(bot_rcp),
-												  .mask_i(mask_i[5:0]),
+												  .mask_i(mask_i[0 +: 12]),
+												  .force_i(mask_i[16 +: 12]),
 												  .L1_scaler_o(scal_o[12 +: 6]),
 												  .L2_scaler_o(scal_o[18 +: 2]),
 												  // scalers later

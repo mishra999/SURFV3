@@ -18,6 +18,7 @@ module ANITA4_dual_L1_trigger(
 		input [1:0] BOT_LCP,
 		input [1:0] BOT_RCP,
 		input [11:0] mask_i,
+		input [11:0] force_i,
 		output [5:0] L1_scaler_o,
 		output [1:0] L2_scaler_o,
 		
@@ -69,14 +70,14 @@ module ANITA4_dual_L1_trigger(
 	generate
 		genvar i;
 		for (i=0;i<2;i=i+1) begin : PHI_L0
-			ANITA4_trig_single_pol u_bot_r(BOT_RCP[i], clk_i, trig_sync_bottom_r[i][SYNC_RESET_BIT], trig_sync_bottom_r[i],mask_i[6*i+0]); 
-			ANITA4_trig_single_pol u_bot_l(BOT_LCP[i], clk_i, trig_sync_bottom_l[i][SYNC_RESET_BIT], trig_sync_bottom_l[i],mask_i[6*i+1]); 
+			ANITA4_trig_single_pol u_bot_r(BOT_RCP[i], clk_i, trig_sync_bottom_r[i][SYNC_RESET_BIT], trig_sync_bottom_r[i],mask_i[6*i+0], force_i[6*i+0]); 
+			ANITA4_trig_single_pol u_bot_l(BOT_LCP[i], clk_i, trig_sync_bottom_l[i][SYNC_RESET_BIT], trig_sync_bottom_l[i],mask_i[6*i+1], force_i[6*i+1]); 
 
-			ANITA4_trig_single_pol u_mid_r(MID_RCP[i], clk_i, trig_sync_middle_r[i][SYNC_RESET_BIT], trig_sync_middle_r[i],mask_i[6*i+2]); 
-			ANITA4_trig_single_pol u_mid_l(MID_LCP[i], clk_i, trig_sync_middle_l[i][SYNC_RESET_BIT], trig_sync_middle_l[i],mask_i[6*i+3]); 
+			ANITA4_trig_single_pol u_mid_r(MID_RCP[i], clk_i, trig_sync_middle_r[i][SYNC_RESET_BIT], trig_sync_middle_r[i],mask_i[6*i+2], force_i[6*i+2]); 
+			ANITA4_trig_single_pol u_mid_l(MID_LCP[i], clk_i, trig_sync_middle_l[i][SYNC_RESET_BIT], trig_sync_middle_l[i],mask_i[6*i+3], force_i[6*i+3]); 
 
-			ANITA4_trig_single_pol u_top_r(TOP_RCP[i], clk_i, trig_sync_top_r[i][SYNC_RESET_BIT], trig_sync_top_r[i],mask_i[6*i+4]); 
-			ANITA4_trig_single_pol u_top_l(TOP_LCP[i], clk_i, trig_sync_top_l[i][SYNC_RESET_BIT], trig_sync_top_l[i],mask_i[6*i+5]); 
+			ANITA4_trig_single_pol u_top_r(TOP_RCP[i], clk_i, trig_sync_top_r[i][SYNC_RESET_BIT], trig_sync_top_r[i],mask_i[6*i+4],force_i[6*i+4]); 
+			ANITA4_trig_single_pol u_top_l(TOP_LCP[i], clk_i, trig_sync_top_l[i][SYNC_RESET_BIT], trig_sync_top_l[i],mask_i[6*i+5],force_i[6*i+5]); 
 
 			// Check coincidence, and kill the coincidence after 4 ns.
 			assign L1_logic[i][BOT] = (trig_sync_bottom_r[i][SYNC_COINC_BIT] && trig_sync_bottom_l[i][SYNC_COINC_BIT]) &&

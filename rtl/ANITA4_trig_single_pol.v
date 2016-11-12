@@ -12,11 +12,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 ///written July 2016
 ///module to handle singles for ANITA4
-module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK);
+module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK, FORCE);
 	input TRIG;
 	input CLK;
 	input CLR;
 	input MASK;
+	input FORCE;
 	output reg [1:0] TRIG_SYNC;
 	
 	// reg [2:0] trig_reg = {3{1'b0}};  //note: LSB is meta-stable 
@@ -32,7 +33,7 @@ module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK);
       .C(TRIG),        // Clock input
       .CE(1'b1),       // Clock enable input
       .CLR(CLR),       // Asynchronous clear input
-      .D(1'b1)         // Data input
+      .D(~MASK)         // Data input
    );	
 	
 	(* IOB = "TRUE" *)
@@ -48,7 +49,9 @@ module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK);
 	
 	//if CLR=1, set all to 0
 	always @(posedge CLK) begin
-		if (CLR)
+		if (FORCE)
+			TRIG_SYNC <= 2'b01;
+		else if (CLR)
 			TRIG_SYNC <= {2{1'b0}};
 		else
 			TRIG_SYNC <= {TRIG_SYNC[0], trig_sync_meta};

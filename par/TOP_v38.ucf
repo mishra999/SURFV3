@@ -386,6 +386,8 @@ TIMESPEC "TS_LABB" = FROM "HOLDB" TO "NRUNB" 9.7 ns;
 TIMESPEC "TS_LABC" = FROM "HOLDC" TO "NRUNC" 9.7 ns;
 TIMESPEC "TS_LABD" = FROM "HOLDD" TO "NRUND" 10.8 ns;
 
+TIMESPEC "TS_false_mask_path" = FROM FFS("u_mess/short_mask*") TO FFS("u_trigger/*") TIG;
+
 ####################################
 #This is with the masking done downstream
 
