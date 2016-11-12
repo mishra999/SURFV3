@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="SURFv38" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/ANITA3_L1_TRIGGER_PIPE C:|Users|EDG|Desktop|firmware-surf|rtl|ANITA3_L1_TRIGGER_PIPE.v</ClosedNode>
+         <ClosedNode>/Level1_Trigger - BEHAVIORAL C:|Users|EDG|Desktop|firmware-surf|rtl|Level1_Trigger.vhd/turfprocessor - TURF_Processor_ANITA3 - BEHAVIORAL</ClosedNode>
+         <ClosedNode>/Level1_Trigger - BEHAVIORAL C:|Users|EDG|Desktop|firmware-surf|rtl|Level1_Trigger.vhd/turfprocessor - TURF_Processor_ANITA3 - BEHAVIORAL/pipe - ANITA4_L1_TRIGGER_PIPE</ClosedNode>
+         <ClosedNode>/SURF_command_receiver_v3 C:|Users|EDG|Desktop|firmware-surf|rtl|SURF_command_receiver_v3.v</ClosedNode>
+         <ClosedNode>/TOP_v38 C:|Users|EDG|Desktop|firmware-surf|rtl|TOP_v38.v/u_infrastructure - SURF_infrastructure</ClosedNode>
+         <ClosedNode>/TOP_v38 C:|Users|EDG|Desktop|firmware-surf|rtl|TOP_v38.v/u_labtop - LAB_TOPv2</ClosedNode>
+         <ClosedNode>/TOP_v38 C:|Users|EDG|Desktop|firmware-surf|rtl|TOP_v38.v/u_mess - MESSv2</ClosedNode>
+         <ClosedNode>/TOP_v38 C:|Users|EDG|Desktop|firmware-surf|rtl|TOP_v38.v/u_scalers - SCALER_TOPv2</ClosedNode>
+         <ClosedNode>/TOP_v38 C:|Users|EDG|Desktop|firmware-surf|rtl|TOP_v38.v/u_trigger - TURF_Processor_ANITA4/u_scalers - ANITA_L0_scalers/u_scaler_100Mhz - L0_scaler_single</ClosedNode>
+         <ClosedNode>/TOP_v38 C:|Users|EDG|Desktop|firmware-surf|rtl|TOP_v38.v/u_trigger - TURF_Processor_ANITA4/u_trig_phi0 - ANITA4_dual_L1_trigger</ClosedNode>
+         <ClosedNode>/TOP_v38 C:|Users|EDG|Desktop|firmware-surf|rtl|TOP_v38.v/u_trigger_rx - Trig_RX - BEHAVIORAL</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>u_trig_phi0 - ANITA4_dual_L1_trigger (C:/Users/EDG/Desktop/firmware-surf/rtl/ANITA4_dual_L1_trigger.v)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021d0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>u_trig_phi0 - ANITA4_dual_L1_trigger (C:/Users/EDG/Desktop/firmware-surf/rtl/ANITA4_dual_L1_trigger.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027d000000040101000100000000000000000000000064ffffffff000000810000000000000004000000cb0000000100000000000000d70000000100000000000000660000000100000000000000750000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>ANITA3_scaler.v</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000011c000000010000000100000000000000000000000064ffffffff0000008100000000000000010000011c0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>CORE Generator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012d0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012d0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/ANITA4_trigger_tb - behavior C:|Users|EDG|Desktop|firmware-surf|sim|ANITA4_trigger_tb.vhd</ClosedNode>
+         <ClosedNode>/DAC_CTRL_v3_tb C:|Users|EDG|Desktop|firmware-surf|sim|DAC_CTRL_v3_tb.v</ClosedNode>
+         <ClosedNode>/Level1_Trigger - BEHAVIORAL C:|Users|EDG|Desktop|firmware-surf|rtl|Level1_Trigger.vhd</ClosedNode>
+         <ClosedNode>/Level1_Trigger - BEHAVIORAL C:|Users|EDG|Desktop|firmware-surf|rtl|Level1_Trigger.vhd/turfprocessor - TURF_Processor_ANITA3 - BEHAVIORAL/pipe - ANITA4_L1_TRIGGER_PIPE</ClosedNode>
+         <ClosedNode>/SCALER_TOPv2_tb C:|Users|EDG|Desktop|firmware-surf|sim|SCALER_TOPv2_tb.v</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v/uut - TOP_v38/u_infrastructure - SURF_infrastructure</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v/uut - TOP_v38/u_labtop - LAB_TOPv2</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v/uut - TOP_v38/u_mess - MESSv2</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v/uut - TOP_v38/u_scalers - SCALER_TOPv2</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v/uut - TOP_v38/u_trigger - TURF_Processor_ANITA4/u_scalers - ANITA_L0_scalers</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v/uut - TOP_v38/u_trigger - TURF_Processor_ANITA4/u_trig_phi0 - ANITA4_dual_L1_trigger</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v/uut - TOP_v38/u_trigger_rx - Trig_RX - BEHAVIORAL</ClosedNode>
+         <ClosedNode>/SURF_command_receiver_v3_test C:|Users|EDG|Desktop|firmware-surf|sim|SURF_command_receiver_v3_test.v</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v/uut - TOP_v38/u_infrastructure - SURF_infrastructure</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v/uut - TOP_v38/u_labtop - LAB_TOPv2</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v/uut - TOP_v38/u_mess - MESSv2</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v/uut - TOP_v38/u_scalers - SCALER_TOPv2</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v/uut - TOP_v38/u_trigger - TURF_Processor_ANITA4</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v/uut - TOP_v38/u_trigger_rx - Trig_RX - BEHAVIORAL</ClosedNode>
+         <ClosedNode>/scaler_clock_test C:|Users|EDG|Desktop|firmware-surf|sim|scaler_clock_test.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>ANITA4_dual_trigger_tb - behavior (C:/Users/EDG/Desktop/firmware-surf/sim/ANITA4_dual_trigger_tb.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >32</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001d2000000020000000000000000000000000200000064ffffffff000000810000000300000002000001d20000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>ANITA4_dual_trigger_tb - behavior (C:/Users/EDG/Desktop/firmware-surf/sim/ANITA4_dual_trigger_tb.vhd)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <SourceProcessView>000000ff0000000000000002000000df000000e001000000050100000002</SourceProcessView>
+   <CurrentView>Behavioral Simulation</CurrentView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="PostMapSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/ANITA4_dual_trigger_tb - behavior C:|Users|EDG|Desktop|firmware-surf|sim|ANITA4_dual_trigger_tb.vhd</ClosedNode>
+         <ClosedNode>/ANITA4_trigger_tb - behavior C:|Users|EDG|Desktop|firmware-surf|sim|ANITA4_trigger_tb.vhd</ClosedNode>
+         <ClosedNode>/DAC_CTRL_v3_tb C:|Users|EDG|Desktop|firmware-surf|sim|DAC_CTRL_v3_tb.v</ClosedNode>
+         <ClosedNode>/SCALER_TOPv2_tb C:|Users|EDG|Desktop|firmware-surf|sim|SCALER_TOPv2_tb.v</ClosedNode>
+         <ClosedNode>/SURF_TOP_TEST C:|Users|EDG|Desktop|firmware-surf|sim|SURF_TOP_TEST.v</ClosedNode>
+         <ClosedNode>/SURF_command_receiver_v3_test C:|Users|EDG|Desktop|firmware-surf|sim|SURF_command_receiver_v3_test.v</ClosedNode>
+         <ClosedNode>/TOP_v38_tb C:|Users|EDG|Desktop|firmware-surf|sim|TOP_v38_tb.v</ClosedNode>
+         <ClosedNode>/scaler_clock_test C:|Users|EDG|Desktop|firmware-surf|sim|scaler_clock_test.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b4000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b40000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
+   </ItemView>
+   <ItemView engineview="PostMapSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+</Project>
