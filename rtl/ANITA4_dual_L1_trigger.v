@@ -70,7 +70,9 @@ module ANITA4_dual_L1_trigger(
 	generate
 		genvar i;
 		for (i=0;i<2;i=i+1) begin : PHI_L0
-			ANITA4_trig_single_pol u_bot_r(BOT_RCP[i], clk_i, trig_sync_bottom_r[i][SYNC_RESET_BIT], trig_sync_bottom_r[i],mask_i[6*i+0], force_i[6*i+0]); 
+			ANITA4_trig_single_pol u_bot_r(.CLK(clk_i),.MASK(mask_i[6*i+0]),.FORCE(force_i[6*i+0]),
+													 .TRIG(BOT_RCP[i]), .CLR(trig_sync_bottom_r[i][SYNC_RESET_BIT]), 
+													 .SYNC(trig_sync_bottom_r[i]));													 
 			ANITA4_trig_single_pol u_bot_l(BOT_LCP[i], clk_i, trig_sync_bottom_l[i][SYNC_RESET_BIT], trig_sync_bottom_l[i],mask_i[6*i+1], force_i[6*i+1]); 
 
 			ANITA4_trig_single_pol u_mid_r(MID_RCP[i], clk_i, trig_sync_middle_r[i][SYNC_RESET_BIT], trig_sync_middle_r[i],mask_i[6*i+2], force_i[6*i+2]); 
