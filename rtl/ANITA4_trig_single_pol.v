@@ -13,12 +13,13 @@
 ///written July 2016
 ///module to handle singles for ANITA4
 module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK, FORCE);
+	parameter ONESHOT=1;
 	input TRIG;
 	input CLK;
 	input CLR;
 	input MASK;
 	input FORCE;
-	output reg [1:0] TRIG_SYNC;
+	output reg [ONESHOT:0] TRIG_SYNC;
 	
 	// reg [2:0] trig_reg = {3{1'b0}};  //note: LSB is meta-stable 
 	wire trig_latch;
@@ -50,11 +51,11 @@ module ANITA4_trig_single_pol(TRIG, CLK, CLR, TRIG_SYNC, MASK, FORCE);
 	//if CLR=1, set all to 0
 	always @(posedge CLK) begin
 		if (FORCE)
-			TRIG_SYNC <= 2'b01;
+			TRIG_SYNC <= {{ONESHOT{1'b0}},1'b1};
 		else if (CLR)
-			TRIG_SYNC <= {2{1'b0}};
+			TRIG_SYNC <= {ONESHOT+1{1'b0}};
 		else
-			TRIG_SYNC <= {TRIG_SYNC[0], trig_sync_meta};
+			TRIG_SYNC <= {TRIG_SYNC[ONESHOT-1:0], trig_sync_meta};
 			//trig_reg <= {trig_reg[1:0], trig_latch};
 		
 	end	
