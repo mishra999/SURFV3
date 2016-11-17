@@ -51,6 +51,7 @@ ARCHITECTURE behavior OF ANITA4_dual_trigger_tb IS
          BOT_LCP : IN  std_logic_vector(1 downto 0);
          BOT_RCP : IN  std_logic_vector(1 downto 0);
          mask_i : IN  std_logic_vector(11 downto 0);
+			force_i : IN  std_logic_vector(11 downto 0);
          L1_scaler_o : OUT  std_logic_vector(5 downto 0);
          L2_scaler_o : OUT  std_logic_vector(1 downto 0);
          clk_i : IN  std_logic;
@@ -68,6 +69,7 @@ ARCHITECTURE behavior OF ANITA4_dual_trigger_tb IS
    signal BOT_LCP : std_logic_vector(1 downto 0) := (others => '0');
    signal BOT_RCP : std_logic_vector(1 downto 0) := (others => '0');
    signal mask_i : std_logic_vector(11 downto 0) := (others => '0');
+	signal force_i : std_logic_vector(11 downto 0) := (others => '0');
    signal clk_i : std_logic := '0';
    signal mclk_i : std_logic := '0';
 
@@ -91,6 +93,7 @@ BEGIN
           BOT_LCP => BOT_LCP,
           BOT_RCP => BOT_RCP,
           mask_i => mask_i,
+			 force_i => force_i,
           L1_scaler_o => L1_scaler_o,
           L2_scaler_o => L2_scaler_o,
           clk_i => clk_i,

@@ -27,40 +27,21 @@ module ANITA4_dual_L1_trigger(
 		output [3:0] trig_o
     );
 
-	localparam L0_PIPELINE_LENGTH = 2;
-
-	//antenna-level trigger L + R. First index is phi sector.
-
-	// L0 PIPELINE
-	//
-	// After the threshold is crossed, the latched bit is clocked into a shift register at 250 MHz.
-	// The LSB of the pipeline is metastable, so it shouldn't be used. Bits after that can be used.
-	// Right now it goes:
-	// clk	latch		pipe0		pipe1		pipe2
-	// 0     0        0        0        0
-	// -     1        0        0        0     <-- Threshold crosses between clk 0 and 1
-	// 1     1        <1>      0        0     <-- pipe0 is metastable
-	// 2     1        1        1        0
-	// 3     0        1        1        1     <-- pipe2 is an async reset on latch
-	// 4     0        0        0        0     <-- pipe2 is a sync reset on others
-	//
-	// The L0 coincidence then uses pipe1/pipe2 to generate the window: so either (pipe1_L & pipe1_R).
-	// or (pipe1_L & pipe2_R) or (pipe1_R & pipe2_L). This works out to be a coincidence window with
-	// a 4 ns flat top and a ~1 ns edge or so, so probably a 6 ns full width.
-
-	wire [L0_PIPELINE_LENGTH-1:0] trig_sync_bottom_r[1:0]; //bit 0 on all of these is meta-stable 
-	wire [L0_PIPELINE_LENGTH-1:0] trig_sync_bottom_l[1:0];
+	// Bit 0 on these is the oneshot.
+	// Bit 1 indicates the last clock in the oneshot. This is used to hold off the
+//	// coincidence to its proper length when the two are timed right.
+	wire [1:0] trig_sync_bottom_r[1:0]; //bit 0 on all of these is meta-stable 
+	wire [1:0] trig_sync_bottom_l[1:0];
 	
-	wire [L0_PIPELINE_LENGTH-1:0] trig_sync_middle_r[1:0];
-	wire [L0_PIPELINE_LENGTH-1:0] trig_sync_middle_l[1:0];
+	wire [1:0] trig_sync_middle_r[1:0];
+	wire [1:0] trig_sync_middle_l[1:0];
 	
-	wire [L0_PIPELINE_LENGTH-1:0] trig_sync_top_r[1:0];
-	wire [L0_PIPELINE_LENGTH-1:0] trig_sync_top_l[1:0];
+	wire [1:0] trig_sync_top_r[1:0];
+	wire [1:0] trig_sync_top_l[1:0];
 	
 	wire [2:0] L1_logic[1:0];
 	
-	localparam SYNC_RESET_BIT = 1; //bit in above registers used to clear
-	localparam SYNC_COINC_BIT = 0; //bit in above registers used in downstream trigger
+	localparam L0_ONESHOT_LENGTH = 1;
 
 	localparam TOP = 2;
 	localparam MID = 1;
@@ -70,24 +51,42 @@ module ANITA4_dual_L1_trigger(
 	generate
 		genvar i;
 		for (i=0;i<2;i=i+1) begin : PHI_L0
-			ANITA4_trig_single_pol u_bot_r(.CLK(clk_i),.MASK(mask_i[6*i+0]),.FORCE(force_i[6*i+0]),
-													 .TRIG(BOT_RCP[i]), .CLR(trig_sync_bottom_r[i][SYNC_RESET_BIT]), 
-													 .SYNC(trig_sync_bottom_r[i]));													 
-			ANITA4_trig_single_pol u_bot_l(BOT_LCP[i], clk_i, trig_sync_bottom_l[i][SYNC_RESET_BIT], trig_sync_bottom_l[i],mask_i[6*i+1], force_i[6*i+1]); 
-
-			ANITA4_trig_single_pol u_mid_r(MID_RCP[i], clk_i, trig_sync_middle_r[i][SYNC_RESET_BIT], trig_sync_middle_r[i],mask_i[6*i+2], force_i[6*i+2]); 
-			ANITA4_trig_single_pol u_mid_l(MID_LCP[i], clk_i, trig_sync_middle_l[i][SYNC_RESET_BIT], trig_sync_middle_l[i],mask_i[6*i+3], force_i[6*i+3]); 
-
-			ANITA4_trig_single_pol u_top_r(TOP_RCP[i], clk_i, trig_sync_top_r[i][SYNC_RESET_BIT], trig_sync_top_r[i],mask_i[6*i+4],force_i[6*i+4]); 
-			ANITA4_trig_single_pol u_top_l(TOP_LCP[i], clk_i, trig_sync_top_l[i][SYNC_RESET_BIT], trig_sync_top_l[i],mask_i[6*i+5],force_i[6*i+5]); 
-
-			// Check coincidence, and kill the coincidence after 4 ns.
-			assign L1_logic[i][BOT] = (trig_sync_bottom_r[i][SYNC_COINC_BIT] && trig_sync_bottom_l[i][SYNC_COINC_BIT]) &&
-											 !(trig_sync_bottom_r[i][SYNC_COINC_BIT+1] && trig_sync_bottom_l[i][SYNC_COINC_BIT+1]);
-			assign L1_logic[i][MID] = (trig_sync_middle_r[i][SYNC_COINC_BIT] && trig_sync_middle_l[i][SYNC_COINC_BIT]) &&
-											 !(trig_sync_middle_r[i][SYNC_COINC_BIT+1] && trig_sync_middle_l[i][SYNC_COINC_BIT+1]);
-			assign L1_logic[i][TOP] = (trig_sync_top_r[i][SYNC_COINC_BIT] && trig_sync_top_l[i][SYNC_COINC_BIT]) &&
-											 !(trig_sync_top_r[i][SYNC_COINC_BIT+1] && trig_sync_top_l[i][SYNC_COINC_BIT+1]);											 											 
+			ANITA4_trig_single_pol_fast_retrig #(.ONESHOT(L0_ONESHOT_LENGTH)) 
+					u_bot_r(.CLK(clk_i),.MASK(mask_i[6*i+0]),.FORCE(force_i[6*i+0]),
+							  .TRIG(BOT_RCP[i]),.TRIG_SYNC(trig_sync_bottom_r[i]));													 
+			ANITA4_trig_single_pol_fast_retrig #(.ONESHOT(L0_ONESHOT_LENGTH)) 
+					u_bot_l(.CLK(clk_i),.MASK(mask_i[6*i+1]),.FORCE(force_i[6*i+1]),
+							  .TRIG(BOT_LCP[i]),.TRIG_SYNC(trig_sync_bottom_l[i]));													 
+			ANITA4_trig_single_pol_fast_retrig #(.ONESHOT(L0_ONESHOT_LENGTH)) 
+					u_mid_r(.CLK(clk_i),.MASK(mask_i[6*i+2]),.FORCE(force_i[6*i+2]),
+							  .TRIG(MID_RCP[i]),.TRIG_SYNC(trig_sync_middle_r[i]));													 
+			ANITA4_trig_single_pol_fast_retrig #(.ONESHOT(L0_ONESHOT_LENGTH)) 
+					u_mid_l(.CLK(clk_i),.MASK(mask_i[6*i+3]),.FORCE(force_i[6*i+3]),
+							  .TRIG(MID_LCP[i]),.TRIG_SYNC(trig_sync_middle_l[i]));													 
+			ANITA4_trig_single_pol_fast_retrig #(.ONESHOT(L0_ONESHOT_LENGTH)) 
+					u_top_r(.CLK(clk_i),.MASK(mask_i[6*i+4]),.FORCE(force_i[6*i+4]),
+							  .TRIG(TOP_RCP[i]),.TRIG_SYNC(trig_sync_top_r[i]));													 
+			ANITA4_trig_single_pol_fast_retrig #(.ONESHOT(L0_ONESHOT_LENGTH)) 
+					u_top_l(.CLK(clk_i),.MASK(mask_i[6*i+5]),.FORCE(force_i[6*i+5]),
+							  .TRIG(TOP_LCP[i]),.TRIG_SYNC(trig_sync_top_l[i]));													 
+			// The single pol outputs are 2 clocks: bit 0 is the oneshot, and bit 1 indicates
+			// the last bit in the oneshot. The oneshots are 1 clock longer than their nominal
+			// length to allow for coincidences across a clock boundary.
+			//
+			// A "4 ns oneshot" therefore means that any 2 signals within 4 ns of each other
+			// will meet this coincidence. Signals separated by 6 ns will meet this coincidence
+			// 50% of the time. Signals separated by 8 ns will essentially never meet this
+			// coincidence.
+			//
+			// True comparator/clock jitter will smooth things out a bit more.
+			//
+			// Bit 1 allows for truncating the oneshot to always be 4 ns max.
+			assign L1_logic[i][BOT] = (trig_sync_bottom_r[i][0] && trig_sync_bottom_l[i][0]) &&
+											 !(trig_sync_bottom_r[i][1] && trig_sync_bottom_l[i][1]);
+			assign L1_logic[i][MID] = (trig_sync_middle_r[i][0] && trig_sync_middle_l[i][0]) &&
+											 !(trig_sync_middle_r[i][1] && trig_sync_middle_l[i][1]);
+			assign L1_logic[i][TOP] = (trig_sync_top_r[i][0] && trig_sync_top_l[i][0]) &&
+											 !(trig_sync_top_r[i][1] && trig_sync_top_l[i][1]);											 											 
 		end
 	endgenerate
 	
