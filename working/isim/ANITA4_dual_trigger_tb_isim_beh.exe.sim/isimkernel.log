@@ -1,0 +1,10 @@
+Command line:
+   ANITA4_dual_trigger_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  43375
+
+Wed Jul 12 10:52:44 2023
+
+
+ Elaboration Time: 0.04 sec

@@ -442,15 +442,15 @@ module TOP_v38(
 	assign lab_debug_sel = vio_async_in[3:2];
 	assign lab_testpattern_sel = vio_async_in[4];
 
-	// screw the ILAs for now.
-	/*
-	(* BOX_TYPE = "black_box" *)
-	cs_icon u_icon(.CONTROL0(ila_control),.CONTROL1(vio_control));
-	(* BOX_TYPE = "black_box" *)
-	cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug_muxer));
-	(* BOX_TYPE = "black_box" *)
-	cs_vio u_vio(.CONTROL(vio_control),.ASYNC_OUT(vio_async_in));
-	*/
+	// // screw the ILAs for now.
+	
+	// (* BOX_TYPE = "black_box" *)
+	// cs_icon u_icon(.CONTROL0(ila_control),.CONTROL1(vio_control));
+	// (* BOX_TYPE = "black_box" *)
+	// cs_ila u_ila(.CONTROL(ila_control),.CLK(clk33),.TRIG0(debug_muxer));
+	// (* BOX_TYPE = "black_box" *)
+	// cs_vio u_vio(.CONTROL(vio_control),.ASYNC_OUT(vio_async_in));
+	
 	
 	// Unused LAB test crap.
 	// CALSNH = VCC

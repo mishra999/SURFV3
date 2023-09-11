@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ise/git/firmware-surf/working/ANITA4_dual_L1_trigger_isim_beh.exe" -prj "/home/ise/git/firmware-surf/working/ANITA4_dual_L1_trigger_beh.prj" "work.ANITA4_dual_L1_trigger" "work.glbl" 

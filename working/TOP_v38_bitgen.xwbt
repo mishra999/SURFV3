@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/git/firmware-surf/working/TOP_v38.ncd
+OUTFILE=/home/ise/git/firmware-surf/working/TOP_v38.bit
+FAMILY=Spartan3
+PART=xc3s2000-4fg456
+WORKINGDIR=/home/ise/git/firmware-surf/working
+LICENSE=ISE
+USER_INFO=8416_11442_1478797146_620

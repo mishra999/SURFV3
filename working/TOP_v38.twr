@@ -1,0 +1,1494 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -filter
+/home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf
+
+Design file:              TOP_v38.ncd
+Physical constraint file: TOP_v38.pcf
+Device,package,speed:     xc3s2000,fg456,-4 (PRODUCTION 1.39 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "BCLKO_IBUFG" PERIOD = 30 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 47975 paths analyzed, 8171 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  24.030ns.
+--------------------------------------------------------------------------------
+
+Paths for end point u_mess/LDBUF[20].u_ld (W14.O1), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     2.985ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_mess/ncs3_q (FF)
+  Destination:          u_mess/LDBUF[20].u_ld (FF)
+  Requirement:          15.000ns
+  Data Path Delay:      11.713ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.302ns (0.815 - 1.117)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    u_scalers/clk33_i falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/ncs3_q to u_mess/LDBUF[20].u_ld
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    U20.IQ1              Tiockiq               0.259   nCS3
+                                                       u_mess/ncs3_q
+    SLICE_X90Y15.F3      net (fanout=38)       7.563   u_mess/ncs3_q
+    SLICE_X90Y15.X       Tilo                  0.608   u_dacs/dac_storage<2>_0_9
+                                                       u_mess/ldo_in_mux<20>1
+    W14.O1               net (fanout=1)        2.535   u_mess/ldo_in_mux<20>
+    W14.OTCLK1           Tioock                0.748   LD<20>
+                                                       u_mess/LDBUF[20].u_ld
+    -------------------------------------------------  ---------------------------
+    Total                                     11.713ns (1.615ns logic, 10.098ns route)
+                                                       (13.8% logic, 86.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.613ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_mess/regs_or_hk_20 (FF)
+  Destination:          u_mess/LDBUF[20].u_ld (FF)
+  Requirement:          15.000ns
+  Data Path Delay:      6.387ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    u_scalers/clk33_i falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/regs_or_hk_20 to u_mess/LDBUF[20].u_ld
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X98Y23.XQ      Tcko                  0.720   u_mess/regs_or_hk<20>
+                                                       u_mess/regs_or_hk_20
+    SLICE_X90Y15.F2      net (fanout=1)        1.776   u_mess/regs_or_hk<20>
+    SLICE_X90Y15.X       Tilo                  0.608   u_dacs/dac_storage<2>_0_9
+                                                       u_mess/ldo_in_mux<20>1
+    W14.O1               net (fanout=1)        2.535   u_mess/ldo_in_mux<20>
+    W14.OTCLK1           Tioock                0.748   LD<20>
+                                                       u_mess/LDBUF[20].u_ld
+    -------------------------------------------------  ---------------------------
+    Total                                      6.387ns (2.076ns logic, 4.311ns route)
+                                                       (32.5% logic, 67.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_mess/LDBUF[31].u_ld (U12.O1), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.134ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_mess/ncs3_q (FF)
+  Destination:          u_mess/LDBUF[31].u_ld (FF)
+  Requirement:          15.000ns
+  Data Path Delay:      11.583ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.283ns (0.834 - 1.117)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    u_scalers/clk33_i falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/ncs3_q to u_mess/LDBUF[31].u_ld
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    U20.IQ1              Tiockiq               0.259   nCS3
+                                                       u_mess/ncs3_q
+    SLICE_X82Y11.G1      net (fanout=38)       8.129   u_mess/ncs3_q
+    SLICE_X82Y11.Y       Tilo                  0.608   u_mess/ldo_in_mux<31>
+                                                       u_mess/ldo_in_mux<31>1
+    U12.O1               net (fanout=1)        1.839   u_mess/ldo_in_mux<31>
+    U12.OTCLK1           Tioock                0.748   LD<31>
+                                                       u_mess/LDBUF[31].u_ld
+    -------------------------------------------------  ---------------------------
+    Total                                     11.583ns (1.615ns logic, 9.968ns route)
+                                                       (13.9% logic, 86.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.999ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_mess/regs_or_hk_31 (FF)
+  Destination:          u_mess/LDBUF[31].u_ld (FF)
+  Requirement:          15.000ns
+  Data Path Delay:      6.001ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    u_scalers/clk33_i falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/regs_or_hk_31 to u_mess/LDBUF[31].u_ld
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X102Y25.YQ     Tcko                  0.720   u_mess/regs_or_hk<31>
+                                                       u_mess/regs_or_hk_31
+    SLICE_X82Y11.G3      net (fanout=1)        2.086   u_mess/regs_or_hk<31>
+    SLICE_X82Y11.Y       Tilo                  0.608   u_mess/ldo_in_mux<31>
+                                                       u_mess/ldo_in_mux<31>1
+    U12.O1               net (fanout=1)        1.839   u_mess/ldo_in_mux<31>
+    U12.OTCLK1           Tioock                0.748   LD<31>
+                                                       u_mess/LDBUF[31].u_ld
+    -------------------------------------------------  ---------------------------
+    Total                                      6.001ns (2.076ns logic, 3.925ns route)
+                                                       (34.6% logic, 65.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_mess/LDBUF[22].u_ld (AB13.O1), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.281ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_mess/ncs3_q (FF)
+  Destination:          u_mess/LDBUF[22].u_ld (FF)
+  Requirement:          15.000ns
+  Data Path Delay:      11.440ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.279ns (0.838 - 1.117)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    u_scalers/clk33_i falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/ncs3_q to u_mess/LDBUF[22].u_ld
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    U20.IQ1              Tiockiq               0.259   nCS3
+                                                       u_mess/ncs3_q
+    SLICE_X83Y11.G1      net (fanout=38)       8.225   u_mess/ncs3_q
+    SLICE_X83Y11.Y       Tilo                  0.551   u_mess/ldo_in_mux<22>
+                                                       u_mess/ldo_in_mux<22>1
+    AB13.O1              net (fanout=1)        1.657   u_mess/ldo_in_mux<22>
+    AB13.OTCLK1          Tioock                0.748   LD<22>
+                                                       u_mess/LDBUF[22].u_ld
+    -------------------------------------------------  ---------------------------
+    Total                                     11.440ns (1.558ns logic, 9.882ns route)
+                                                       (13.6% logic, 86.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.707ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_mess/regs_or_hk_22 (FF)
+  Destination:          u_mess/LDBUF[22].u_ld (FF)
+  Requirement:          15.000ns
+  Data Path Delay:      6.293ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    u_scalers/clk33_i falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/regs_or_hk_22 to u_mess/LDBUF[22].u_ld
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X100Y25.XQ     Tcko                  0.720   u_mess/regs_or_hk<22>
+                                                       u_mess/regs_or_hk_22
+    SLICE_X83Y11.G3      net (fanout=1)        2.617   u_mess/regs_or_hk<22>
+    SLICE_X83Y11.Y       Tilo                  0.551   u_mess/ldo_in_mux<22>
+                                                       u_mess/ldo_in_mux<22>1
+    AB13.O1              net (fanout=1)        1.657   u_mess/ldo_in_mux<22>
+    AB13.OTCLK1          Tioock                0.748   LD<22>
+                                                       u_mess/LDBUF[22].u_ld
+    -------------------------------------------------  ---------------------------
+    Total                                      6.293ns (2.019ns logic, 4.274ns route)
+                                                       (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "BCLKO_IBUFG" PERIOD = 30 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point u_dacs/dac_storage<2>_2_3 (SLICE_X127Y1.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.491ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_mess/ldi_q_3 (FF)
+  Destination:          u_dacs/dac_storage<2>_2_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.434ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.057ns (0.151 - 0.208)
+  Source Clock:         u_scalers/clk33_i rising at 30.000ns
+  Destination Clock:    u_scalers/clk33_i rising at 30.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_mess/ldi_q_3 to u_dacs/dac_storage<2>_2_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    V18.IQ1              Tiockiq               0.207   LD<3>
+                                                       u_mess/ldi_q_3
+    SLICE_X127Y1.BY      net (fanout=34)       0.464   u_mess/ldi_q<3>
+    SLICE_X127Y1.CLK     Tckdi       (-Th)     0.237   u_dacs/dac_storage<2>_2_3
+                                                       u_dacs/dac_storage<2>_2_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.434ns (-0.030ns logic, 0.464ns route)
+                                                       (-6.9% logic, 106.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_dacs/dac_storage<5>_2_4 (SLICE_X99Y0.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.510ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_mess/ldi_q_4 (FF)
+  Destination:          u_dacs/dac_storage<5>_2_4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.451ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.059ns (0.143 - 0.202)
+  Source Clock:         u_scalers/clk33_i rising at 30.000ns
+  Destination Clock:    u_scalers/clk33_i rising at 30.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_mess/ldi_q_4 to u_dacs/dac_storage<5>_2_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    AA17.IQ1             Tiockiq               0.207   LD<4>
+                                                       u_mess/ldi_q_4
+    SLICE_X99Y0.BY       net (fanout=34)       0.481   u_mess/ldi_q<4>
+    SLICE_X99Y0.CLK      Tckdi       (-Th)     0.237   u_dacs/dac_storage<5>_2_4
+                                                       u_dacs/dac_storage<5>_2_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.451ns (-0.030ns logic, 0.481ns route)
+                                                       (-6.7% logic, 106.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_dacs/dac_storage<5>_3_4 (SLICE_X99Y1.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.510ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_mess/ldi_q_4 (FF)
+  Destination:          u_dacs/dac_storage<5>_3_4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.451ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.059ns (0.143 - 0.202)
+  Source Clock:         u_scalers/clk33_i rising at 30.000ns
+  Destination Clock:    u_scalers/clk33_i rising at 30.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_mess/ldi_q_4 to u_dacs/dac_storage<5>_3_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    AA17.IQ1             Tiockiq               0.207   LD<4>
+                                                       u_mess/ldi_q_4
+    SLICE_X99Y1.BY       net (fanout=34)       0.481   u_mess/ldi_q<4>
+    SLICE_X99Y1.CLK      Tckdi       (-Th)     0.237   u_dacs/dac_storage<5>_3_4
+                                                       u_dacs/dac_storage<5>_3_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.451ns (-0.030ns logic, 0.481ns route)
+                                                       (-6.7% logic, 106.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "BCLKO_IBUFG" PERIOD = 30 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 20.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 30.000ns
+  Low pulse: 15.000ns
+  Low pulse limit: 5.000ns (Tdcmpw_CLKIN_25_50)
+  Physical resource: u_infrastructure/u_clk100/DCM_INST/CLKIN
+  Logical resource: u_infrastructure/u_clk100/DCM_INST/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: u_scalers/clk33_i
+--------------------------------------------------------------------------------
+Slack: 20.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 30.000ns
+  High pulse: 15.000ns
+  High pulse limit: 5.000ns (Tdcmpw_CLKIN_25_50)
+  Physical resource: u_infrastructure/u_clk100/DCM_INST/CLKIN
+  Logical resource: u_infrastructure/u_clk100/DCM_INST/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: u_scalers/clk33_i
+--------------------------------------------------------------------------------
+Slack: 24.013ns (period - min period limit)
+  Period: 30.000ns
+  Min period limit: 5.987ns (167.029MHz) (Tdcmpps)
+  Physical resource: u_infrastructure/u_clk125/DCM_INST/PSCLK
+  Logical resource: u_infrastructure/u_clk125/DCM_INST/PSCLK
+  Location pin: DCM_X1Y1.PSCLK
+  Clock network: u_scalers/clk33_i
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PERIOD analysis for net 
+"u_infrastructure/u_clk100/CLKFX_BUF" derived from  NET "BCLKO_IBUFG" PERIOD = 
+30 ns HIGH 50%;  divided by 3.00 to 10 nS and duty cycle corrected to HIGH 5 nS 
+ 
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1240 paths analyzed, 664 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   7.817ns.
+--------------------------------------------------------------------------------
+
+Paths for end point u_labtop/LAB[0].u_test/u_wclk/FF1 (C7.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     1.298ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_labtop/LAB[0].u_test/clock_reset (FF)
+  Destination:          u_labtop/LAB[0].u_test/u_wclk/FF1 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      3.702ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk100 rising at 0.000ns
+  Destination Clock:    clk100 falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_labtop/LAB[0].u_test/clock_reset to u_labtop/LAB[0].u_test/u_wclk/FF1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y145.YQ     Tcko                  0.720   u_labtop/LAB[0].u_test/clock_reset
+                                                       u_labtop/LAB[0].u_test/clock_reset
+    C7.SR                net (fanout=1)        1.991   u_labtop/LAB[0].u_test/clock_reset
+    C7.OTCLK2            Tiosrcko              0.991   A_GCK
+                                                       u_labtop/LAB[0].u_test/u_wclk/FF1
+    -------------------------------------------------  ---------------------------
+    Total                                      3.702ns (1.711ns logic, 1.991ns route)
+                                                       (46.2% logic, 53.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_labtop/LAB[3].u_test/u_wclk/FF1 (AA6.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     1.888ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_labtop/LAB[3].u_test/clock_reset (FF)
+  Destination:          u_labtop/LAB[3].u_test/u_wclk/FF1 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      3.108ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.004ns (0.662 - 0.666)
+  Source Clock:         clk100 rising at 0.000ns
+  Destination Clock:    clk100 falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_labtop/LAB[3].u_test/clock_reset to u_labtop/LAB[3].u_test/u_wclk/FF1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X39Y3.YQ       Tcko                  0.720   u_labtop/LAB[3].u_test/clock_reset
+                                                       u_labtop/LAB[3].u_test/clock_reset
+    AA6.SR               net (fanout=1)        1.397   u_labtop/LAB[3].u_test/clock_reset
+    AA6.OTCLK2           Tiosrcko              0.991   D_GCK
+                                                       u_labtop/LAB[3].u_test/u_wclk/FF1
+    -------------------------------------------------  ---------------------------
+    Total                                      3.108ns (1.711ns logic, 1.397ns route)
+                                                       (55.1% logic, 44.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_labtop/LAB[2].u_test/u_wclk/FF1 (P4.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     1.979ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_labtop/LAB[2].u_test/clock_reset (FF)
+  Destination:          u_labtop/LAB[2].u_test/u_wclk/FF1 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      2.883ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.138ns (0.522 - 0.660)
+  Source Clock:         clk100 rising at 0.000ns
+  Destination Clock:    clk100 falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_labtop/LAB[2].u_test/clock_reset to u_labtop/LAB[2].u_test/u_wclk/FF1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y53.YQ       Tcko                  0.720   u_labtop/LAB[2].u_test/clock_reset
+                                                       u_labtop/LAB[2].u_test/clock_reset
+    P4.SR                net (fanout=1)        1.172   u_labtop/LAB[2].u_test/clock_reset
+    P4.OTCLK2            Tiosrcko              0.991   C_GCK
+                                                       u_labtop/LAB[2].u_test/u_wclk/FF1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.883ns (1.711ns logic, 1.172ns route)
+                                                       (59.3% logic, 40.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: PERIOD analysis for net "u_infrastructure/u_clk100/CLKFX_BUF" derived from
+ NET "BCLKO_IBUFG" PERIOD = 30 ns HIGH 50%;
+ divided by 3.00 to 10 nS and duty cycle corrected to HIGH 5 nS 
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_labtop/LAB[3].u_read_done_sync/Mshreg_SyncA_clkB_1/SRL16E (SLICE_X64Y16.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.686ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_labtop/LAB[3].u_read_done_sync/FlagToggle_clkA (FF)
+  Destination:          u_labtop/LAB[3].u_read_done_sync/Mshreg_SyncA_clkB_1/SRL16E (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      3.408ns (Levels of Logic = 1)
+  Clock Path Skew:      2.722ns (3.962 - 1.240)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    clk100 rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_labtop/LAB[3].u_read_done_sync/FlagToggle_clkA to u_labtop/LAB[3].u_read_done_sync/Mshreg_SyncA_clkB_1/SRL16E
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y17.YQ      Tcko                  0.576   u_labtop/LAB[3].u_read_done_sync/FlagToggle_clkA
+                                                       u_labtop/LAB[3].u_read_done_sync/FlagToggle_clkA
+    SLICE_X64Y16.BY      net (fanout=3)        2.550   u_labtop/LAB[3].u_read_done_sync/FlagToggle_clkA
+    SLICE_X64Y16.CLK     Tdh         (-Th)    -0.282   u_labtop/LAB[3].u_read_done_sync/SyncA_clkB<1>
+                                                       u_labtop/LAB[3].u_read_done_sync/Mshreg_SyncA_clkB_1/SRL16E
+    -------------------------------------------------  ---------------------------
+    Total                                      3.408ns (0.858ns logic, 2.550ns route)
+                                                       (25.2% logic, 74.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0 (SLICE_X117Y88.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.827ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0 (FF)
+  Destination:          u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.827ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk100 rising at 10.000ns
+  Destination Clock:    clk100 rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0 to u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X117Y88.XQ     Tcko                  0.576   u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase<0>
+                                                       u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0
+    SLICE_X117Y88.BX     net (fanout=6)        0.534   u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase<0>
+    SLICE_X117Y88.CLK    Tckdi       (-Th)     0.283   u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase<0>
+                                                       u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.827ns (0.293ns logic, 0.534ns route)
+                                                       (35.4% logic, 64.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E (SLICE_X106Y95.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.842ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1 (FF)
+  Destination:          u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      3.555ns (Levels of Logic = 1)
+  Clock Path Skew:      2.713ns (3.607 - 0.894)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    clk100 rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1 to u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X106Y94.YQ     Tcko                  0.576   u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB<1>
+                                                       u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1
+    SLICE_X106Y95.BY     net (fanout=3)        2.697   u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB<1>
+    SLICE_X106Y95.CLK    Tdh         (-Th)    -0.282   u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA<1>
+                                                       u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E
+    -------------------------------------------------  ---------------------------
+    Total                                      3.555ns (0.858ns logic, 2.697ns route)
+                                                       (24.1% logic, 75.9% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: PERIOD analysis for net "u_infrastructure/u_clk100/CLKFX_BUF" derived from
+ NET "BCLKO_IBUFG" PERIOD = 30 ns HIGH 50%;
+ divided by 3.00 to 10 nS and duty cycle corrected to HIGH 5 nS 
+
+--------------------------------------------------------------------------------
+Slack: 5.239ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 4.761ns (210.040MHz) (Tdcmpfx)
+  Physical resource: u_infrastructure/u_clk100/DCM_INST/CLKFX
+  Logical resource: u_infrastructure/u_clk100/DCM_INST/CLKFX
+  Location pin: DCM_X0Y0.CLKFX
+  Clock network: u_infrastructure/u_clk100/CLKFX_BUF
+--------------------------------------------------------------------------------
+Slack: 8.428ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 0.786ns (Tcl)
+  Physical resource: u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd<0>/CLK
+  Logical resource: u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd_0/CK
+  Location pin: SLICE_X106Y121.CLK
+  Clock network: clk100
+--------------------------------------------------------------------------------
+Slack: 8.428ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 0.786ns (Tch)
+  Physical resource: u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd<0>/CLK
+  Logical resource: u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd_0/CK
+  Location pin: SLICE_X106Y121.CLK
+  Clock network: clk100
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: NET "u_infrastructure/clk125_to_bufg" PERIOD = 8 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   5.987ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "u_infrastructure/clk125_to_bufg" PERIOD = 8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 2.013ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 5.987ns (167.029MHz) (Tdcmpc)
+  Physical resource: u_infrastructure/u_clk125/DCM_INST/CLKIN
+  Logical resource: u_infrastructure/u_clk125/DCM_INST/CLKIN
+  Location pin: DCM_X1Y1.CLKIN
+  Clock network: u_infrastructure/clk125_o
+--------------------------------------------------------------------------------
+Slack: 2.013ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 5.987ns (167.029MHz) (Tdcmpco)
+  Physical resource: u_infrastructure/u_clk125/DCM_INST/CLK0
+  Logical resource: u_infrastructure/u_clk125/DCM_INST/CLK0
+  Location pin: DCM_X1Y1.CLK0
+  Clock network: u_infrastructure/u_clk125/CLK0_BUF
+--------------------------------------------------------------------------------
+Slack: 3.200ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 8.000ns
+  Low pulse: 4.000ns
+  Low pulse limit: 2.400ns (Tdcmpw_CLKIN_100_150)
+  Physical resource: u_infrastructure/u_clk125/DCM_INST/CLKIN
+  Logical resource: u_infrastructure/u_clk125/DCM_INST/CLKIN
+  Location pin: DCM_X1Y1.CLKIN
+  Clock network: u_infrastructure/clk125_o
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PERIOD analysis for net 
+"u_infrastructure/u_clk125/CLK2X_BUF" derived from  NET 
+"u_infrastructure/clk125_to_bufg" PERIOD = 8 ns HIGH 50%;  divided by 2.00 to 4 
+nS and duty cycle corrected to HIGH 2 nS  
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 192 paths analyzed, 164 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   3.980ns.
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_oneshot (SLICE_X92Y134.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.020ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_reset_0 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_oneshot (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.980ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk250 rising at 0.000ns
+  Destination Clock:    clk250 rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_reset_0 to u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_oneshot
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X86Y157.YQ     Tcko                  0.720   u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_reset<0>
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_reset_0
+    SLICE_X92Y134.CE     net (fanout=3)        2.658   u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_reset<0>
+    SLICE_X92Y134.CLK    Tceck                 0.602   u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_oneshot
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_oneshot
+    -------------------------------------------------  ---------------------------
+    Total                                      3.980ns (1.322ns logic, 2.658ns route)
+                                                       (33.2% logic, 66.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_oneshot (SLICE_X92Y132.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.038ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_reset_0 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_oneshot (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.886ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.076ns (0.631 - 0.707)
+  Source Clock:         clk250 rising at 0.000ns
+  Destination Clock:    clk250 rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_reset_0 to u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_oneshot
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X74Y146.YQ     Tcko                  0.720   u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_reset<0>
+                                                       u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_reset_0
+    SLICE_X92Y132.CE     net (fanout=3)        2.564   u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_reset<0>
+    SLICE_X92Y132.CLK    Tceck                 0.602   u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_oneshot
+                                                       u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_oneshot
+    -------------------------------------------------  ---------------------------
+    Total                                      3.886ns (1.322ns logic, 2.564ns route)
+                                                       (34.0% logic, 66.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_oneshot (SLICE_X88Y132.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.052ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_reset_0 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_oneshot (FF)
+  Requirement:          4.000ns
+  Data Path Delay:      3.876ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.072ns (0.649 - 0.721)
+  Source Clock:         clk250 rising at 0.000ns
+  Destination Clock:    clk250 rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_reset_0 to u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_oneshot
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X71Y147.YQ     Tcko                  0.720   u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_reset<0>
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_reset_0
+    SLICE_X88Y132.CE     net (fanout=3)        2.554   u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_reset<0>
+    SLICE_X88Y132.CLK    Tceck                 0.602   u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_oneshot
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_oneshot
+    -------------------------------------------------  ---------------------------
+    Total                                      3.876ns (1.322ns logic, 2.554ns route)
+                                                       (34.1% logic, 65.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: PERIOD analysis for net "u_infrastructure/u_clk125/CLK2X_BUF" derived from
+ NET "u_infrastructure/clk125_to_bufg" PERIOD = 8 ns HIGH 50%;
+ divided by 2.00 to 4 nS and duty cycle corrected to HIGH 2 nS 
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/mid_top_sr_0_1 (SLICE_X107Y130.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.806ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_trigger/u_trig_phi0/mid_top_sr_0_0 (FF)
+  Destination:          u_trigger/u_trig_phi0/mid_top_sr_0_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.806ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk250 rising at 4.000ns
+  Destination Clock:    clk250 rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_trigger/u_trig_phi0/mid_top_sr_0_0 to u_trigger/u_trig_phi0/mid_top_sr_0_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X106Y131.YQ    Tcko                  0.576   u_trigger/u_trig_phi0/mid_top_sr_0<0>
+                                                       u_trigger/u_trig_phi0/mid_top_sr_0_0
+    SLICE_X107Y130.BX    net (fanout=1)        0.513   u_trigger/u_trig_phi0/mid_top_sr_0<0>
+    SLICE_X107Y130.CLK   Tckdi       (-Th)     0.283   u_trigger/u_trig_phi0/mid_top_sr_0<1>
+                                                       u_trigger/u_trig_phi0/mid_top_sr_0_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.806ns (0.293ns logic, 0.513ns route)
+                                                       (36.4% logic, 63.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/mid_top_sr_1_1 (SLICE_X95Y129.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.813ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_trigger/u_trig_phi0/mid_top_sr_1_0 (FF)
+  Destination:          u_trigger/u_trig_phi0/mid_top_sr_1_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.813ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk250 rising at 4.000ns
+  Destination Clock:    clk250 rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_trigger/u_trig_phi0/mid_top_sr_1_0 to u_trigger/u_trig_phi0/mid_top_sr_1_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X95Y128.YQ     Tcko                  0.576   u_trigger/u_trig_phi0/mid_top_sr_1<0>
+                                                       u_trigger/u_trig_phi0/mid_top_sr_1_0
+    SLICE_X95Y129.BX     net (fanout=1)        0.520   u_trigger/u_trig_phi0/mid_top_sr_1<0>
+    SLICE_X95Y129.CLK    Tckdi       (-Th)     0.283   u_trigger/u_trig_phi0/mid_top_sr_1<1>
+                                                       u_trigger/u_trig_phi0/mid_top_sr_1_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.813ns (0.293ns logic, 0.520ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_reset_0 (SLICE_X111Y148.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.873ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_reg (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_reset_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.873ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk250 rising at 4.000ns
+  Destination Clock:    clk250 rising at 4.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_reg to u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_reset_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X110Y149.YQ    Tcko                  0.576   u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_sync_meta
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_reg
+    SLICE_X111Y148.BY    net (fanout=1)        0.534   u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_sync_meta
+    SLICE_X111Y148.CLK   Tckdi       (-Th)     0.237   u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_reset<0>
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_reset_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.873ns (0.339ns logic, 0.534ns route)
+                                                       (38.8% logic, 61.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: PERIOD analysis for net "u_infrastructure/u_clk125/CLK2X_BUF" derived from
+ NET "u_infrastructure/clk125_to_bufg" PERIOD = 8 ns HIGH 50%;
+ divided by 2.00 to 4 nS and duty cycle corrected to HIGH 2 nS 
+
+--------------------------------------------------------------------------------
+Slack: 1.007ns (period - min period limit)
+  Period: 4.000ns
+  Min period limit: 2.993ns (334.113MHz) (Tdcmpco)
+  Physical resource: u_infrastructure/u_clk125/DCM_INST/CLK2X
+  Logical resource: u_infrastructure/u_clk125/DCM_INST/CLK2X
+  Location pin: DCM_X1Y1.CLK2X
+  Clock network: u_infrastructure/u_clk125/CLK2X_BUF
+--------------------------------------------------------------------------------
+Slack: 2.428ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 4.000ns
+  Low pulse: 2.000ns
+  Low pulse limit: 0.786ns (Tcl)
+  Physical resource: u_trigger/u_trig_phi0/L2_bot_mid<1>/CLK
+  Logical resource: u_trigger/u_trig_phi0/L2_bot_mid_1/CK
+  Location pin: SLICE_X106Y123.CLK
+  Clock network: clk250
+--------------------------------------------------------------------------------
+Slack: 2.428ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 4.000ns
+  High pulse: 2.000ns
+  High pulse limit: 0.786ns (Tch)
+  Physical resource: u_trigger/u_trig_phi0/L2_bot_mid<1>/CLK
+  Logical resource: u_trigger/u_trig_phi0/L2_bot_mid_1/CK
+  Location pin: SLICE_X106Y123.CLK
+  Clock network: clk250
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_LABA = MAXDELAY FROM TIMEGRP "HOLDA" TO TIMEGRP "NRUNA" 
+9.7 ns;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 1 path analyzed, 1 endpoint analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   9.665ns.
+--------------------------------------------------------------------------------
+
+Paths for end point A_NRUN (D9.PAD), 1 path
+--------------------------------------------------------------------------------
+Slack (slowest paths):  0.035ns (requirement - data path)
+  Source:               HOLD_P<0> (PAD)
+  Destination:          A_NRUN (PAD)
+  Requirement:          9.700ns
+  Data Path Delay:      9.665ns (Levels of Logic = 2)
+
+  Maximum Data Path: HOLD_P<0> to A_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    J19.I                Tiopi                 1.577   HOLD_P<0>
+                                                       HOLD_P<0>
+                                                       u_infrastructure/LAB[0].u_hold_ibufds/IBUFDS
+    D9.O1                net (fanout=1)        5.859   HOLD<0>
+    D9.PAD               Tioop                 2.229   A_NRUN
+                                                       A_NRUN_OBUF
+                                                       A_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                      9.665ns (3.806ns logic, 5.859ns route)
+                                                       (39.4% logic, 60.6% route)
+
+--------------------------------------------------------------------------------
+
+Fastest Paths: TS_LABA = MAXDELAY FROM TIMEGRP "HOLDA" TO TIMEGRP "NRUNA" 9.7 ns;
+--------------------------------------------------------------------------------
+
+Paths for end point A_NRUN (D9.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay (hold path):      7.881ns (data path)
+  Source:               HOLD_P<0> (PAD)
+  Destination:          A_NRUN (PAD)
+  Requirement:          0.000ns
+  Data Path Delay:      7.881ns (Levels of Logic = 2)
+
+  Minimum Data Path: HOLD_P<0> to A_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    J19.I                Tiopi                 1.411   HOLD_P<0>
+                                                       HOLD_P<0>
+                                                       u_infrastructure/LAB[0].u_hold_ibufds/IBUFDS
+    D9.O1                net (fanout=1)        4.687   HOLD<0>
+    D9.PAD               Tioop                 1.783   A_NRUN
+                                                       A_NRUN_OBUF
+                                                       A_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                      7.881ns (3.194ns logic, 4.687ns route)
+                                                       (40.5% logic, 59.5% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_LABB = MAXDELAY FROM TIMEGRP "HOLDB" TO TIMEGRP "NRUNB" 
+9.7 ns;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 1 path analyzed, 1 endpoint analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   9.429ns.
+--------------------------------------------------------------------------------
+
+Paths for end point B_NRUN (F5.PAD), 1 path
+--------------------------------------------------------------------------------
+Slack (slowest paths):  0.271ns (requirement - data path)
+  Source:               HOLD_P<1> (PAD)
+  Destination:          B_NRUN (PAD)
+  Requirement:          9.700ns
+  Data Path Delay:      9.429ns (Levels of Logic = 2)
+
+  Maximum Data Path: HOLD_P<1> to B_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    J22.I                Tiopi                 1.577   HOLD_P<1>
+                                                       HOLD_P<1>
+                                                       u_infrastructure/LAB[1].u_hold_ibufds/IBUFDS
+    F5.O1                net (fanout=1)        5.623   HOLD<1>
+    F5.PAD               Tioop                 2.229   B_NRUN
+                                                       B_NRUN_OBUF
+                                                       B_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                      9.429ns (3.806ns logic, 5.623ns route)
+                                                       (40.4% logic, 59.6% route)
+
+--------------------------------------------------------------------------------
+
+Fastest Paths: TS_LABB = MAXDELAY FROM TIMEGRP "HOLDB" TO TIMEGRP "NRUNB" 9.7 ns;
+--------------------------------------------------------------------------------
+
+Paths for end point B_NRUN (F5.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay (hold path):      7.692ns (data path)
+  Source:               HOLD_P<1> (PAD)
+  Destination:          B_NRUN (PAD)
+  Requirement:          0.000ns
+  Data Path Delay:      7.692ns (Levels of Logic = 2)
+
+  Minimum Data Path: HOLD_P<1> to B_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    J22.I                Tiopi                 1.411   HOLD_P<1>
+                                                       HOLD_P<1>
+                                                       u_infrastructure/LAB[1].u_hold_ibufds/IBUFDS
+    F5.O1                net (fanout=1)        4.498   HOLD<1>
+    F5.PAD               Tioop                 1.783   B_NRUN
+                                                       B_NRUN_OBUF
+                                                       B_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                      7.692ns (3.194ns logic, 4.498ns route)
+                                                       (41.5% logic, 58.5% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_LABC = MAXDELAY FROM TIMEGRP "HOLDC" TO TIMEGRP "NRUNC" 
+9.7 ns;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 1 path analyzed, 1 endpoint analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   9.609ns.
+--------------------------------------------------------------------------------
+
+Paths for end point C_NRUN (N4.PAD), 1 path
+--------------------------------------------------------------------------------
+Slack (slowest paths):  0.091ns (requirement - data path)
+  Source:               HOLD_P<2> (PAD)
+  Destination:          C_NRUN (PAD)
+  Requirement:          9.700ns
+  Data Path Delay:      9.609ns (Levels of Logic = 2)
+
+  Maximum Data Path: HOLD_P<2> to C_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K18.I                Tiopi                 1.577   HOLD_P<2>
+                                                       HOLD_P<2>
+                                                       u_infrastructure/LAB[2].u_hold_ibufds/IBUFDS
+    N4.O1                net (fanout=1)        5.803   HOLD<2>
+    N4.PAD               Tioop                 2.229   C_NRUN
+                                                       C_NRUN_OBUF
+                                                       C_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                      9.609ns (3.806ns logic, 5.803ns route)
+                                                       (39.6% logic, 60.4% route)
+
+--------------------------------------------------------------------------------
+
+Fastest Paths: TS_LABC = MAXDELAY FROM TIMEGRP "HOLDC" TO TIMEGRP "NRUNC" 9.7 ns;
+--------------------------------------------------------------------------------
+
+Paths for end point C_NRUN (N4.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay (hold path):      7.837ns (data path)
+  Source:               HOLD_P<2> (PAD)
+  Destination:          C_NRUN (PAD)
+  Requirement:          0.000ns
+  Data Path Delay:      7.837ns (Levels of Logic = 2)
+
+  Minimum Data Path: HOLD_P<2> to C_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K18.I                Tiopi                 1.411   HOLD_P<2>
+                                                       HOLD_P<2>
+                                                       u_infrastructure/LAB[2].u_hold_ibufds/IBUFDS
+    N4.O1                net (fanout=1)        4.643   HOLD<2>
+    N4.PAD               Tioop                 1.783   C_NRUN
+                                                       C_NRUN_OBUF
+                                                       C_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                      7.837ns (3.194ns logic, 4.643ns route)
+                                                       (40.8% logic, 59.2% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_LABD = MAXDELAY FROM TIMEGRP "HOLDD" TO TIMEGRP "NRUND" 
+10.8 ns;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 1 path analyzed, 1 endpoint analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is  10.774ns.
+--------------------------------------------------------------------------------
+
+Paths for end point D_NRUN (AA4.PAD), 1 path
+--------------------------------------------------------------------------------
+Slack (slowest paths):  0.026ns (requirement - data path)
+  Source:               HOLD_P<3> (PAD)
+  Destination:          D_NRUN (PAD)
+  Requirement:          10.800ns
+  Data Path Delay:      10.774ns (Levels of Logic = 2)
+
+  Maximum Data Path: HOLD_P<3> to D_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K20.I                Tiopi                 1.577   HOLD_P<3>
+                                                       HOLD_P<3>
+                                                       u_infrastructure/LAB[3].u_hold_ibufds/IBUFDS
+    AA4.O1               net (fanout=1)        6.968   HOLD<3>
+    AA4.PAD              Tioop                 2.229   D_NRUN
+                                                       D_NRUN_OBUF
+                                                       D_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                     10.774ns (3.806ns logic, 6.968ns route)
+                                                       (35.3% logic, 64.7% route)
+
+--------------------------------------------------------------------------------
+
+Fastest Paths: TS_LABD = MAXDELAY FROM TIMEGRP "HOLDD" TO TIMEGRP "NRUND" 10.8 ns;
+--------------------------------------------------------------------------------
+
+Paths for end point D_NRUN (AA4.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay (hold path):      8.768ns (data path)
+  Source:               HOLD_P<3> (PAD)
+  Destination:          D_NRUN (PAD)
+  Requirement:          0.000ns
+  Data Path Delay:      8.768ns (Levels of Logic = 2)
+
+  Minimum Data Path: HOLD_P<3> to D_NRUN
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    K20.I                Tiopi                 1.411   HOLD_P<3>
+                                                       HOLD_P<3>
+                                                       u_infrastructure/LAB[3].u_hold_ibufds/IBUFDS
+    AA4.O1               net (fanout=1)        5.574   HOLD<3>
+    AA4.PAD              Tioop                 1.783   D_NRUN
+                                                       D_NRUN_OBUF
+                                                       D_NRUN
+    -------------------------------------------------  ---------------------------
+    Total                                      8.768ns (3.194ns logic, 5.574ns route)
+                                                       (36.4% logic, 63.6% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_false_mask_path_path" TIG;
+
+ 12 paths analyzed, 12 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch (SLICE_X56Y159.BY), 1 path
+--------------------------------------------------------------------------------
+Delay (setup path):     7.406ns (data path - clock path skew + uncertainty)
+  Source:               u_mess/short_mask_11 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch (FF)
+  Data Path Delay:      7.039ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.367ns (1.954 - 2.321)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    ANT_C<1> falling
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/short_mask_11 to u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X92Y73.YQ      Tcko                  0.720   u_mess/short_mask<11>
+                                                       u_mess/short_mask_11
+    SLICE_X56Y159.BY     net (fanout=2)        6.059   u_mess/short_mask<11>
+    SLICE_X56Y159.CLK                          0.260   u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_latch
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch
+    -------------------------------------------------  ---------------------------
+    Total                                      7.039ns (0.980ns logic, 6.059ns route)
+                                                       (13.9% logic, 86.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch (SLICE_X58Y159.BY), 1 path
+--------------------------------------------------------------------------------
+Delay (setup path):     7.114ns (data path - clock path skew + uncertainty)
+  Source:               u_mess/short_mask_4 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch (FF)
+  Data Path Delay:      6.875ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.239ns (1.954 - 2.193)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    ANT_B<0> falling
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/short_mask_4 to u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X85Y67.YQ      Tcko                  0.720   u_mess/short_mask<4>
+                                                       u_mess/short_mask_4
+    SLICE_X58Y159.BY     net (fanout=2)        5.895   u_mess/short_mask<4>
+    SLICE_X58Y159.CLK                          0.260   u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_latch
+                                                       u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch
+    -------------------------------------------------  ---------------------------
+    Total                                      6.875ns (0.980ns logic, 5.895ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch (SLICE_X70Y159.BY), 1 path
+--------------------------------------------------------------------------------
+Delay (setup path):     7.051ns (data path - clock path skew + uncertainty)
+  Source:               u_mess/short_mask_1 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch (FF)
+  Data Path Delay:      6.597ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.454ns (1.954 - 2.408)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    ANT_B<7> falling
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: u_mess/short_mask_1 to u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X112Y78.YQ     Tcko                  0.720   u_mess/short_mask<1>
+                                                       u_mess/short_mask_1
+    SLICE_X70Y159.BY     net (fanout=2)        5.617   u_mess/short_mask<1>
+    SLICE_X70Y159.CLK                          0.260   u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/trig_latch
+                                                       u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch
+    -------------------------------------------------  ---------------------------
+    Total                                      6.597ns (0.980ns logic, 5.617ns route)
+                                                       (14.9% logic, 85.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: PATH "TS_false_mask_path_path" TIG;
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch (SLICE_X126Y159.BY), 1 path
+--------------------------------------------------------------------------------
+Delay (hold path):      3.001ns (datapath - clock path skew - uncertainty)
+  Source:               u_mess/short_mask_2 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch (FF)
+  Data Path Delay:      2.954ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.047ns (2.294 - 2.341)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    ANT_B<4> falling
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_mess/short_mask_2 to u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X127Y66.YQ     Tcko                  0.576   u_mess/short_mask<2>
+                                                       u_mess/short_mask_2
+    SLICE_X126Y159.BY    net (fanout=2)        2.616   u_mess/short_mask<2>
+    SLICE_X126Y159.CLK               (-Th)     0.238   u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/trig_latch
+                                                       u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch
+    -------------------------------------------------  ---------------------------
+    Total                                      2.954ns (0.338ns logic, 2.616ns route)
+                                                       (11.4% logic, 88.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch (SLICE_X117Y159.BY), 1 path
+--------------------------------------------------------------------------------
+Delay (hold path):      3.093ns (datapath - clock path skew - uncertainty)
+  Source:               u_mess/short_mask_7 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch (FF)
+  Data Path Delay:      3.273ns (Levels of Logic = 0)
+  Clock Path Skew:      0.180ns (2.630 - 2.450)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    ANT_C<7> falling
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_mess/short_mask_7 to u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X117Y74.YQ     Tcko                  0.576   u_mess/short_mask<7>
+                                                       u_mess/short_mask_7
+    SLICE_X117Y159.BY    net (fanout=2)        2.934   u_mess/short_mask<7>
+    SLICE_X117Y159.CLK   Tckdi       (-Th)     0.237   u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_latch
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch
+    -------------------------------------------------  ---------------------------
+    Total                                      3.273ns (0.339ns logic, 2.934ns route)
+                                                       (10.4% logic, 89.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch (SLICE_X97Y159.BY), 1 path
+--------------------------------------------------------------------------------
+Delay (hold path):      3.691ns (datapath - clock path skew - uncertainty)
+  Source:               u_mess/short_mask_6 (FF)
+  Destination:          u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch (FF)
+  Data Path Delay:      4.037ns (Levels of Logic = 0)
+  Clock Path Skew:      0.346ns (2.639 - 2.293)
+  Source Clock:         u_scalers/clk33_i rising at 0.000ns
+  Destination Clock:    ANT_C<6> falling
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: u_mess/short_mask_6 to u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X102Y75.YQ     Tcko                  0.576   u_mess/short_mask<6>
+                                                       u_mess/short_mask_6
+    SLICE_X97Y159.BY     net (fanout=2)        3.698   u_mess/short_mask<6>
+    SLICE_X97Y159.CLK    Tckdi       (-Th)     0.237   u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/trig_latch
+                                                       u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch
+    -------------------------------------------------  ---------------------------
+    Total                                      4.037ns (0.339ns logic, 3.698ns route)
+                                                       (8.4% logic, 91.6% route)
+
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for BCLKO_IBUFG
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|BCLKO_IBUFG                    |     30.000ns|     24.030ns|     23.451ns|            0|            0|        47975|         1240|
+| u_infrastructure/u_clk100/CLKF|     10.000ns|      7.817ns|          N/A|            0|            0|         1240|            0|
+| X_BUF                         |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+Derived Constraints for u_infrastructure/clk125_to_bufg
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|u_infrastructure/clk125_to_bufg|      8.000ns|      5.987ns|      7.960ns|            0|            0|            0|          192|
+| u_infrastructure/u_clk125/CLK2|      4.000ns|      3.980ns|          N/A|            0|            0|          192|            0|
+| X_BUF                         |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock A2TC<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    7.114|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A2TC<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.656|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A2TC<4>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    4.606|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A2TC<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.430|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A2TC<6>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.848|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A2TC<7>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    7.051|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A3TC<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.113|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A3TC<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    7.406|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A3TC<4>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.086|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A3TC<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    5.505|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A3TC<6>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    5.635|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock A3TC<7>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    4.844|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock BCLKO
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |   16.703|         |   12.015|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLK125_N
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK125_N       |    3.980|         |         |         |
+CLK125_P       |    3.980|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLK125_P
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK125_N       |    3.980|         |         |         |
+CLK125_P       |    3.980|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A2TC<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    7.114|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A2TC<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.656|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A2TC<4>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    4.606|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A2TC<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.430|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A2TC<6>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.848|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A2TC<7>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    7.051|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A3TC<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.113|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A3TC<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    7.406|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A3TC<4>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    6.086|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A3TC<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    5.505|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A3TC<6>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    5.635|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock VTRG_A3TC<7>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+BCLKO          |         |         |    4.844|         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+HOLD_P<0>      |A_NRUN         |    9.665|
+HOLD_P<1>      |B_NRUN         |    9.429|
+HOLD_P<2>      |C_NRUN         |    9.609|
+HOLD_P<3>      |D_NRUN         |   10.774|
+---------------+---------------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 49423 paths, 0 nets, and 15625 connections
+
+Design statistics:
+   Minimum period:  24.030ns{1}   (Maximum frequency:  41.615MHz)
+   Maximum path delay from/to any node:  10.774ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri Aug 11 15:31:34 2023 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 429 MB
+
+
+

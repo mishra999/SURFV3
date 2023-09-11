@@ -1,0 +1,381 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Map Application Log File for Design 'TOP_v38'
+
+Design Information
+------------------
+Command Line   : map -filter
+/home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -p
+xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication
+on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd
+TOP_v38.ngd TOP_v38.pcf 
+Target Device  : xc3s2000
+Target Package : fg456
+Target Speed   : -4
+Mapper Version : spartan3 -- $Revision: 1.55 $
+Mapped Date    : Fri Aug 11 15:30:13 2023
+
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:56 - Part 'xc3s2000' is not a WebPack part.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+----------------------------------------------------------------------
+WARNING:LIT:222 - The use of IBUFDS_DIFF_OUT symbol
+   "u_trigger_rx/CH_input_gen_B[0].CH_input_u/in_buf_u" (output
+   signal=trig_scaler_path<8>) is only recommended for expert users.
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal A1TC<0> connected to top level port A1TC<0> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<0> connected to top level port
+   VTRG_A1TC<0> has been removed.
+WARNING:MapLib:701 - Signal A1TC<1> connected to top level port A1TC<1> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<1> connected to top level port
+   VTRG_A1TC<1> has been removed.
+WARNING:MapLib:701 - Signal A1TC<2> connected to top level port A1TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<2> connected to top level port
+   VTRG_A1TC<2> has been removed.
+WARNING:MapLib:701 - Signal A1TC<3> connected to top level port A1TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<3> connected to top level port
+   VTRG_A1TC<3> has been removed.
+WARNING:MapLib:701 - Signal A1TC<4> connected to top level port A1TC<4> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<4> connected to top level port
+   VTRG_A1TC<4> has been removed.
+WARNING:MapLib:701 - Signal A1TC<5> connected to top level port A1TC<5> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<5> connected to top level port
+   VTRG_A1TC<5> has been removed.
+WARNING:MapLib:701 - Signal A1TC<6> connected to top level port A1TC<6> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<6> connected to top level port
+   VTRG_A1TC<6> has been removed.
+WARNING:MapLib:701 - Signal A1TC<7> connected to top level port A1TC<7> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<7> connected to top level port
+   VTRG_A1TC<7> has been removed.
+WARNING:MapLib:701 - Signal A2TC<2> connected to top level port A2TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A2TC<2> connected to top level port
+   VTRG_A2TC<2> has been removed.
+WARNING:MapLib:701 - Signal A2TC<3> connected to top level port A2TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A2TC<3> connected to top level port
+   VTRG_A2TC<3> has been removed.
+WARNING:MapLib:701 - Signal A3TC<2> connected to top level port A3TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A3TC<2> connected to top level port
+   VTRG_A3TC<2> has been removed.
+WARNING:MapLib:701 - Signal A3TC<3> connected to top level port A3TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A3TC<3> connected to top level port
+   VTRG_A3TC<3> has been removed.
+WARNING:MapLib:701 - Signal A4TC<0> connected to top level port A4TC<0> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<0> connected to top level port
+   VTRG_A4TC<0> has been removed.
+WARNING:MapLib:701 - Signal A4TC<1> connected to top level port A4TC<1> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<1> connected to top level port
+   VTRG_A4TC<1> has been removed.
+WARNING:MapLib:701 - Signal A4TC<2> connected to top level port A4TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<2> connected to top level port
+   VTRG_A4TC<2> has been removed.
+WARNING:MapLib:701 - Signal A4TC<3> connected to top level port A4TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<3> connected to top level port
+   VTRG_A4TC<3> has been removed.
+WARNING:MapLib:701 - Signal A4TC<4> connected to top level port A4TC<4> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<4> connected to top level port
+   VTRG_A4TC<4> has been removed.
+WARNING:MapLib:701 - Signal A4TC<5> connected to top level port A4TC<5> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<5> connected to top level port
+   VTRG_A4TC<5> has been removed.
+WARNING:MapLib:701 - Signal A4TC<6> connected to top level port A4TC<6> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<6> connected to top level port
+   VTRG_A4TC<6> has been removed.
+WARNING:MapLib:701 - Signal A4TC<7> connected to top level port A4TC<7> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<7> connected to top level port
+   VTRG_A4TC<7> has been removed.
+WARNING:MapLib:701 - Signal B_RCO connected to top level port B_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal B_HITBUS connected to top level port B_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal C_RCO connected to top level port C_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal A_HITBUS connected to top level port A_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal D_RCO connected to top level port D_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal D_HITBUS connected to top level port D_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal A_RCO connected to top level port A_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal C_HITBUS connected to top level port C_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<11> connected to top level port B_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<10> connected to top level port B_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<9> connected to top level port B_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<8> connected to top level port B_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<7> connected to top level port B_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<6> connected to top level port B_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<5> connected to top level port B_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<4> connected to top level port B_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<3> connected to top level port B_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<2> connected to top level port B_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<1> connected to top level port B_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<0> connected to top level port B_DAT<0> has
+   been removed.
+WARNING:MapLib:701 - Signal LA<7> connected to top level port LA<7> has been
+   removed.
+WARNING:MapLib:701 - Signal C_DAT<11> connected to top level port C_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<10> connected to top level port C_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<9> connected to top level port C_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<8> connected to top level port C_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<7> connected to top level port C_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<6> connected to top level port C_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<5> connected to top level port C_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<4> connected to top level port C_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<3> connected to top level port C_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<2> connected to top level port C_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<1> connected to top level port C_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<0> connected to top level port C_DAT<0> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<11> connected to top level port D_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<10> connected to top level port D_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<9> connected to top level port D_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<8> connected to top level port D_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<7> connected to top level port D_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<6> connected to top level port D_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<5> connected to top level port D_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<4> connected to top level port D_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<3> connected to top level port D_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<2> connected to top level port D_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<1> connected to top level port D_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<0> connected to top level port D_DAT<0> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<11> connected to top level port A_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<10> connected to top level port A_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<9> connected to top level port A_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<8> connected to top level port A_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<7> connected to top level port A_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<6> connected to top level port A_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<5> connected to top level port A_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<4> connected to top level port A_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<3> connected to top level port A_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<2> connected to top level port A_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<1> connected to top level port A_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<0> connected to top level port A_DAT<0> has
+   been removed.
+WARNING:LIT:216 - PSINCDEC, PSEN, PSCLK and PSDONE of DCM symbol
+   "physical_group_u_infrastructure/u_clk125/CLK0_BUF/u_infrastructure/u_clk125/
+   DCM_INST" (output signal=u_infrastructure/u_clk125/CLK0_BUF) should be driven
+   by active signals if CLKOUT_PHASE_SHIFT is set to VARIABLE.
+Running directed packing...
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+Running delay-based LUT packing...
+Updating timing models...
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 2 secs 
+Total CPU  time at the beginning of Placer: 1 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:77e1b635) REAL time: 3 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:77e1b635) REAL time: 3 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:77e1b635) REAL time: 3 secs 
+
+Phase 4.2  Initial Clock and IO Placement
+
+
+
+..................
+WARNING:Place:1019 - A clock IOB / clock component pair have been found that are not placed at an optimal clock IOB /
+   clock site pair. The clock component <u_infrastructure/u_bufg_clk125> is placed at site <BUFGMUX5>. The IO component
+   <CLK125_P> is placed at site <L20>.  This will not allow the use of the fast path between the IO and the Clock
+   buffer. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <CLK125_P.PAD>
+   allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN.
+   The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that
+   this error condition be corrected in the design.
+Phase 4.2  Initial Clock and IO Placement (Checksum:5ee6278b) REAL time: 3 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:5ee6278b) REAL time: 3 secs 
+
+Phase 6.4  Local Placement Optimization
+...................
+Phase 6.4  Local Placement Optimization (Checksum:5ee6278b) REAL time: 3 secs 
+
+Phase 7.28  Local Placement Optimization
+Phase 7.28  Local Placement Optimization (Checksum:5ee6278b) REAL time: 3 secs 
+
+Phase 8.8  Global Placement
+...........................
+.....
+.................
+................
+................
+................
+Phase 8.8  Global Placement (Checksum:9cecc06c) REAL time: 5 secs 
+
+Phase 9.29  Local Placement Optimization
+Phase 9.29  Local Placement Optimization (Checksum:9cecc06c) REAL time: 5 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:9cecc06c) REAL time: 5 secs 
+
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:11808c04) REAL time: 45 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:11808c04) REAL time: 45 secs 
+
+Total REAL time to Placer completion: 45 secs 
+Total CPU  time to Placer completion: 43 secs 
+Running physical synthesis...
+
+Physical synthesis completed.
+Running post-placement packing...
+WARNING:PhysDesignRules:777 - Incomplete DCM configuration. The DCM comp u_infrastructure/u_clk125/DCM_INST is set for
+   variable phase shifting with CLKOUT_PHASE_SHIFT set to VARIABLE. Therefore the phase shift pins (PSINCDEC, PSEN and
+   PSCLK) should have active signals in order to implement variable phase shifting, if this implementation is wanted.
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:  113
+Logic Utilization:
+  Number of Slice Flip Flops:         2,888 out of  40,960    7%
+  Number of 4 input LUTs:             2,413 out of  40,960    5%
+Logic Distribution:
+  Number of occupied Slices:          2,858 out of  20,480   13%
+    Number of Slices containing only related logic:   2,858 out of   2,858 100%
+    Number of Slices containing unrelated logic:          0 out of   2,858   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       2,994 out of  40,960    7%
+    Number used as logic:             2,276
+    Number used as a route-thru:        581
+    Number used as Shift registers:     137
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                221 out of     333   66%
+    IOB Flip Flops:                     215
+    IOB Master Pads:                     26
+    IOB Slave Pads:                      26
+  Number of RAMB16s:                      2 out of      40    5%
+  Number of BUFGMUXs:                     5 out of       8   62%
+  Number of DCMs:                         2 out of       4   50%
+
+Average Fanout of Non-Clock Nets:                3.01
+
+Peak Memory Usage:  838 MB
+Total REAL time to MAP completion:  46 secs 
+Total CPU time to MAP completion:   45 secs 
+
+Mapping completed.
+See MAP report file "TOP_v38_map.mrp" for details.

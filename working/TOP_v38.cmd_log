@@ -1,0 +1,52 @@
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+trce -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf 
+bitgen -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -f TOP_v38.ut TOP_v38.ncd 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38_cs.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+trce -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf 
+bitgen -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -f TOP_v38.ut TOP_v38.ncd 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+trce -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf 
+bitgen -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -f TOP_v38.ut TOP_v38.ncd 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+trce -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf 
+bitgen -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -f TOP_v38.ut TOP_v38.ncd 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+trce -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf 
+bitgen -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -f TOP_v38.ut TOP_v38.ncd 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+trce -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf 
+bitgen -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -f TOP_v38.ut TOP_v38.ncd 
+xst -intstyle ise -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -ifn "/home/ise/git/firmware-surf/working/TOP_v38.xst" -ofn "/home/ise/git/firmware-surf/working/TOP_v38.syr" 
+ngdbuild -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -dd _ngo -sd ../par/ipcore_dir -nt timestamp -uc /home/ise/git/firmware-surf/par/TOP_v38.ucf -p xc3s2000-fg456-4 TOP_v38.ngc TOP_v38.ngd  
+map -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -p xc3s2000-fg456-4 -timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+par -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -w -intstyle ise -ol high -xe n -t 1 -p TOP_v38_map.ncd TOP_v38.ncd TOP_v38.pcf 
+trce -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TOP_v38.twx TOP_v38.ncd -o TOP_v38.twr TOP_v38.pcf 
+bitgen -filter "/home/ise/git/firmware-surf/par/iseconfig/filter.filter" -intstyle ise -f TOP_v38.ut TOP_v38.ncd 

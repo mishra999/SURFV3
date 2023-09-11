@@ -1,0 +1,4 @@
+verilog work "../rtl/Verilog_Library/flag_sync.v"
+verilog work "../rtl/ANITA4_trig_single_pol_fast_retrig.v"
+verilog work "../rtl/ANITA4_dual_L1_trigger.v"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,10 @@
+Command line:
+   SURF_TOP_TEST_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  41593
+
+Tue Jul 18 18:29:29 2023
+
+
+ Elaboration Time: 0.27 sec

@@ -68,6 +68,7 @@ module LAB_TOPv2(
 			 input [12:0] addr_i,
 			 output [31:0] dat_o,
 			 output 		  done_o,
+			 output [3:0] lab_done_mask_o, //by me
 			 input			debug_tp_i,
 			 input	[1:0] debug_sel_i,
 			 output [34:0] debug_o
@@ -78,6 +79,7 @@ module LAB_TOPv2(
    wire [15:0] 		    lab_dat[3:0];
    wire [3:0] 		    lab_wr;
    reg [3:0] 		    lab_done = {4{1'b0}};
+   reg [3:0] 		    lab_mask = {4{1'b0}}; // by me
 	wire [3:0] 			readout_done;
 	
    wire [31:0] 		    ram_dat[3:0];
@@ -98,14 +100,21 @@ module LAB_TOPv2(
 	integer j;
 	always @(posedge clk_i) begin
 		for (j=0;j<4;j=j+1) begin
+			lab_mask[j] <= 0;
 			if (rst_i) lab_done[j] <= 0;
-			else if (digitize_i[j]) lab_done[j] <= 0;
-			else if (readout_done[j]) lab_done[j] <= 1;
+			else if (digitize_i[j]) begin
+				lab_done[j] <= 0;
+				lab_mask[j] <= 0;
+			end
+			else if (readout_done[j]) begin 
+				lab_done[j] <= 1;
+				lab_mask[j] <= 1;
+			end
 		end
 	end
 
    // The LAB_RAM here uses 3 block RAMs to generate
-   // a 3072x16 RAM with a 1536x32 readout port.
+   // a 3072x16 RAM with a 1536x32 readout port.(16384/16*3=3072)
    // This means we use 12 block RAMs in total.
    generate
       genvar 		    i;
@@ -197,6 +206,7 @@ module LAB_TOPv2(
 	assign D_GCK = GCK[ 3 ];
 	assign D_GCCLR = GCCLR[ 3 ];
 
+	assign lab_done_mask_o = lab_mask; //by me
 	assign done_o = lab_done[addr_i[12:11]];
 	assign dat_o = ram_dat[addr_i[12:11]];
 

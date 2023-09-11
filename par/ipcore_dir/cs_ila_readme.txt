@@ -1,5 +1,5 @@
 The following files were generated for 'cs_ila' in directory
-C:\Users\EDG\Desktop\firmware-surf\par\ipcore_dir\
+/home/ise/git/firmware-surf/par/ipcore_dir/
 
 XCO file generator:
    Generate an XCO file for compatibility with legacy flows.
@@ -19,6 +19,11 @@ Creates an implementation netlist:
    * cs_ila.veo
    * cs_ila.xdc
    * cs_ila_xmdf.tcl
+
+Creates an HDL instantiation template:
+   Creates an HDL instantiation template for the IP.
+
+   * cs_ila.veo
 
 IP Symbol Generator:
    Generate an IP symbol based on the current project options'.

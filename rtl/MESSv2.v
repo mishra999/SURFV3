@@ -109,7 +109,7 @@ module MESSv2( input        clk_i,
    wire [34:0] 		     event_fifo_out;
    wire 		     event_fifo_empty;   
 
-   // These generate the address outputs for the lab and HK data.
+   // These generate the address outputs for the lab and HK (house keeping) data.
    reg [6:0] 		     hk_counter = {7{1'b0}};
 	// The LAB counter consists of 2 segments - the page register, and the
 	// address predictor.

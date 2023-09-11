@@ -278,7 +278,7 @@ module ANITA4_dual_L1_trigger(
 	wire [1:0] bot_coincidence_with_top = {bot_top_coincidence_1,
 														bot_top_coincidence_0};
 	reg [1:0] L2_all_reg = 2'b00;
-	(* IOB = "FORCE" *)
+	// (* IOB = "FORCE" *) //by me
 	reg [1:0] L2 = {2{1'b0}};
 	wire [1:0] L2_reset;
 	

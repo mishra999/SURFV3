@@ -1,0 +1,15 @@
+V3 9
+FL /home/ise/git/firmware-surf/rtl/CH_input.vhd 2023/06/16.01:26:51 P.20131013
+EN work/CH_input 1691767795 FL /home/ise/git/firmware-surf/rtl/CH_input.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/CH_input/BEHAVIORAL 1691767796 \
+      FL /home/ise/git/firmware-surf/rtl/CH_input.vhd EN work/CH_input 1691767795 \
+      CP IBUFDS_DIFF_OUT
+FL /home/ise/git/firmware-surf/rtl/Trig_RX.vhd 2023/06/16.01:26:51 P.20131013
+EN work/Trig_RX 1691767797 FL /home/ise/git/firmware-surf/rtl/Trig_RX.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182
+AR work/Trig_RX/BEHAVIORAL 1691767798 \
+      FL /home/ise/git/firmware-surf/rtl/Trig_RX.vhd EN work/Trig_RX 1691767797 \
+      CP CH_input

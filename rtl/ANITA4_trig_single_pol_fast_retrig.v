@@ -48,7 +48,7 @@ module ANITA4_trig_single_pol_fast_retrig(TRIG, CLK, CLR, TRIG_SYNC, MASK, FORCE
 	integer i,j;
 	always @(posedge CLK) begin
 		trig_reset[0] <= trig_sync_meta;
-		for (j=1;j<ONESHOT;j=j+1) trig_reset[j] <= trig_reset[j-1];
+		// for (j=1;j<ONESHOT;j=j+1) trig_reset[j] <= trig_reset[j-1];
 		
 		if (trig_pipeline[ONESHOT-1]) begin
 			trig_oneshot <= 0;
@@ -56,9 +56,9 @@ module ANITA4_trig_single_pol_fast_retrig(TRIG, CLK, CLR, TRIG_SYNC, MASK, FORCE
 		end else begin
 			if (trig_reset[0]) trig_oneshot <= 1;
 			trig_pipeline[0] <= trig_oneshot;
-			for (i=1;i<ONESHOT;i=i+1) begin
-				trig_pipeline[i] <= trig_pipeline[i-1];
-			end
+			// for (i=1;i<ONESHOT;i=i+1) begin
+			// 	trig_pipeline[i] <= trig_pipeline[i-1];
+			// end
 		end
 	end
 	assign TRIG_SYNC={trig_pipeline,trig_oneshot};

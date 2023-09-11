@@ -6,7 +6,9 @@ module LAB_RAM_v2( input clk_i,
 		   output [31:0] dat_o);
 
    // We need 3 block RAMs, because we never write to
-   // 3072-4096.
+   // 3072-4096.  16384/16=1024, 16384/16*3=3072, 9*260 = 2340, bin(2340) = '0b100100100100'
+   // 16384/32 = 512 read out, 511 > '0b111111111'(9 bits),10 and 11 to select ram
+
    wire [31:0] 			 dat_out[3:0];
    wire [31:0] 			 dat_muxed;
    

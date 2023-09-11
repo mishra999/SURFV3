@@ -1,0 +1,1270 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Aug 11 15:30:58 2023
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/trig_latch" LOCATE = SITE
+        "SLICE_X70Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/trig_latch" LOCATE = SITE
+        "SLICE_X97Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/trig_sync_meta" LOCATE = SITE
+        "SLICE_X127Y116" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/trig_latch" LOCATE = SITE
+        "SLICE_X98Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/trig_latch" LOCATE = SITE
+        "SLICE_X68Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/trig_sync_meta" LOCATE = SITE
+        "SLICE_X71Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/trig_latch" LOCATE = SITE
+        "SLICE_X80Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_sync_meta" LOCATE = SITE
+        "SLICE_X57Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/trig_latch" LOCATE = SITE
+        "SLICE_X126Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_sync_meta" LOCATE = SITE
+        "SLICE_X59Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/trig_sync_meta" LOCATE = SITE
+        "SLICE_X99Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/trig_sync_meta" LOCATE = SITE
+        "SLICE_X81Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_latch" LOCATE = SITE
+        "SLICE_X56Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/trig_sync_meta" LOCATE = SITE
+        "SLICE_X127Y129" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_sync_meta" LOCATE = SITE
+        "SLICE_X79Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/trig_latch" LOCATE = SITE
+        "SLICE_X126Y116" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/trig_latch" LOCATE = SITE
+        "SLICE_X126Y129" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/trig_sync_meta" LOCATE = SITE
+        "SLICE_X127Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_latch" LOCATE = SITE
+        "SLICE_X117Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_latch" LOCATE = SITE
+        "SLICE_X78Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_latch" LOCATE = SITE
+        "SLICE_X58Y159" LEVEL 1;
+COMP "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/trig_sync_meta" LOCATE = SITE
+        "SLICE_X69Y159" LEVEL 1;
+COMP "WnR" LOCATE = SITE "W22" LEVEL 1;
+COMP "nRD" LOCATE = SITE "W21" LEVEL 1;
+COMP "nWR" LOCATE = SITE "W20" LEVEL 1;
+COMP "LCLK" LOCATE = SITE "AA12" LEVEL 1;
+COMP "SCLK" LOCATE = SITE "A10" LEVEL 1;
+COMP "nADS" LOCATE = SITE "W19" LEVEL 1;
+COMP "nCS2" LOCATE = SITE "U19" LEVEL 1;
+COMP "nCS3" LOCATE = SITE "U20" LEVEL 1;
+COMP "BCLKO" LOCATE = SITE "AB12" LEVEL 1;
+COMP "LA<2>" LOCATE = SITE "R21" LEVEL 1;
+COMP "LA<3>" LOCATE = SITE "AB18" LEVEL 1;
+COMP "LA<4>" LOCATE = SITE "AA19" LEVEL 1;
+COMP "LA<5>" LOCATE = SITE "AB19" LEVEL 1;
+COMP "LA<6>" LOCATE = SITE "AA20" LEVEL 1;
+COMP "LD<0>" LOCATE = SITE "AA18" LEVEL 1;
+COMP "LD<1>" LOCATE = SITE "Y18" LEVEL 1;
+COMP "LD<2>" LOCATE = SITE "W18" LEVEL 1;
+COMP "LD<3>" LOCATE = SITE "V18" LEVEL 1;
+COMP "LD<4>" LOCATE = SITE "AA17" LEVEL 1;
+COMP "LD<5>" LOCATE = SITE "Y17" LEVEL 1;
+COMP "LD<6>" LOCATE = SITE "W17" LEVEL 1;
+COMP "LD<7>" LOCATE = SITE "U17" LEVEL 1;
+COMP "LD<8>" LOCATE = SITE "AB16" LEVEL 1;
+COMP "LD<9>" LOCATE = SITE "AA16" LEVEL 1;
+COMP "CMD_N" LOCATE = SITE "L17" LEVEL 1;
+COMP "CMD_P" LOCATE = SITE "L18" LEVEL 1;
+COMP "VTRG_A2TC<0>" LOCATE = SITE "F11" LEVEL 1;
+COMP "VTRG_A2TC<1>" LOCATE = SITE "G17" LEVEL 1;
+COMP "VTRG_A2TC<4>" LOCATE = SITE "C19" LEVEL 1;
+COMP "VTRG_A2TC<5>" LOCATE = SITE "D17" LEVEL 1;
+COMP "VTRG_A2TC<6>" LOCATE = SITE "D15" LEVEL 1;
+COMP "VTRG_A2TC<7>" LOCATE = SITE "C13" LEVEL 1;
+COMP "A_GCK" LOCATE = SITE "C7" LEVEL 1;
+COMP "VTRG_A3TC<0>" LOCATE = SITE "D20" LEVEL 1;
+COMP "VTRG_A3TC<1>" LOCATE = SITE "C10" LEVEL 1;
+COMP "VTRG_A3TC<4>" LOCATE = SITE "A13" LEVEL 1;
+COMP "VTRG_A3TC<5>" LOCATE = SITE "B15" LEVEL 1;
+COMP "VTRG_A3TC<6>" LOCATE = SITE "B17" LEVEL 1;
+COMP "B_GCK" LOCATE = SITE "G5" LEVEL 1;
+COMP "VTRG_A3TC<7>" LOCATE = SITE "A19" LEVEL 1;
+COMP "C_GCK" LOCATE = SITE "P4" LEVEL 1;
+COMP "D_GCK" LOCATE = SITE "AA6" LEVEL 1;
+COMP "REF_N" LOCATE = SITE "K21" LEVEL 1;
+COMP "REF_P" LOCATE = SITE "K22" LEVEL 1;
+COMP "AD_NCONVST" LOCATE = SITE "M19" LEVEL 1;
+COMP "NSYNC" LOCATE = SITE "C22" LEVEL 1;
+COMP "BAD<0>" LOCATE = SITE "R18" LEVEL 1;
+COMP "BAD<1>" LOCATE = SITE "T22" LEVEL 1;
+COMP "BAD<2>" LOCATE = SITE "T21" LEVEL 1;
+COMP "BAD<3>" LOCATE = SITE "T20" LEVEL 1;
+COMP "BAD<4>" LOCATE = SITE "T19" LEVEL 1;
+COMP "BAD<5>" LOCATE = SITE "T18" LEVEL 1;
+COMP "LD<10>" LOCATE = SITE "Y16" LEVEL 1;
+COMP "LD<11>" LOCATE = SITE "W16" LEVEL 1;
+COMP "LD<20>" LOCATE = SITE "W14" LEVEL 1;
+COMP "LD<12>" LOCATE = SITE "V16" LEVEL 1;
+COMP "LD<21>" LOCATE = SITE "U14" LEVEL 1;
+COMP "LD<13>" LOCATE = SITE "U16" LEVEL 1;
+COMP "LD<30>" LOCATE = SITE "V12" LEVEL 1;
+COMP "LD<22>" LOCATE = SITE "AB13" LEVEL 1;
+COMP "LD<14>" LOCATE = SITE "AB15" LEVEL 1;
+COMP "LD<31>" LOCATE = SITE "U12" LEVEL 1;
+COMP "LD<23>" LOCATE = SITE "AA13" LEVEL 1;
+COMP "LD<15>" LOCATE = SITE "AA15" LEVEL 1;
+COMP "LD<24>" LOCATE = SITE "Y13" LEVEL 1;
+COMP "LD<16>" LOCATE = SITE "W15" LEVEL 1;
+COMP "DIN<0>" LOCATE = SITE "A12" LEVEL 1;
+COMP "LD<25>" LOCATE = SITE "W13" LEVEL 1;
+COMP "LD<17>" LOCATE = SITE "V15" LEVEL 1;
+COMP "DIN<1>" LOCATE = SITE "E16" LEVEL 1;
+COMP "LD<26>" LOCATE = SITE "V13" LEVEL 1;
+COMP "LD<18>" LOCATE = SITE "AB14" LEVEL 1;
+COMP "DIN<2>" LOCATE = SITE "F12" LEVEL 1;
+COMP "LD<27>" LOCATE = SITE "U13" LEVEL 1;
+COMP "LD<19>" LOCATE = SITE "T17" LEVEL 1;
+COMP "DIN<3>" LOCATE = SITE "F13" LEVEL 1;
+COMP "LD<28>" LOCATE = SITE "Y12" LEVEL 1;
+COMP "DIN<4>" LOCATE = SITE "F16" LEVEL 1;
+COMP "LD<29>" LOCATE = SITE "U21" LEVEL 1;
+COMP "DIN<5>" LOCATE = SITE "F17" LEVEL 1;
+COMP "DIN<6>" LOCATE = SITE "E13" LEVEL 1;
+COMP "DIN<7>" LOCATE = SITE "F14" LEVEL 1;
+COMP "AD_NCS" LOCATE = SITE "M18" LEVEL 1;
+COMP "ASS<0>" LOCATE = SITE "D10" LEVEL 1;
+COMP "ASS<1>" LOCATE = SITE "A8" LEVEL 1;
+COMP "AD_NRD" LOCATE = SITE "M20" LEVEL 1;
+COMP "ASS<2>" LOCATE = SITE "B8" LEVEL 1;
+COMP "A_S<0>" LOCATE = SITE "E4" LEVEL 1;
+COMP "A_S<1>" LOCATE = SITE "E3" LEVEL 1;
+COMP "A_S<2>" LOCATE = SITE "E2" LEVEL 1;
+COMP "A_S<3>" LOCATE = SITE "E1" LEVEL 1;
+COMP "A_S<4>" LOCATE = SITE "D4" LEVEL 1;
+COMP "A_S<5>" LOCATE = SITE "D3" LEVEL 1;
+COMP "A_S<6>" LOCATE = SITE "D2" LEVEL 1;
+COMP "A_S<7>" LOCATE = SITE "D1" LEVEL 1;
+COMP "B_S<0>" LOCATE = SITE "M6" LEVEL 1;
+COMP "B_S<1>" LOCATE = SITE "M5" LEVEL 1;
+COMP "B_S<2>" LOCATE = SITE "M4" LEVEL 1;
+COMP "B_S<3>" LOCATE = SITE "M3" LEVEL 1;
+COMP "B_S<4>" LOCATE = SITE "M2" LEVEL 1;
+COMP "B_S<5>" LOCATE = SITE "M1" LEVEL 1;
+COMP "B_S<6>" LOCATE = SITE "L6" LEVEL 1;
+COMP "B_S<7>" LOCATE = SITE "L5" LEVEL 1;
+COMP "C_S<0>" LOCATE = SITE "Y3" LEVEL 1;
+COMP "C_S<1>" LOCATE = SITE "Y2" LEVEL 1;
+COMP "C_S<2>" LOCATE = SITE "Y1" LEVEL 1;
+COMP "C_S<3>" LOCATE = SITE "W4" LEVEL 1;
+COMP "C_S<4>" LOCATE = SITE "W3" LEVEL 1;
+COMP "C_S<5>" LOCATE = SITE "W2" LEVEL 1;
+COMP "C_S<6>" LOCATE = SITE "W1" LEVEL 1;
+COMP "C_S<7>" LOCATE = SITE "V5" LEVEL 1;
+COMP "BUSY_A" LOCATE = SITE "L22" LEVEL 1;
+COMP "A_RAMP" LOCATE = SITE "C1" LEVEL 1;
+COMP "D_S<0>" LOCATE = SITE "Y11" LEVEL 1;
+COMP "D_S<1>" LOCATE = SITE "AA11" LEVEL 1;
+COMP "D_S<2>" LOCATE = SITE "AB11" LEVEL 1;
+COMP "D_S<3>" LOCATE = SITE "U10" LEVEL 1;
+COMP "D_S<4>" LOCATE = SITE "V10" LEVEL 1;
+COMP "D_S<5>" LOCATE = SITE "W10" LEVEL 1;
+COMP "D_S<6>" LOCATE = SITE "Y10" LEVEL 1;
+COMP "D_S<7>" LOCATE = SITE "AA10" LEVEL 1;
+COMP "B_RAMP" LOCATE = SITE "L1" LEVEL 1;
+COMP "A_NRUN" LOCATE = SITE "D9" LEVEL 1;
+COMP "C_RAMP" LOCATE = SITE "V1" LEVEL 1;
+COMP "TCS<0>" LOCATE = SITE "C3" LEVEL 1;
+COMP "TCS<1>" LOCATE = SITE "L3" LEVEL 1;
+COMP "TCS<2>" LOCATE = SITE "V3" LEVEL 1;
+COMP "TCS<3>" LOCATE = SITE "U9" LEVEL 1;
+COMP "B_NRUN" LOCATE = SITE "F5" LEVEL 1;
+COMP "D_RAMP" LOCATE = SITE "W9" LEVEL 1;
+COMP "C_NRUN" LOCATE = SITE "N4" LEVEL 1;
+COMP "D_NRUN" LOCATE = SITE "AA4" LEVEL 1;
+COMP "RSS<0>" LOCATE = SITE "A3" LEVEL 1;
+COMP "RSS<1>" LOCATE = SITE "K6" LEVEL 1;
+COMP "RSS<2>" LOCATE = SITE "U5" LEVEL 1;
+COMP "RSS<3>" LOCATE = SITE "AA9" LEVEL 1;
+COMP "CALSNH<0>" LOCATE = SITE "C2" LEVEL 1;
+COMP "CALSNH<1>" LOCATE = SITE "L2" LEVEL 1;
+COMP "CALSNH<2>" LOCATE = SITE "V2" LEVEL 1;
+COMP "CALSNH<3>" LOCATE = SITE "V9" LEVEL 1;
+COMP "nBTERM" LOCATE = SITE "V20" LEVEL 1;
+COMP "nREADY" LOCATE = SITE "V19" LEVEL 1;
+COMP "CLK125_N" LOCATE = SITE "L19" LEVEL 1;
+COMP "CLK125_P" LOCATE = SITE "L20" LEVEL 1;
+PIN CLK125_P_pin<0> = BEL "CLK125_P" PINNAME PAD;
+PIN "CLK125_P_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "AD_D<10>" LOCATE = SITE "P21" LEVEL 1;
+COMP "AD_D<11>" LOCATE = SITE "P22" LEVEL 1;
+COMP "A2TC<0>" LOCATE = SITE "E11" LEVEL 1;
+COMP "A2TC<1>" LOCATE = SITE "G18" LEVEL 1;
+COMP "A2TC<4>" LOCATE = SITE "B20" LEVEL 1;
+COMP "A2TC<5>" LOCATE = SITE "E17" LEVEL 1;
+COMP "A2TC<6>" LOCATE = SITE "E15" LEVEL 1;
+COMP "A2TC<7>" LOCATE = SITE "D13" LEVEL 1;
+COMP "A3TC<0>" LOCATE = SITE "D19" LEVEL 1;
+COMP "A3TC<1>" LOCATE = SITE "B10" LEVEL 1;
+COMP "AD_NBUSY" LOCATE = SITE "M17" LEVEL 1;
+COMP "A3TC<4>" LOCATE = SITE "B13" LEVEL 1;
+COMP "A3TC<5>" LOCATE = SITE "A15" LEVEL 1;
+COMP "A3TC<6>" LOCATE = SITE "C17" LEVEL 1;
+COMP "A3TC<7>" LOCATE = SITE "B19" LEVEL 1;
+COMP "HOLD_N<0>" LOCATE = SITE "J18" LEVEL 1;
+COMP "HOLD_N<1>" LOCATE = SITE "J21" LEVEL 1;
+COMP "HOLD_N<2>" LOCATE = SITE "K17" LEVEL 1;
+COMP "HOLD_N<3>" LOCATE = SITE "K19" LEVEL 1;
+COMP "HOLD_P<0>" LOCATE = SITE "J19" LEVEL 1;
+COMP "HOLD_P<1>" LOCATE = SITE "J22" LEVEL 1;
+COMP "HOLD_P<2>" LOCATE = SITE "K18" LEVEL 1;
+COMP "HOLD_P<3>" LOCATE = SITE "K20" LEVEL 1;
+COMP "A_SELMAIN" LOCATE = SITE "F4" LEVEL 1;
+COMP "A_SELTAIL" LOCATE = SITE "C4" LEVEL 1;
+COMP "AD_D<0>" LOCATE = SITE "M21" LEVEL 1;
+COMP "AD_D<1>" LOCATE = SITE "M22" LEVEL 1;
+COMP "AD_D<2>" LOCATE = SITE "N17" LEVEL 1;
+COMP "AD_D<3>" LOCATE = SITE "N18" LEVEL 1;
+COMP "AD_D<4>" LOCATE = SITE "N19" LEVEL 1;
+COMP "AD_D<5>" LOCATE = SITE "N20" LEVEL 1;
+COMP "AD_D<6>" LOCATE = SITE "N21" LEVEL 1;
+COMP "AD_D<7>" LOCATE = SITE "N22" LEVEL 1;
+COMP "AD_D<8>" LOCATE = SITE "P17" LEVEL 1;
+COMP "AD_D<9>" LOCATE = SITE "P18" LEVEL 1;
+COMP "B_SELMAIN" LOCATE = SITE "N3" LEVEL 1;
+COMP "B_SELTAIL" LOCATE = SITE "L4" LEVEL 1;
+COMP "L1_N<0>" LOCATE = SITE "G21" LEVEL 1;
+COMP "L1_N<1>" LOCATE = SITE "G20" LEVEL 1;
+COMP "L1_N<2>" LOCATE = SITE "H21" LEVEL 1;
+COMP "L1_N<3>" LOCATE = SITE "H18" LEVEL 1;
+COMP "L1_P<0>" LOCATE = SITE "G22" LEVEL 1;
+COMP "L1_P<1>" LOCATE = SITE "H19" LEVEL 1;
+COMP "L1_P<2>" LOCATE = SITE "H22" LEVEL 1;
+COMP "L1_P<3>" LOCATE = SITE "J17" LEVEL 1;
+COMP "C_SELMAIN" LOCATE = SITE "AB4" LEVEL 1;
+COMP "C_SELTAIL" LOCATE = SITE "V4" LEVEL 1;
+COMP "A_CS<0>" LOCATE = SITE "D8" LEVEL 1;
+COMP "A_CS<1>" LOCATE = SITE "E8" LEVEL 1;
+COMP "A_CS<2>" LOCATE = SITE "A7" LEVEL 1;
+COMP "A_CS<3>" LOCATE = SITE "B7" LEVEL 1;
+COMP "A_GCCLR" LOCATE = SITE "D7" LEVEL 1;
+COMP "D_SELMAIN" LOCATE = SITE "U11" LEVEL 1;
+COMP "B_CS<0>" LOCATE = SITE "G1" LEVEL 1;
+COMP "B_CS<1>" LOCATE = SITE "G2" LEVEL 1;
+COMP "B_CS<2>" LOCATE = SITE "G3" LEVEL 1;
+COMP "B_CS<3>" LOCATE = SITE "G4" LEVEL 1;
+COMP "D_SELTAIL" LOCATE = SITE "AB10" LEVEL 1;
+COMP "B_GCCLR" LOCATE = SITE "G6" LEVEL 1;
+COMP "C_CS<0>" LOCATE = SITE "N5" LEVEL 1;
+COMP "C_CS<1>" LOCATE = SITE "N6" LEVEL 1;
+COMP "C_CS<2>" LOCATE = SITE "P1" LEVEL 1;
+COMP "C_CS<3>" LOCATE = SITE "P2" LEVEL 1;
+COMP "A_TREF_N" LOCATE = SITE "F2" LEVEL 1;
+COMP "A_TREF_P" LOCATE = SITE "F3" LEVEL 1;
+COMP "C_GCCLR" LOCATE = SITE "P5" LEVEL 1;
+COMP "D_CS<0>" LOCATE = SITE "AB5" LEVEL 1;
+COMP "D_CS<1>" LOCATE = SITE "AA5" LEVEL 1;
+COMP "D_CS<2>" LOCATE = SITE "Y5" LEVEL 1;
+COMP "D_CS<3>" LOCATE = SITE "W5" LEVEL 1;
+COMP "D_GCCLR" LOCATE = SITE "Y6" LEVEL 1;
+COMP "B_TREF_N" LOCATE = SITE "N2" LEVEL 1;
+COMP "B_TREF_P" LOCATE = SITE "N1" LEVEL 1;
+COMP "C_TREF_N" LOCATE = SITE "Y4" LEVEL 1;
+COMP "C_TREF_P" LOCATE = SITE "AA3" LEVEL 1;
+COMP "D_TREF_N" LOCATE = SITE "W11" LEVEL 1;
+COMP "D_TREF_P" LOCATE = SITE "V11" LEVEL 1;
+NET "BCLKO_IBUFG" BEL "u_infrastructure/u_bufg_clk33.GCLKMUX" USELOCALCONNECT;
+TIMEGRP NRUNA = BEL "A_NRUN";
+TIMEGRP NRUNB = BEL "B_NRUN";
+TIMEGRP NRUNC = BEL "C_NRUN";
+TIMEGRP NRUND = BEL "D_NRUN";
+TIMEGRP HOLDA = BEL "HOLD_P<0>";
+TIMEGRP HOLDB = BEL "HOLD_P<1>";
+TIMEGRP HOLDC = BEL "HOLD_P<2>";
+TIMEGRP HOLDD = BEL "HOLD_P<3>";
+NET "BCLKO_IBUFG" PERIOD = 30 ns HIGH 50%;
+NET "u_infrastructure/clk125_to_bufg" PERIOD = 8 ns HIGH 50%;
+TS_LABA = MAXDELAY FROM TIMEGRP "HOLDA" TO TIMEGRP "NRUNA" 9.7 ns;
+TS_LABB = MAXDELAY FROM TIMEGRP "HOLDB" TO TIMEGRP "NRUNB" 9.7 ns;
+TS_LABC = MAXDELAY FROM TIMEGRP "HOLDC" TO TIMEGRP "NRUNC" 9.7 ns;
+TS_LABD = MAXDELAY FROM TIMEGRP "HOLDD" TO TIMEGRP "NRUND" 10.8 ns;
+TIMEGRP "FFS(\"u_mess/short_mask*\")" = BEL "u_mess/short_mask_31" BEL
+        "u_mess/short_mask_30" BEL "u_mess/short_mask_29" BEL
+        "u_mess/short_mask_28" BEL "u_mess/short_mask_27" BEL
+        "u_mess/short_mask_26" BEL "u_mess/short_mask_25" BEL
+        "u_mess/short_mask_24" BEL "u_mess/short_mask_23" BEL
+        "u_mess/short_mask_22" BEL "u_mess/short_mask_21" BEL
+        "u_mess/short_mask_20" BEL "u_mess/short_mask_19" BEL
+        "u_mess/short_mask_18" BEL "u_mess/short_mask_17" BEL
+        "u_mess/short_mask_16" BEL "u_mess/short_mask_15" BEL
+        "u_mess/short_mask_14" BEL "u_mess/short_mask_13" BEL
+        "u_mess/short_mask_12" BEL "u_mess/short_mask_11" BEL
+        "u_mess/short_mask_10" BEL "u_mess/short_mask_9" BEL
+        "u_mess/short_mask_8" BEL "u_mess/short_mask_7" BEL
+        "u_mess/short_mask_6" BEL "u_mess/short_mask_5" BEL
+        "u_mess/short_mask_4" BEL "u_mess/short_mask_3" BEL
+        "u_mess/short_mask_2" BEL "u_mess/short_mask_1" BEL
+        "u_mess/short_mask_0";
+TIMEGRP "FFS(\"u_trigger/*\")" = BEL "u_trigger/ref_pulse_registered" BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[4].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[4].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[5].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[5].u_scaler_sync/SyncA_clkB_2"
+        BEL "u_trigger/u_trig_phi0/L2_PHI[0].u_L2_scaler/FlagToggle_clkA" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[0].u_L2_scaler/SyncA_clkB_2" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[1].u_L2_scaler/FlagToggle_clkA" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[1].u_L2_scaler/SyncA_clkB_2" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_pipeline_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_reset_0" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/trig_oneshot" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch" BEL
+        "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_reg" BEL
+        "u_trigger/u_trig_phi0/bot_top_coincidence_1" BEL
+        "u_trigger/u_trig_phi0/bot_top_coincidence_0" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_1_3" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_0_3" BEL
+        "u_trigger/u_trig_phi0/mid_top_coincidence_1" BEL
+        "u_trigger/u_trig_phi0/mid_top_coincidence_0" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_1_2" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_0_2" BEL
+        "u_trigger/u_trig_phi0/mid_top_sr_1_2" BEL
+        "u_trigger/u_trig_phi0/mid_top_sr_0_2" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_1_1" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_0_1" BEL
+        "u_trigger/u_trig_phi0/mid_top_sr_1_1" BEL
+        "u_trigger/u_trig_phi0/mid_top_sr_0_1" BEL
+        "u_trigger/u_trig_phi0/L2_1" BEL "u_trigger/u_trig_phi0/L2_0" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_1_0" BEL
+        "u_trigger/u_trig_phi0/bot_top_sr_0_0" BEL
+        "u_trigger/u_trig_phi0/mid_top_sr_1_0" BEL
+        "u_trigger/u_trig_phi0/mid_top_sr_0_0" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[0].L2_reset_sr_2" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[0].L2_reset_sr_1" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[0].L2_reset_sr_0" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[1].L2_reset_sr_2" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[1].L2_reset_sr_1" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[1].L2_reset_sr_0" BEL
+        "u_trigger/u_trig_phi0/bot_delay_1_0" BEL
+        "u_trigger/u_trig_phi0/bot_delay_0_0" BEL
+        "u_trigger/u_trig_phi0/mid_delay_1_0" BEL
+        "u_trigger/u_trig_phi0/mid_delay_0_0" BEL
+        "u_trigger/u_trig_phi0/L2_bot_mid_1" BEL
+        "u_trigger/u_trig_phi0/L2_bot_mid_0" BEL
+        "u_trigger/u_trig_phi0/bot_delay_1_1" BEL
+        "u_trigger/u_trig_phi0/bot_delay_0_1" BEL
+        "u_trigger/u_trig_phi0/mid_delay_1_1" BEL
+        "u_trigger/u_trig_phi0/mid_delay_0_1" BEL
+        "u_trigger/u_trig_phi0/L1_top_1" BEL "u_trigger/u_trig_phi0/L1_top_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_sync_0"
+        BEL "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd_3"
+        BEL "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/trig_reg" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_sync_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_3" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_4" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_5" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_6" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/stuck_check_7" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/FDCE_scaler_latch"
+        BEL "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/phase_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/phase_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/FlagToggle_clkA"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_2"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/FlagToggle_clkA"
+        BEL "u_trigger/u_trig_phi0/L2_all_reg_1" BEL
+        "u_trigger/u_trig_phi0/L2_all_reg_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd_0" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/pulse_abcd_2" BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[4].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[4].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_trig_phi0/L2_PHI[0].u_L2_scaler/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL "u_trigger/u_trig_phi0/L2_PHI[0].u_L2_scaler/SyncA_clkB_1" BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[5].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[5].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_trig_phi0/L2_PHI[1].u_L2_scaler/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL "u_trigger/u_trig_phi0/L2_PHI[1].u_L2_scaler/SyncA_clkB_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncA_clkB_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncA_clkB_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[4].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[4].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[5].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_trig_phi0/L1_SCALER_LOOP[5].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_trig_phi0/L2_PHI[0].u_L2_scaler/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL "u_trigger/u_trig_phi0/L2_PHI[0].u_L2_scaler/SyncB_clkA_1" BEL
+        "u_trigger/u_trig_phi0/L2_PHI[1].u_L2_scaler/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL "u_trigger/u_trig_phi0/L2_PHI[1].u_L2_scaler/SyncB_clkA_1" BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[0].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[1].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[2].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[3].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[4].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[5].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[6].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[7].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[8].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[9].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[10].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[3].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[2].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[1].u_scaler_sync/SyncB_clkA_1"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/Mshreg_SyncB_clkA_1/SRL16E"
+        BEL
+        "u_trigger/u_scalers/L0_SCALERS[11].u_scaler_100Mhz/L0_SCALER_LOOP[0].u_scaler_sync/SyncB_clkA_1";
+PATH TS_false_mask_path_path = FROM TIMEGRP "FFS(\"u_mess/short_mask*\")" TO
+        TIMEGRP "FFS(\"u_trigger/*\")";
+PATH "TS_false_mask_path_path" TIG;
+SCHEMATIC END;
+

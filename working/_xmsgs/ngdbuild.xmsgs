@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;INST &quot;u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch&quot; LOC = SLICE_X96Y159;&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(499)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;INST &quot;u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch&quot; LOC = SLICE_X116Y159;&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(509)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;PERIOD = 30 ns HIGH 50%;&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(217)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;PERIOD = 8.0 ns |&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(382)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="1012" delta="old" >The constraint <arg fmt="%s" index="1">&lt;INST &quot;u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch&quot; LOC = SLICE_X96Y159;&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(499)]</arg> is overridden on the design object <arg fmt="%s" index="2">u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch</arg> by the constraint <arg fmt="%s" index="3">&lt;INST &quot;u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch&quot; LOC = SLICE_X97Y159;&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(500)]</arg>.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="1012" delta="old" >The constraint <arg fmt="%s" index="1">&lt;INST &quot;u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch&quot; LOC = SLICE_X116Y159;&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(509)]</arg> is overridden on the design object <arg fmt="%s" index="2">u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch</arg> by the constraint <arg fmt="%s" index="3">&lt;INST &quot;u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch&quot; LOC = SLICE_X117Y159;&gt; [/home/ise/git/firmware-surf/par/TOP_v38.ucf(510)]</arg>.
+</msg>
+
+</messages>
+

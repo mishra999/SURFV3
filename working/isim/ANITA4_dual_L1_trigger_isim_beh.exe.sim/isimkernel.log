@@ -1,0 +1,28 @@
+Command line:
+   ANITA4_dual_L1_trigger_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  45570
+
+Wed Jul 26 21:43:24 2023
+
+
+ Elaboration Time: 0.06 sec
+
+ Current Memory Usage: 200.643 Meg
+
+ Total Signals          : 322
+ Total Nets             : 249
+ Total Signal Drivers   : 190
+ Total Blocks           : 50
+ Total Primitive Blocks : 37
+ Total Processes        : 336
+ Total Traceable Variables  : 204
+ Total Scalar Nets and Variables : 2805
+
+ Total Simulation Time: 0.1 sec
+
+ Current Memory Usage: 277.197 Meg
+
+Thu Jul 27 21:46:38 2023
+

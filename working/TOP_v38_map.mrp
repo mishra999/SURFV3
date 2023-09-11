@@ -1,0 +1,1973 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'TOP_v38'
+
+Design Information
+------------------
+Command Line   : map -filter /home/ise/git/firmware-surf/par/iseconfig/filter.filter -intstyle ise -p xc3s2000-fg456-4
+-timing -logic_opt on -ol high -xe n -t 1 -register_duplication on -cm speed -ir off -ignore_keep_hierarchy -pr b -power
+off -o TOP_v38_map.ncd TOP_v38.ngd TOP_v38.pcf 
+Target Device  : xc3s2000
+Target Package : fg456
+Target Speed   : -4
+Mapper Version : spartan3 -- $Revision: 1.55 $
+Mapped Date    : Fri Aug 11 15:30:13 2023
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:  113
+Logic Utilization:
+  Number of Slice Flip Flops:         2,888 out of  40,960    7%
+  Number of 4 input LUTs:             2,413 out of  40,960    5%
+Logic Distribution:
+  Number of occupied Slices:          2,858 out of  20,480   13%
+    Number of Slices containing only related logic:   2,858 out of   2,858 100%
+    Number of Slices containing unrelated logic:          0 out of   2,858   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       2,994 out of  40,960    7%
+    Number used as logic:             2,276
+    Number used as a route-thru:        581
+    Number used as Shift registers:     137
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                221 out of     333   66%
+    IOB Flip Flops:                     215
+    IOB Master Pads:                     26
+    IOB Slave Pads:                      26
+  Number of RAMB16s:                      2 out of      40    5%
+  Number of BUFGMUXs:                     5 out of       8   62%
+  Number of DCMs:                         2 out of       4   50%
+
+Average Fanout of Non-Clock Nets:                3.01
+
+Peak Memory Usage:  838 MB
+Total REAL time to MAP completion:  46 secs 
+Total CPU time to MAP completion:   45 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:LIT:222 - The use of IBUFDS_DIFF_OUT symbol
+   "u_trigger_rx/CH_input_gen_B[0].CH_input_u/in_buf_u" (output
+   signal=trig_scaler_path<8>) is only recommended for expert users.
+WARNING:MapLib:701 - Signal A1TC<0> connected to top level port A1TC<0> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<0> connected to top level port
+   VTRG_A1TC<0> has been removed.
+WARNING:MapLib:701 - Signal A1TC<1> connected to top level port A1TC<1> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<1> connected to top level port
+   VTRG_A1TC<1> has been removed.
+WARNING:MapLib:701 - Signal A1TC<2> connected to top level port A1TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<2> connected to top level port
+   VTRG_A1TC<2> has been removed.
+WARNING:MapLib:701 - Signal A1TC<3> connected to top level port A1TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<3> connected to top level port
+   VTRG_A1TC<3> has been removed.
+WARNING:MapLib:701 - Signal A1TC<4> connected to top level port A1TC<4> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<4> connected to top level port
+   VTRG_A1TC<4> has been removed.
+WARNING:MapLib:701 - Signal A1TC<5> connected to top level port A1TC<5> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<5> connected to top level port
+   VTRG_A1TC<5> has been removed.
+WARNING:MapLib:701 - Signal A1TC<6> connected to top level port A1TC<6> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<6> connected to top level port
+   VTRG_A1TC<6> has been removed.
+WARNING:MapLib:701 - Signal A1TC<7> connected to top level port A1TC<7> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A1TC<7> connected to top level port
+   VTRG_A1TC<7> has been removed.
+WARNING:MapLib:701 - Signal A2TC<2> connected to top level port A2TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A2TC<2> connected to top level port
+   VTRG_A2TC<2> has been removed.
+WARNING:MapLib:701 - Signal A2TC<3> connected to top level port A2TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A2TC<3> connected to top level port
+   VTRG_A2TC<3> has been removed.
+WARNING:MapLib:701 - Signal A3TC<2> connected to top level port A3TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A3TC<2> connected to top level port
+   VTRG_A3TC<2> has been removed.
+WARNING:MapLib:701 - Signal A3TC<3> connected to top level port A3TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A3TC<3> connected to top level port
+   VTRG_A3TC<3> has been removed.
+WARNING:MapLib:701 - Signal A4TC<0> connected to top level port A4TC<0> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<0> connected to top level port
+   VTRG_A4TC<0> has been removed.
+WARNING:MapLib:701 - Signal A4TC<1> connected to top level port A4TC<1> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<1> connected to top level port
+   VTRG_A4TC<1> has been removed.
+WARNING:MapLib:701 - Signal A4TC<2> connected to top level port A4TC<2> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<2> connected to top level port
+   VTRG_A4TC<2> has been removed.
+WARNING:MapLib:701 - Signal A4TC<3> connected to top level port A4TC<3> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<3> connected to top level port
+   VTRG_A4TC<3> has been removed.
+WARNING:MapLib:701 - Signal A4TC<4> connected to top level port A4TC<4> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<4> connected to top level port
+   VTRG_A4TC<4> has been removed.
+WARNING:MapLib:701 - Signal A4TC<5> connected to top level port A4TC<5> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<5> connected to top level port
+   VTRG_A4TC<5> has been removed.
+WARNING:MapLib:701 - Signal A4TC<6> connected to top level port A4TC<6> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<6> connected to top level port
+   VTRG_A4TC<6> has been removed.
+WARNING:MapLib:701 - Signal A4TC<7> connected to top level port A4TC<7> has been
+   removed.
+WARNING:MapLib:701 - Signal VTRG_A4TC<7> connected to top level port
+   VTRG_A4TC<7> has been removed.
+WARNING:MapLib:701 - Signal B_RCO connected to top level port B_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal B_HITBUS connected to top level port B_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal C_RCO connected to top level port C_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal A_HITBUS connected to top level port A_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal D_RCO connected to top level port D_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal D_HITBUS connected to top level port D_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal A_RCO connected to top level port A_RCO has been
+   removed.
+WARNING:MapLib:701 - Signal C_HITBUS connected to top level port C_HITBUS has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<11> connected to top level port B_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<10> connected to top level port B_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<9> connected to top level port B_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<8> connected to top level port B_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<7> connected to top level port B_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<6> connected to top level port B_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<5> connected to top level port B_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<4> connected to top level port B_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<3> connected to top level port B_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<2> connected to top level port B_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<1> connected to top level port B_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal B_DAT<0> connected to top level port B_DAT<0> has
+   been removed.
+WARNING:MapLib:701 - Signal LA<7> connected to top level port LA<7> has been
+   removed.
+WARNING:MapLib:701 - Signal C_DAT<11> connected to top level port C_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<10> connected to top level port C_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<9> connected to top level port C_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<8> connected to top level port C_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<7> connected to top level port C_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<6> connected to top level port C_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<5> connected to top level port C_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<4> connected to top level port C_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<3> connected to top level port C_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<2> connected to top level port C_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<1> connected to top level port C_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal C_DAT<0> connected to top level port C_DAT<0> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<11> connected to top level port D_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<10> connected to top level port D_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<9> connected to top level port D_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<8> connected to top level port D_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<7> connected to top level port D_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<6> connected to top level port D_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<5> connected to top level port D_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<4> connected to top level port D_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<3> connected to top level port D_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<2> connected to top level port D_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<1> connected to top level port D_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal D_DAT<0> connected to top level port D_DAT<0> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<11> connected to top level port A_DAT<11> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<10> connected to top level port A_DAT<10> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<9> connected to top level port A_DAT<9> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<8> connected to top level port A_DAT<8> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<7> connected to top level port A_DAT<7> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<6> connected to top level port A_DAT<6> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<5> connected to top level port A_DAT<5> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<4> connected to top level port A_DAT<4> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<3> connected to top level port A_DAT<3> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<2> connected to top level port A_DAT<2> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<1> connected to top level port A_DAT<1> has
+   been removed.
+WARNING:MapLib:701 - Signal A_DAT<0> connected to top level port A_DAT<0> has
+   been removed.
+WARNING:LIT:216 - PSINCDEC, PSEN, PSCLK and PSDONE of DCM symbol
+   "physical_group_u_infrastructure/u_clk125/CLK0_BUF/u_infrastructure/u_clk125/
+   DCM_INST" (output signal=u_infrastructure/u_clk125/CLK0_BUF) should be driven
+   by active signals if CLKOUT_PHASE_SHIFT is set to VARIABLE.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Pack:2780 - The register
+   "u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch" has the property
+   IOB=TRUE, but it did not join an IO component because it is not connected to
+   any IO element.
+WARNING:Place:1019 - A clock IOB / clock component pair have been found that are not placed at an optimal clock IOB /
+   clock site pair. The clock component <u_infrastructure/u_bufg_clk125> is placed at site <BUFGMUX5>. The IO component
+   <CLK125_P> is placed at site <L20>.  This will not allow the use of the fast path between the IO and the Clock
+   buffer. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN <CLK125_P.PAD>
+   allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN.
+   The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that
+   this error condition be corrected in the design.
+WARNING:PhysDesignRules:777 - Incomplete DCM configuration. The DCM comp u_infrastructure/u_clk125/DCM_INST is set for
+   variable phase shifting with CLKOUT_PHASE_SHIFT set to VARIABLE. Therefore the phase shift pins (PSINCDEC, PSEN and
+   PSCLK) should have active signals in order to implement variable phase shifting, if this implementation is wanted.
+
+Section 3 - Informational
+-------------------------
+INFO:Security:56 - Part 'xc3s2000' is not a WebPack part.
+INFO:LIT:243 - Logical network CMD_N_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 42 more times for the
+   following (max. 5 shown):
+   AD_NBUSY_IBUF,
+   u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/O,
+   u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/OB,
+   u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/O,
+   u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/OB
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:159 - Net Timing constraints on signal CLK125_P are pushed forward
+   through input buffer.
+INFO:MapLib:159 - Net Timing constraints on signal BCLKO are pushed forward
+   through input buffer.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Pack:1650 - Map created a placed design.
+INFO:PhysDesignRules:772 - To achieve optimal frequency synthesis performance with the CLKFX and CLKFX180 outputs of the
+   DCM comp u_infrastructure/u_clk100/DCM_INST, consult the device Interactive Data Sheet.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 471 block(s) removed
+ 140 block(s) optimized away
+ 459 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "u_infrastructure/u_clk125/CLK2X180_BUFG_INST" (CKBUF) removed.
+ The signal "u_infrastructure/u_clk125/CLK2X180_BUF" is loadless and has been
+removed.
+Loadless block "u_labtop/LAB[0].u_ram/bram_A" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[0].u_ram/_cmp_eq0000" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_ram/_cmp_eq00001" (ROM) removed.
+   The signal "u_labtop/LAB[0].u_lab/counter_store_2<11>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_11" (FF) removed.
+     The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_11" is loadless and has
+been removed.
+   The signal "u_labtop/LAB[0].u_lab/counter_store_2<12>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_12" (FF) removed.
+     The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_12" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_ram/_cmp_eq0001" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_ram/_cmp_eq00011" (ROM) removed.
+ The signal "u_labtop/LAB[0].u_ram/wr_i" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/wr_o1" (ROM) removed.
+   The signal "u_labtop/LAB[0].u_lab/counter_store_2<0>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_0" (FF) removed.
+     The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_0" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<10>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_10" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_10" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<9>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_9" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_9" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<8>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_8" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_8" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<7>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_7" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_7" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<6>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_6" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_6" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<5>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_5" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_5" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<4>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_4" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_4" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<3>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_3" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_3" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<2>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_2" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_2" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[0].u_lab/counter_store_2<1>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[0].u_lab/counter_store_2_1" (FF) removed.
+   The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_1" is loadless and has
+been removed.
+ The signal "lab_addr<5>" is loadless and has been removed.
+  Loadless block "lab_addr<5>" (ROM) removed.
+   The signal "u_mess/lab_address_predictor<5>" is loadless and has been removed.
+    Loadless block "u_mess/lab_address_predictor_5" (SFF) removed.
+     The signal "u_mess/lab_address_predictor_and0000_inv" is loadless and has been
+removed.
+      Loadless block "u_mess/lab_address_predictor_and0000_inv1" (ROM) removed.
+   The signal "N428" is loadless and has been removed.
+    Loadless block "lab_addr<5>_SW0_f5" (MUX) removed.
+     The signal "lab_addr<5>_SW0" is loadless and has been removed.
+      Loadless block "lab_addr<5>_SW01" (ROM) removed.
+       The signal "u_mess/lab_address_predictor<2>" is loadless and has been removed.
+        Loadless block "u_mess/lab_address_predictor_2" (SFF) removed.
+         The signal "lab_addr<2>" is loadless and has been removed.
+          Loadless block "lab_addr<2>_f5" (MUX) removed.
+           The signal "lab_addr<2>1" is loadless and has been removed.
+            Loadless block "lab_addr<2>1" (ROM) removed.
+             The signal "u_mess/lab_address_predictor<1>" is loadless and has been removed.
+              Loadless block "u_mess/lab_address_predictor_1" (SFF) removed.
+               The signal "lab_addr<1>" is loadless and has been removed.
+                Loadless block "u_mess/lab_addr_o<1>1" (ROM) removed.
+                 The signal "u_mess/lab_address_predictor<0>" is loadless and has been removed.
+                  Loadless block "u_mess/lab_address_predictor_0" (SFF) removed.
+                   The signal "lab_addr<0>" is loadless and has been removed.
+                    Loadless block "u_mess/lab_addr_o<0>1" (ROM) removed.
+       The signal "u_mess/lab_address_predictor<3>" is loadless and has been removed.
+        Loadless block "u_mess/lab_address_predictor_3" (SFF) removed.
+         The signal "lab_addr<3>" is loadless and has been removed.
+          Loadless block "u_mess/lab_addr_o<3>_f5" (MUX) removed.
+           The signal "u_mess/lab_addr_o<3>" is loadless and has been removed.
+            Loadless block "u_mess/lab_addr_o<3>1" (ROM) removed.
+     The signal "u_mess/lab_address_predictor<4>" is loadless and has been removed.
+      Loadless block "u_mess/lab_address_predictor_4" (SFF) removed.
+       The signal "lab_addr<4>" is loadless and has been removed.
+        Loadless block "lab_addr<4>" (ROM) removed.
+         The signal "N379" is loadless and has been removed.
+          Loadless block "lab_addr<4>_SW0" (ROM) removed.
+   The signal "u_mess/la_q<5>" is loadless and has been removed.
+    Loadless block "u_mess/la_q_5" (FF) removed.
+     The signal "LA_7_IBUF" is loadless and has been removed.
+      Loadless block "LA_7_IBUF" (BUF) removed.
+       The signal "LA<7>" is loadless and has been removed.
+        Loadless block "LA<7>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_ram/dat_i<13>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/u_rco_latch" (LATCH) removed.
+   The signal "A_RCO_IBUF" is loadless and has been removed.
+    Loadless block "A_RCO_IBUF" (BUF) removed.
+     The signal "A_RCO" is loadless and has been removed.
+      Loadless block "A_RCO" (PAD) removed.
+   The signal "u_labtop/LAB[0].u_lab/u_rco_latch_not0000" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[0].u_lab/u_rco_latch_not00001_INV_0" (BUF) removed.
+ The signal "u_labtop/LAB[0].u_lab/hitbus_q" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/hitbus_q" (FF) removed.
+   The signal "A_HITBUS_IBUF" is loadless and has been removed.
+    Loadless block "A_HITBUS_IBUF" (BUF) removed.
+     The signal "A_HITBUS" is loadless and has been removed.
+      Loadless block "A_HITBUS" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<11>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_11" (FF) removed.
+   The signal "A_DAT_11_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_11_IBUF" (BUF) removed.
+     The signal "A_DAT<11>" is loadless and has been removed.
+      Loadless block "A_DAT<11>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<10>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_10" (FF) removed.
+   The signal "A_DAT_10_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_10_IBUF" (BUF) removed.
+     The signal "A_DAT<10>" is loadless and has been removed.
+      Loadless block "A_DAT<10>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<9>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_9" (FF) removed.
+   The signal "A_DAT_9_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_9_IBUF" (BUF) removed.
+     The signal "A_DAT<9>" is loadless and has been removed.
+      Loadless block "A_DAT<9>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<8>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_8" (FF) removed.
+   The signal "A_DAT_8_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_8_IBUF" (BUF) removed.
+     The signal "A_DAT<8>" is loadless and has been removed.
+      Loadless block "A_DAT<8>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<7>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_7" (FF) removed.
+   The signal "A_DAT_7_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_7_IBUF" (BUF) removed.
+     The signal "A_DAT<7>" is loadless and has been removed.
+      Loadless block "A_DAT<7>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<6>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_6" (FF) removed.
+   The signal "A_DAT_6_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_6_IBUF" (BUF) removed.
+     The signal "A_DAT<6>" is loadless and has been removed.
+      Loadless block "A_DAT<6>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<5>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_5" (FF) removed.
+   The signal "A_DAT_5_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_5_IBUF" (BUF) removed.
+     The signal "A_DAT<5>" is loadless and has been removed.
+      Loadless block "A_DAT<5>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<4>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_4" (FF) removed.
+   The signal "A_DAT_4_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_4_IBUF" (BUF) removed.
+     The signal "A_DAT<4>" is loadless and has been removed.
+      Loadless block "A_DAT<4>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<3>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_3" (FF) removed.
+   The signal "A_DAT_3_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_3_IBUF" (BUF) removed.
+     The signal "A_DAT<3>" is loadless and has been removed.
+      Loadless block "A_DAT<3>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<2>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_2" (FF) removed.
+   The signal "A_DAT_2_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_2_IBUF" (BUF) removed.
+     The signal "A_DAT<2>" is loadless and has been removed.
+      Loadless block "A_DAT<2>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<1>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_1" (FF) removed.
+   The signal "A_DAT_1_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_1_IBUF" (BUF) removed.
+     The signal "A_DAT<1>" is loadless and has been removed.
+      Loadless block "A_DAT<1>" (PAD) removed.
+ The signal "u_labtop/LAB[0].u_lab/dat_q<0>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_lab/dat_q_0" (FF) removed.
+   The signal "A_DAT_0_IBUF" is loadless and has been removed.
+    Loadless block "A_DAT_0_IBUF" (BUF) removed.
+     The signal "A_DAT<0>" is loadless and has been removed.
+      Loadless block "A_DAT<0>" (PAD) removed.
+Loadless block "u_labtop/LAB[0].u_ram/bram_B" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[0].u_ram/_cmp_eq0002" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_ram/_cmp_eq00021" (ROM) removed.
+ The signal "u_labtop/LAB[0].u_ram/_cmp_eq0003" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_ram/_cmp_eq00031" (ROM) removed.
+Loadless block "u_labtop/LAB[0].u_ram/bram_C" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[0].u_ram/_cmp_eq0004" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_ram/_cmp_eq00041" (ROM) removed.
+ The signal "u_labtop/LAB[0].u_ram/_cmp_eq0005" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[0].u_ram/_cmp_eq00051" (ROM) removed.
+Loadless block "u_labtop/LAB[1].u_ram/bram_A" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[1].u_ram/_cmp_eq0000" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_ram/_cmp_eq00001" (ROM) removed.
+   The signal "u_labtop/LAB[1].u_lab/counter_store_2<11>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_11" (FF) removed.
+     The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_11" is loadless and has
+been removed.
+   The signal "u_labtop/LAB[1].u_lab/counter_store_2<12>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_12" (FF) removed.
+     The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_12" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_ram/_cmp_eq0001" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_ram/_cmp_eq00011" (ROM) removed.
+ The signal "u_labtop/LAB[1].u_ram/wr_i" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/wr_o1" (ROM) removed.
+   The signal "u_labtop/LAB[1].u_lab/counter_store_2<0>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_0" (FF) removed.
+     The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_0" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<10>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_10" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_10" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<9>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_9" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_9" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<8>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_8" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_8" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<7>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_7" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_7" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<6>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_6" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_6" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<5>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_5" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_5" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<4>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_4" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_4" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<3>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_3" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_3" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<2>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_2" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_2" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/counter_store_2<1>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[1].u_lab/counter_store_2_1" (FF) removed.
+   The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_1" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[1].u_lab/rco_held" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/u_rco_latch" (LATCH) removed.
+   The signal "B_RCO_IBUF" is loadless and has been removed.
+    Loadless block "B_RCO_IBUF" (BUF) removed.
+     The signal "B_RCO" is loadless and has been removed.
+      Loadless block "B_RCO" (PAD) removed.
+   The signal "u_labtop/LAB[1].u_lab/u_rco_latch_not0000" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[1].u_lab/u_rco_latch_not00001_INV_0" (BUF) removed.
+ The signal "u_labtop/LAB[1].u_lab/hitbus_q" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/hitbus_q" (FF) removed.
+   The signal "B_HITBUS_IBUF" is loadless and has been removed.
+    Loadless block "B_HITBUS_IBUF" (BUF) removed.
+     The signal "B_HITBUS" is loadless and has been removed.
+      Loadless block "B_HITBUS" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<11>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_11" (FF) removed.
+   The signal "B_DAT_11_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_11_IBUF" (BUF) removed.
+     The signal "B_DAT<11>" is loadless and has been removed.
+      Loadless block "B_DAT<11>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<10>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_10" (FF) removed.
+   The signal "B_DAT_10_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_10_IBUF" (BUF) removed.
+     The signal "B_DAT<10>" is loadless and has been removed.
+      Loadless block "B_DAT<10>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<9>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_9" (FF) removed.
+   The signal "B_DAT_9_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_9_IBUF" (BUF) removed.
+     The signal "B_DAT<9>" is loadless and has been removed.
+      Loadless block "B_DAT<9>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<8>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_8" (FF) removed.
+   The signal "B_DAT_8_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_8_IBUF" (BUF) removed.
+     The signal "B_DAT<8>" is loadless and has been removed.
+      Loadless block "B_DAT<8>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<7>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_7" (FF) removed.
+   The signal "B_DAT_7_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_7_IBUF" (BUF) removed.
+     The signal "B_DAT<7>" is loadless and has been removed.
+      Loadless block "B_DAT<7>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<6>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_6" (FF) removed.
+   The signal "B_DAT_6_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_6_IBUF" (BUF) removed.
+     The signal "B_DAT<6>" is loadless and has been removed.
+      Loadless block "B_DAT<6>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<5>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_5" (FF) removed.
+   The signal "B_DAT_5_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_5_IBUF" (BUF) removed.
+     The signal "B_DAT<5>" is loadless and has been removed.
+      Loadless block "B_DAT<5>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<4>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_4" (FF) removed.
+   The signal "B_DAT_4_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_4_IBUF" (BUF) removed.
+     The signal "B_DAT<4>" is loadless and has been removed.
+      Loadless block "B_DAT<4>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<3>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_3" (FF) removed.
+   The signal "B_DAT_3_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_3_IBUF" (BUF) removed.
+     The signal "B_DAT<3>" is loadless and has been removed.
+      Loadless block "B_DAT<3>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<2>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_2" (FF) removed.
+   The signal "B_DAT_2_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_2_IBUF" (BUF) removed.
+     The signal "B_DAT<2>" is loadless and has been removed.
+      Loadless block "B_DAT<2>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<1>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_1" (FF) removed.
+   The signal "B_DAT_1_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_1_IBUF" (BUF) removed.
+     The signal "B_DAT<1>" is loadless and has been removed.
+      Loadless block "B_DAT<1>" (PAD) removed.
+ The signal "u_labtop/LAB[1].u_lab/dat_q<0>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_lab/dat_q_0" (FF) removed.
+   The signal "B_DAT_0_IBUF" is loadless and has been removed.
+    Loadless block "B_DAT_0_IBUF" (BUF) removed.
+     The signal "B_DAT<0>" is loadless and has been removed.
+      Loadless block "B_DAT<0>" (PAD) removed.
+Loadless block "u_labtop/LAB[1].u_ram/bram_B" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[1].u_ram/_cmp_eq0002" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_ram/_cmp_eq00021" (ROM) removed.
+ The signal "u_labtop/LAB[1].u_ram/_cmp_eq0003" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_ram/_cmp_eq00031" (ROM) removed.
+Loadless block "u_labtop/LAB[1].u_ram/bram_C" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[1].u_ram/_cmp_eq0004" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_ram/_cmp_eq00041" (ROM) removed.
+ The signal "u_labtop/LAB[1].u_ram/_cmp_eq0005" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[1].u_ram/_cmp_eq00051" (ROM) removed.
+Loadless block "u_labtop/LAB[2].u_ram/bram_A" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[2].u_ram/_cmp_eq0000" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_ram/_cmp_eq00001" (ROM) removed.
+   The signal "u_labtop/LAB[2].u_lab/counter_store_2<11>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_11" (FF) removed.
+     The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_11" is loadless and has
+been removed.
+   The signal "u_labtop/LAB[2].u_lab/counter_store_2<12>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_12" (FF) removed.
+     The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_12" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_ram/_cmp_eq0001" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_ram/_cmp_eq00011" (ROM) removed.
+ The signal "u_labtop/LAB[2].u_ram/wr_i" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/wr_o1" (ROM) removed.
+   The signal "u_labtop/LAB[2].u_lab/counter_store_2<0>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_0" (FF) removed.
+     The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_0" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<10>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_10" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_10" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<9>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_9" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_9" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<8>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_8" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_8" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<7>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_7" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_7" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<6>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_6" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_6" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<5>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_5" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_5" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<4>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_4" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_4" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<3>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_3" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_3" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<2>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_2" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_2" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/counter_store_2<1>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[2].u_lab/counter_store_2_1" (FF) removed.
+   The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_1" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[2].u_lab/rco_held" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/u_rco_latch" (LATCH) removed.
+   The signal "C_RCO_IBUF" is loadless and has been removed.
+    Loadless block "C_RCO_IBUF" (BUF) removed.
+     The signal "C_RCO" is loadless and has been removed.
+      Loadless block "C_RCO" (PAD) removed.
+   The signal "u_labtop/LAB[2].u_lab/u_rco_latch_not0000" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[2].u_lab/u_rco_latch_not00001_INV_0" (BUF) removed.
+ The signal "u_labtop/LAB[2].u_lab/hitbus_q" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/hitbus_q" (FF) removed.
+   The signal "C_HITBUS_IBUF" is loadless and has been removed.
+    Loadless block "C_HITBUS_IBUF" (BUF) removed.
+     The signal "C_HITBUS" is loadless and has been removed.
+      Loadless block "C_HITBUS" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<11>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_11" (FF) removed.
+   The signal "C_DAT_11_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_11_IBUF" (BUF) removed.
+     The signal "C_DAT<11>" is loadless and has been removed.
+      Loadless block "C_DAT<11>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<10>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_10" (FF) removed.
+   The signal "C_DAT_10_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_10_IBUF" (BUF) removed.
+     The signal "C_DAT<10>" is loadless and has been removed.
+      Loadless block "C_DAT<10>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<9>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_9" (FF) removed.
+   The signal "C_DAT_9_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_9_IBUF" (BUF) removed.
+     The signal "C_DAT<9>" is loadless and has been removed.
+      Loadless block "C_DAT<9>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<8>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_8" (FF) removed.
+   The signal "C_DAT_8_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_8_IBUF" (BUF) removed.
+     The signal "C_DAT<8>" is loadless and has been removed.
+      Loadless block "C_DAT<8>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<7>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_7" (FF) removed.
+   The signal "C_DAT_7_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_7_IBUF" (BUF) removed.
+     The signal "C_DAT<7>" is loadless and has been removed.
+      Loadless block "C_DAT<7>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<6>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_6" (FF) removed.
+   The signal "C_DAT_6_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_6_IBUF" (BUF) removed.
+     The signal "C_DAT<6>" is loadless and has been removed.
+      Loadless block "C_DAT<6>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<5>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_5" (FF) removed.
+   The signal "C_DAT_5_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_5_IBUF" (BUF) removed.
+     The signal "C_DAT<5>" is loadless and has been removed.
+      Loadless block "C_DAT<5>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<4>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_4" (FF) removed.
+   The signal "C_DAT_4_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_4_IBUF" (BUF) removed.
+     The signal "C_DAT<4>" is loadless and has been removed.
+      Loadless block "C_DAT<4>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<3>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_3" (FF) removed.
+   The signal "C_DAT_3_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_3_IBUF" (BUF) removed.
+     The signal "C_DAT<3>" is loadless and has been removed.
+      Loadless block "C_DAT<3>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<2>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_2" (FF) removed.
+   The signal "C_DAT_2_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_2_IBUF" (BUF) removed.
+     The signal "C_DAT<2>" is loadless and has been removed.
+      Loadless block "C_DAT<2>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<1>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_1" (FF) removed.
+   The signal "C_DAT_1_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_1_IBUF" (BUF) removed.
+     The signal "C_DAT<1>" is loadless and has been removed.
+      Loadless block "C_DAT<1>" (PAD) removed.
+ The signal "u_labtop/LAB[2].u_lab/dat_q<0>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_lab/dat_q_0" (FF) removed.
+   The signal "C_DAT_0_IBUF" is loadless and has been removed.
+    Loadless block "C_DAT_0_IBUF" (BUF) removed.
+     The signal "C_DAT<0>" is loadless and has been removed.
+      Loadless block "C_DAT<0>" (PAD) removed.
+Loadless block "u_labtop/LAB[2].u_ram/bram_B" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[2].u_ram/_cmp_eq0002" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_ram/_cmp_eq00021" (ROM) removed.
+ The signal "u_labtop/LAB[2].u_ram/_cmp_eq0003" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_ram/_cmp_eq00031" (ROM) removed.
+Loadless block "u_labtop/LAB[2].u_ram/bram_C" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[2].u_ram/_cmp_eq0004" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_ram/_cmp_eq00041" (ROM) removed.
+ The signal "u_labtop/LAB[2].u_ram/_cmp_eq0005" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[2].u_ram/_cmp_eq00051" (ROM) removed.
+Loadless block "u_labtop/LAB[3].u_ram/bram_A" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[3].u_ram/_cmp_eq0000" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_ram/_cmp_eq00001" (ROM) removed.
+   The signal "u_labtop/LAB[3].u_lab/counter_store_2<11>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_11" (FF) removed.
+     The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_11" is loadless and has
+been removed.
+   The signal "u_labtop/LAB[3].u_lab/counter_store_2<12>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_12" (FF) removed.
+     The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_12" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_ram/_cmp_eq0001" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_ram/_cmp_eq00011" (ROM) removed.
+ The signal "u_labtop/LAB[3].u_ram/wr_i" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/wr_o1" (ROM) removed.
+   The signal "u_labtop/LAB[3].u_lab/counter_store_2<0>" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_0" (FF) removed.
+     The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_0" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<10>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_10" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_10" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<9>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_9" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_9" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<8>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_8" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_8" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<7>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_7" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_7" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<6>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_6" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_6" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<5>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_5" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_5" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<4>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_4" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_4" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<3>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_3" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_3" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<2>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_2" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_2" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/counter_store_2<1>" is loadless and has been
+removed.
+  Loadless block "u_labtop/LAB[3].u_lab/counter_store_2_1" (FF) removed.
+   The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_1" is loadless and has
+been removed.
+ The signal "u_labtop/LAB[3].u_lab/rco_held" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/u_rco_latch" (LATCH) removed.
+   The signal "D_RCO_IBUF" is loadless and has been removed.
+    Loadless block "D_RCO_IBUF" (BUF) removed.
+     The signal "D_RCO" is loadless and has been removed.
+      Loadless block "D_RCO" (PAD) removed.
+   The signal "u_labtop/LAB[3].u_lab/u_rco_latch_not0000" is loadless and has been
+removed.
+    Loadless block "u_labtop/LAB[3].u_lab/u_rco_latch_not00001_INV_0" (BUF) removed.
+ The signal "u_labtop/LAB[3].u_lab/hitbus_q" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/hitbus_q" (FF) removed.
+   The signal "D_HITBUS_IBUF" is loadless and has been removed.
+    Loadless block "D_HITBUS_IBUF" (BUF) removed.
+     The signal "D_HITBUS" is loadless and has been removed.
+      Loadless block "D_HITBUS" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<11>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_11" (FF) removed.
+   The signal "D_DAT_11_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_11_IBUF" (BUF) removed.
+     The signal "D_DAT<11>" is loadless and has been removed.
+      Loadless block "D_DAT<11>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<10>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_10" (FF) removed.
+   The signal "D_DAT_10_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_10_IBUF" (BUF) removed.
+     The signal "D_DAT<10>" is loadless and has been removed.
+      Loadless block "D_DAT<10>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<9>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_9" (FF) removed.
+   The signal "D_DAT_9_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_9_IBUF" (BUF) removed.
+     The signal "D_DAT<9>" is loadless and has been removed.
+      Loadless block "D_DAT<9>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<8>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_8" (FF) removed.
+   The signal "D_DAT_8_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_8_IBUF" (BUF) removed.
+     The signal "D_DAT<8>" is loadless and has been removed.
+      Loadless block "D_DAT<8>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<7>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_7" (FF) removed.
+   The signal "D_DAT_7_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_7_IBUF" (BUF) removed.
+     The signal "D_DAT<7>" is loadless and has been removed.
+      Loadless block "D_DAT<7>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<6>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_6" (FF) removed.
+   The signal "D_DAT_6_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_6_IBUF" (BUF) removed.
+     The signal "D_DAT<6>" is loadless and has been removed.
+      Loadless block "D_DAT<6>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<5>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_5" (FF) removed.
+   The signal "D_DAT_5_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_5_IBUF" (BUF) removed.
+     The signal "D_DAT<5>" is loadless and has been removed.
+      Loadless block "D_DAT<5>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<4>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_4" (FF) removed.
+   The signal "D_DAT_4_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_4_IBUF" (BUF) removed.
+     The signal "D_DAT<4>" is loadless and has been removed.
+      Loadless block "D_DAT<4>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<3>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_3" (FF) removed.
+   The signal "D_DAT_3_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_3_IBUF" (BUF) removed.
+     The signal "D_DAT<3>" is loadless and has been removed.
+      Loadless block "D_DAT<3>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<2>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_2" (FF) removed.
+   The signal "D_DAT_2_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_2_IBUF" (BUF) removed.
+     The signal "D_DAT<2>" is loadless and has been removed.
+      Loadless block "D_DAT<2>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<1>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_1" (FF) removed.
+   The signal "D_DAT_1_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_1_IBUF" (BUF) removed.
+     The signal "D_DAT<1>" is loadless and has been removed.
+      Loadless block "D_DAT<1>" (PAD) removed.
+ The signal "u_labtop/LAB[3].u_lab/dat_q<0>" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_lab/dat_q_0" (FF) removed.
+   The signal "D_DAT_0_IBUF" is loadless and has been removed.
+    Loadless block "D_DAT_0_IBUF" (BUF) removed.
+     The signal "D_DAT<0>" is loadless and has been removed.
+      Loadless block "D_DAT<0>" (PAD) removed.
+Loadless block "u_labtop/LAB[3].u_ram/bram_B" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[3].u_ram/_cmp_eq0002" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_ram/_cmp_eq00021" (ROM) removed.
+ The signal "u_labtop/LAB[3].u_ram/_cmp_eq0003" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_ram/_cmp_eq00031" (ROM) removed.
+Loadless block "u_labtop/LAB[3].u_ram/bram_C" (RAMB16_S18_S36) removed.
+ The signal "u_labtop/LAB[3].u_ram/_cmp_eq0004" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_ram/_cmp_eq00041" (ROM) removed.
+ The signal "u_labtop/LAB[3].u_ram/_cmp_eq0005" is loadless and has been removed.
+  Loadless block "u_labtop/LAB[3].u_ram/_cmp_eq00051" (ROM) removed.
+The signal "u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[2].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[2].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[3].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[3].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[4].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[4].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[5].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[5].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[6].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[6].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[7].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_A[7].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_B[2].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_B[2].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_B[3].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_B[3].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_C[2].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_C[2].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_C[3].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_C[3].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[0].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[0].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[1].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[1].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[2].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[2].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[3].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[3].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[4].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[4].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[5].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[5].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[6].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[6].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[7].CH_input_u/in_buf_u/O" is sourceless
+and has been removed.
+The signal "u_trigger_rx/CH_input_gen_D[7].CH_input_u/in_buf_u/OB" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_1/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_0/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_4/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_2/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_3/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_7/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_5/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_6/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_10/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_8/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_9/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_0/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_11/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_12/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_3/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_1/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_2/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_6/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_4/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_5/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_9/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_7/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_8/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_12/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_10/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_11/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_2/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_0/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_1/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_5/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_3/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_4/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_8/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_6/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_7/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_11/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_9/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_10/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_1/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_12/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_0/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_4/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_2/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_3/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_7/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_5/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_6/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_10/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_8/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_9/CE" is sourceless and
+has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_11/CE" is sourceless
+and has been removed.
+The signal "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_12/CE" is sourceless
+and has been removed.
+The signal
+"u_mess/u_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.w
+r/gwss.wsts/ram_full_i" is sourceless and has been removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "A1TC<0>" is unused and has been removed.
+ Unused block "A1TC<0>" (PAD) removed.
+The signal "A1TC<1>" is unused and has been removed.
+ Unused block "A1TC<1>" (PAD) removed.
+The signal "A1TC<2>" is unused and has been removed.
+ Unused block "A1TC<2>" (PAD) removed.
+The signal "A1TC<3>" is unused and has been removed.
+ Unused block "A1TC<3>" (PAD) removed.
+The signal "A1TC<4>" is unused and has been removed.
+ Unused block "A1TC<4>" (PAD) removed.
+The signal "A1TC<5>" is unused and has been removed.
+ Unused block "A1TC<5>" (PAD) removed.
+The signal "A1TC<6>" is unused and has been removed.
+ Unused block "A1TC<6>" (PAD) removed.
+The signal "A1TC<7>" is unused and has been removed.
+ Unused block "A1TC<7>" (PAD) removed.
+The signal "A2TC<2>" is unused and has been removed.
+ Unused block "A2TC<2>" (PAD) removed.
+The signal "A2TC<3>" is unused and has been removed.
+ Unused block "A2TC<3>" (PAD) removed.
+The signal "A3TC<2>" is unused and has been removed.
+ Unused block "A3TC<2>" (PAD) removed.
+The signal "A3TC<3>" is unused and has been removed.
+ Unused block "A3TC<3>" (PAD) removed.
+The signal "A4TC<0>" is unused and has been removed.
+ Unused block "A4TC<0>" (PAD) removed.
+The signal "A4TC<1>" is unused and has been removed.
+ Unused block "A4TC<1>" (PAD) removed.
+The signal "A4TC<2>" is unused and has been removed.
+ Unused block "A4TC<2>" (PAD) removed.
+The signal "A4TC<3>" is unused and has been removed.
+ Unused block "A4TC<3>" (PAD) removed.
+The signal "A4TC<4>" is unused and has been removed.
+ Unused block "A4TC<4>" (PAD) removed.
+The signal "A4TC<5>" is unused and has been removed.
+ Unused block "A4TC<5>" (PAD) removed.
+The signal "A4TC<6>" is unused and has been removed.
+ Unused block "A4TC<6>" (PAD) removed.
+The signal "A4TC<7>" is unused and has been removed.
+ Unused block "A4TC<7>" (PAD) removed.
+The signal "VTRG_A1TC<0>" is unused and has been removed.
+ Unused block "VTRG_A1TC<0>" (PAD) removed.
+The signal "VTRG_A1TC<1>" is unused and has been removed.
+ Unused block "VTRG_A1TC<1>" (PAD) removed.
+The signal "VTRG_A1TC<2>" is unused and has been removed.
+ Unused block "VTRG_A1TC<2>" (PAD) removed.
+The signal "VTRG_A1TC<3>" is unused and has been removed.
+ Unused block "VTRG_A1TC<3>" (PAD) removed.
+The signal "VTRG_A1TC<4>" is unused and has been removed.
+ Unused block "VTRG_A1TC<4>" (PAD) removed.
+The signal "VTRG_A1TC<5>" is unused and has been removed.
+ Unused block "VTRG_A1TC<5>" (PAD) removed.
+The signal "VTRG_A1TC<6>" is unused and has been removed.
+ Unused block "VTRG_A1TC<6>" (PAD) removed.
+The signal "VTRG_A1TC<7>" is unused and has been removed.
+ Unused block "VTRG_A1TC<7>" (PAD) removed.
+The signal "VTRG_A2TC<2>" is unused and has been removed.
+ Unused block "VTRG_A2TC<2>" (PAD) removed.
+The signal "VTRG_A2TC<3>" is unused and has been removed.
+ Unused block "VTRG_A2TC<3>" (PAD) removed.
+The signal "VTRG_A3TC<2>" is unused and has been removed.
+ Unused block "VTRG_A3TC<2>" (PAD) removed.
+The signal "VTRG_A3TC<3>" is unused and has been removed.
+ Unused block "VTRG_A3TC<3>" (PAD) removed.
+The signal "VTRG_A4TC<0>" is unused and has been removed.
+ Unused block "VTRG_A4TC<0>" (PAD) removed.
+The signal "VTRG_A4TC<1>" is unused and has been removed.
+ Unused block "VTRG_A4TC<1>" (PAD) removed.
+The signal "VTRG_A4TC<2>" is unused and has been removed.
+ Unused block "VTRG_A4TC<2>" (PAD) removed.
+The signal "VTRG_A4TC<3>" is unused and has been removed.
+ Unused block "VTRG_A4TC<3>" (PAD) removed.
+The signal "VTRG_A4TC<4>" is unused and has been removed.
+ Unused block "VTRG_A4TC<4>" (PAD) removed.
+The signal "VTRG_A4TC<5>" is unused and has been removed.
+ Unused block "VTRG_A4TC<5>" (PAD) removed.
+The signal "VTRG_A4TC<6>" is unused and has been removed.
+ Unused block "VTRG_A4TC<6>" (PAD) removed.
+The signal "VTRG_A4TC<7>" is unused and has been removed.
+ Unused block "VTRG_A4TC<7>" (PAD) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_0/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_0/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_1/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_1/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_10/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_10/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_11/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_11/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_12/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_12/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_2/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_2/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_3/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_3/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_4/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_4/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_5/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_5/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_6/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_6/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_7/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_7/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_8/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_8/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_9/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[0].u_lab/Mshreg_counter_store_2_9/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_0/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_0/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_1/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_1/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_10/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_10/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_11/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_11/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_12/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_12/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_2/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_2/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_3/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_3/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_4/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_4/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_5/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_5/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_6/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_6/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_7/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_7/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_8/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_8/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_9/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[1].u_lab/Mshreg_counter_store_2_9/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_0/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_0/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_1/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_1/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_10/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_10/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_11/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_11/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_12/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_12/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_2/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_2/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_3/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_3/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_4/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_4/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_5/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_5/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_6/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_6/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_7/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_7/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_8/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_8/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_9/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[2].u_lab/Mshreg_counter_store_2_9/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_0/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_0/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_1/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_1/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_10/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_10/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_11/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_11/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_12/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_12/VCC" (ONE)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_2/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_2/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_3/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_3/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_4/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_4/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_5/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_5/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_6/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_6/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_7/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_7/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_8/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_8/VCC" (ONE) removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_9/SRL16E" (SRLC16E)
+removed.
+Unused block "u_labtop/LAB[3].u_lab/Mshreg_counter_store_2_9/VCC" (ONE) removed.
+Unused block
+"u_mess/u_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.w
+r/gwss.wsts/ram_full_i" (FF) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[2].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[2].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[3].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[3].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[4].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[4].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[5].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[5].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[6].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[6].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[7].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_A[7].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_B[2].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_B[2].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_B[3].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_B[3].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_C[2].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_C[2].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_C[3].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_C[3].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[0].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[0].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[1].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[1].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[2].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[2].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[3].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[3].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[4].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[4].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[5].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[5].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[6].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[6].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[7].CH_input_u/in_buf_u/IBUFDS"
+(IBUFDS) removed.
+Unused block "u_trigger_rx/CH_input_gen_D[7].CH_input_u/in_buf_u/IBUFDS_0"
+(IBUFDS) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		u_mess/u_fifo/XST_GND
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| A2TC<0>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A2TC<1>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A2TC<4>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A2TC<5>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A2TC<6>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A2TC<7>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A3TC<0>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A3TC<1>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A3TC<4>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A3TC<5>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A3TC<6>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| A3TC<7>                            | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| AD_D<0>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<1>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<2>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<3>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<4>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<5>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<6>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<7>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<8>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<9>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<10>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_D<11>                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_NBUSY                           | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| AD_NCONVST                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| AD_NCS                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| AD_NRD                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| ASS<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| ASS<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| ASS<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| A_CS<0>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_CS<1>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_CS<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_CS<3>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_GCCLR                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | FAST | OFF1         |          |          |
+| A_GCK                              | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OUTDDR       |          |          |
+| A_NRUN                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST |              |          |          |
+| A_RAMP                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | FAST | OFF1         |          |          |
+| A_S<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_S<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_S<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_S<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_S<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_S<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_S<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_S<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF2         |          |          |
+| A_SELMAIN                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_SELTAIL                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| A_TREF_N                           | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| A_TREF_P                           | DIFFM            | OUTPUT    | LVDS_25              |       |          |      | OUTDDR       |          |          |
+| BAD<0>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        | PULLUP   | IFD      |
+| BAD<1>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        | PULLUP   | IFD      |
+| BAD<2>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        | PULLUP   | IFD      |
+| BAD<3>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        | PULLUP   | IFD      |
+| BAD<4>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        | PULLUP   | IFD      |
+| BAD<5>                             | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        | PULLUP   | IFD      |
+| BCLKO                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| BUSY_A                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| B_CS<0>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_CS<1>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_CS<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_CS<3>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_GCCLR                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | FAST | OFF1         |          |          |
+| B_GCK                              | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OUTDDR       |          |          |
+| B_NRUN                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST |              |          |          |
+| B_RAMP                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_S<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_SELMAIN                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_SELTAIL                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| B_TREF_N                           | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| B_TREF_P                           | DIFFM            | OUTPUT    | LVDS_25              |       |          |      | OUTDDR       |          |          |
+| CALSNH<0>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| CALSNH<1>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| CALSNH<2>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| CALSNH<3>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| CLK125_N                           | DIFFS            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| CLK125_P                           | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| CMD_N                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| CMD_P                              | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| C_CS<0>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_CS<1>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_CS<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_CS<3>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_GCCLR                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | FAST | OFF1         |          |          |
+| C_GCK                              | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OUTDDR       |          |          |
+| C_NRUN                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST |              |          |          |
+| C_RAMP                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_S<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_SELMAIN                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_SELTAIL                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| C_TREF_N                           | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| C_TREF_P                           | DIFFM            | OUTPUT    | LVDS_25              |       |          |      | OUTDDR       |          |          |
+| DIN<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DIN<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DIN<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DIN<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DIN<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DIN<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DIN<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| DIN<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| D_CS<0>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_CS<1>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_CS<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_CS<3>                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_GCCLR                            | IOB              | OUTPUT    | LVCMOS25             |       | 6        | FAST | OFF1         |          |          |
+| D_GCK                              | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OUTDDR       |          |          |
+| D_NRUN                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | FAST |              |          |          |
+| D_RAMP                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_S<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_SELMAIN                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_SELTAIL                          | IOB              | OUTPUT    | LVCMOS25             |       | 6        | SLOW | OFF1         |          |          |
+| D_TREF_N                           | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| D_TREF_P                           | DIFFM            | OUTPUT    | LVDS_25              |       |          |      | OUTDDR       |          |          |
+| HOLD_N<0>                          | DIFFS            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| HOLD_N<1>                          | DIFFS            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| HOLD_N<2>                          | DIFFS            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| HOLD_N<3>                          | DIFFS            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| HOLD_P<0>                          | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| HOLD_P<1>                          | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| HOLD_P<2>                          | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| HOLD_P<3>                          | DIFFM            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| L1_N<0>                            | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| L1_N<1>                            | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| L1_N<2>                            | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| L1_N<3>                            | DIFFS            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| L1_P<0>                            | DIFFM            | OUTPUT    | LVDS_25              |       |          |      | OFF1         |          |          |
+| L1_P<1>                            | DIFFM            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| L1_P<2>                            | DIFFM            | OUTPUT    | LVDS_25              |       |          |      | OFF1         |          |          |
+| L1_P<3>                            | DIFFM            | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
+| LA<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| LA<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| LA<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| LA<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| LA<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| LCLK                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OUTDDR       |          |          |
+| LD<0>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<1>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<2>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<3>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<4>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<5>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<6>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<7>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<8>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<9>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<10>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<11>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<12>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<13>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<14>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<15>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<16>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<17>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<18>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<19>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<20>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<21>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<22>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<23>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<24>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<25>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<26>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<27>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<28>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<29>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<30>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| LD<31>                             | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | INFF1        |          | IFD      |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
+|                                    |                  |           |                      |       |          |      | ENFF1        |          |          |
+| NSYNC                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          |          |
+| REF_N                              | DIFFS            | INPUT     | LVDS_25              |       |          |      |              |          |          |
+| REF_P                              | DIFFM            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| RSS<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RSS<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RSS<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RSS<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| SCLK                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          |          |
+| TCS<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TCS<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TCS<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TCS<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| VTRG_A2TC<0>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A2TC<1>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A2TC<4>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A2TC<5>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A2TC<6>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A2TC<7>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A3TC<0>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A3TC<1>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A3TC<4>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A3TC<5>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A3TC<6>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| VTRG_A3TC<7>                       | DIFFS            | INPUT     | LVDS_25              |       |          |      | INFF1        |          | IFD      |
+| WnR                                | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| nADS                               | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| nBTERM                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          |          |
+| nCS2                               | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| nCS3                               | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| nRD                                | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
+| nREADY                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          |          |
+| nWR                                | IOB              | INPUT     | LVCMOS25             |       |          |      | INFF1        |          | IFD      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

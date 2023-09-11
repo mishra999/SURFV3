@@ -1,0 +1,34 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ise/git/firmware-surf/working/ANITA4_dual_L1_trigger_isim_beh.exe" -prj "/home/ise/git/firmware-surf/working/ANITA4_dual_L1_trigger_beh.prj" "work.ANITA4_dual_L1_trigger" "work.glbl" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/ise/git/firmware-surf/working/../rtl/Verilog_Library/flag_sync.v" into library work
+Analyzing Verilog file "/home/ise/git/firmware-surf/working/../rtl/ANITA4_trig_single_pol_fast_retrig.v" into library work
+Analyzing Verilog file "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 54: Port CLR is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 57: Port CLR is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 60: Port CLR is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 63: Port CLR is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 66: Port CLR is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 69: Port CLR is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 254: Port busy_clkA is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/git/firmware-surf/working/../rtl/ANITA4_dual_L1_trigger.v" Line 306: Port busy_clkA is not connected to this instance
+Completed static elaboration
+Fuse Memory Usage: 95064 KB
+Fuse CPU Usage: 2370 ms
+Compiling module FDCE_1
+Compiling module FDCE
+Compiling module ANITA4_trig_single_pol_fast_retr...
+Compiling module flag_sync_default
+Compiling module ANITA4_dual_L1_trigger
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 6 Verilog Units
+Built simulation executable /home/ise/git/firmware-surf/working/ANITA4_dual_L1_trigger_isim_beh.exe
+Fuse Memory Usage: 393000 KB
+Fuse CPU Usage: 2500 ms
+GCC CPU Usage: 330 ms

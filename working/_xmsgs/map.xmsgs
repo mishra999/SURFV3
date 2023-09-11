@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="LIT" num="222" delta="old" >The use of <arg fmt="%s" index="1">IBUFDS_DIFF_OUT symbol &quot;u_trigger_rx/CH_input_gen_B[0].CH_input_u/in_buf_u&quot; (output signal=trig_scaler_path&lt;8&gt;)</arg> is only recommended for expert users.
+</msg>
+
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">CMD_N_IBUF</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">42</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">AD_NBUSY_IBUF,
+u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/O,
+u_trigger_rx/CH_input_gen_A[0].CH_input_u/in_buf_u/OB,
+u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/O,
+u_trigger_rx/CH_input_gen_A[1].CH_input_u/in_buf_u/OB</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="MapLib" num="159" delta="old" >Net Timing constraints on signal <arg fmt="%s" index="1">CLK125_P</arg> are pushed forward through input buffer.
+</msg>
+
+<msg type="info" file="MapLib" num="159" delta="old" >Net Timing constraints on signal <arg fmt="%s" index="1">BCLKO</arg> are pushed forward through input buffer.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A1TC&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">A1TC&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A1TC&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A1TC&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A2TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">A2TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A2TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A2TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A2TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">A2TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A2TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A2TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A3TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">A3TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A3TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A3TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A3TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">A3TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A3TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A3TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A4TC&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">A4TC&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">VTRG_A4TC&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">VTRG_A4TC&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_RCO</arg> connected to top level port <arg fmt="%s" index="2">B_RCO</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_HITBUS</arg> connected to top level port <arg fmt="%s" index="2">B_HITBUS</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_RCO</arg> connected to top level port <arg fmt="%s" index="2">C_RCO</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_HITBUS</arg> connected to top level port <arg fmt="%s" index="2">A_HITBUS</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_RCO</arg> connected to top level port <arg fmt="%s" index="2">D_RCO</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_HITBUS</arg> connected to top level port <arg fmt="%s" index="2">D_HITBUS</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_RCO</arg> connected to top level port <arg fmt="%s" index="2">A_RCO</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_HITBUS</arg> connected to top level port <arg fmt="%s" index="2">C_HITBUS</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;11&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;11&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;10&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;10&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;9&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;9&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;8&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;8&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">B_DAT&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">B_DAT&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">LA&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">LA&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;11&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;11&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;10&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;10&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;9&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;9&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;8&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;8&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">C_DAT&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">C_DAT&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;11&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;11&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;10&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;10&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;9&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;9&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;8&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;8&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">D_DAT&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">D_DAT&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;11&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;11&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;10&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;10&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;9&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;9&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;8&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;8&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;7&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;7&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;6&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;6&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;5&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;5&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;4&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;4&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;3&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;3&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;2&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;2&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;1&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;1&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="MapLib" num="701" delta="old" >Signal <arg fmt="%s" index="1">A_DAT&lt;0&gt;</arg> connected to top level port <arg fmt="%s" index="2">A_DAT&lt;0&gt;</arg> has been removed.
+</msg>
+
+<msg type="warning" file="LIT" num="216" delta="old" >PSINCDEC, PSEN, PSCLK and PSDONE of <arg fmt="%s" index="1">DCM symbol &quot;physical_group_u_infrastructure/u_clk125/CLK0_BUF/u_infrastructure/u_clk125/DCM_INST&quot; (output signal=u_infrastructure/u_clk125/CLK0_BUF)</arg> should be driven by active signals if CLKOUT_PHASE_SHIFT is set to VARIABLE.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[0].u_bot_l/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[1].u_bot_r/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[0].u_mid_l/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[1].u_mid_r/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[0].u_bot_r/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[0].u_mid_r/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[1].u_top_l/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[0].u_top_l/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[1].u_top_r/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[1].u_bot_l/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[1].u_mid_l/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="warning" file="Pack" num="2780" delta="old" >The register &quot;<arg fmt="%s" index="1">u_trigger/u_trig_phi0/PHI_L0[0].u_top_r/FDCE_latch</arg>&quot; has the property IOB=<arg fmt="%s" index="2">TRUE</arg>, but it did not join an IO component because it is not connected to any IO element.
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="old" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="old" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
+</msg>
+
+<msg type="warning" file="Place" num="1019" delta="old" >A clock IOB / clock component pair have been found that are not placed at an optimal clock IOB / clock site pair. The clock component &lt;<arg fmt="%s" index="1">u_infrastructure/u_bufg_clk125</arg>&gt; is placed at site &lt;<arg fmt="%s" index="2">BUFGMUX5</arg>&gt;. The IO component &lt;<arg fmt="%s" index="3">CLK125_P</arg>&gt; is placed at site &lt;<arg fmt="%s" index="4">L20</arg>&gt;.  This will not allow the use of the fast path between the IO and the Clock buffer. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN &lt;<arg fmt="%s" index="5">CLK125_P.PAD</arg>&gt; allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
+</msg>
+
+<msg type="info" file="PhysDesignRules" num="772" delta="old" >To achieve optimal frequency synthesis performance with the CLKFX and CLKFX180 outputs of the DCM comp <arg fmt="%s" index="1">u_infrastructure/u_clk100/DCM_INST</arg>, consult the device Interactive Data Sheet.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="777" delta="old" >Incomplete DCM configuration. The DCM comp <arg fmt="%s" index="1">u_infrastructure/u_clk125/DCM_INST</arg> is set for variable phase shifting with CLKOUT_PHASE_SHIFT set to VARIABLE. Therefore the phase shift pins (PSINCDEC, PSEN and PSCLK) should have active signals in order to implement variable phase shifting, if this implementation is wanted.
+</msg>
+
+</messages>
+

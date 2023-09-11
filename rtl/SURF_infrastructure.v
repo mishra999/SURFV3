@@ -13,8 +13,8 @@
 module SURF_infrastructure(
 		output LCLK,
 		input BCLKO,
-		input CLK125_P,
-		input CLK125_N,
+		// input CLK125_P,
+		// input CLK125_N,
 		input CMD_P,
 		input CMD_N,
 		input [3:0] HOLD_P,
@@ -27,6 +27,8 @@ module SURF_infrastructure(
 		output [3:0] L1_P,
 		output [3:0] L1_N,
 		input [3:0] L1,
+
+		output locked250,
 		
 		input clr_all_i,
 		
@@ -51,24 +53,29 @@ module SURF_infrastructure(
 	reg [3:0] reset = 4'b0111;
 	always @(posedge clk33_o) reset <= {reset[2:0],clr_all_i};
 	wire [7:0] status;
+	wire locked; //ny me
 	
 	clk100_wizard u_clk100(.CLKIN_IN(clk33_o),.RST_IN(reset[3]),.CLKFX_OUT(clk100_o));
-	clkwiz u_clk125(.CLKIN_IN(clk125_o),
-						 .PSCLK_IN(clk33_o),
-						 .PSEN_IN(ps_en_i),
-						 .PSINCDEC_IN(ps_incdec_i),
-						 .RST_IN(reset),
-						 .CLK2X_OUT(clk250_o),
-						 .CLK2X180_OUT(clk250b_o),
-						 .STATUS_OUT(status),
-						 .LOCKED_OUT(),
-						 .PSDONE_OUT(psdone_o));
+
+	clk262 u_clk240(.CLKIN_IN(clk33_o),.RST_IN(reset[3]),.LOCKED_OUT(locked), .CLKFX_OUT(clk250_o));
+
+	// clkwiz u_clk125(.CLKIN_IN(clk33_o), // clk125_o earlier
+	// 					 .PSCLK_IN(clk33_o),
+	// 					 .PSEN_IN(ps_en_i),
+	// 					 .PSINCDEC_IN(ps_incdec_i),
+	// 					 .RST_IN(reset[3]), //by me
+	// 					 .CLKFX_OUT(clk250_o),
+	// 					//  .CLK2X_OUT(clk250_o),//by me
+	// 					//  .CLK2X180_OUT(clk250b_o),//by me
+	// 					 .STATUS_OUT(status),
+	// 					 .LOCKED_OUT(locked), //by me
+	// 					 .PSDONE_OUT(psdone_o));
 	assign pslimit_o = status[0];
 	parameter REF_CLOCK = "33MHZ";
 	wire [3:0] TREF;
 	wire clk125_to_bufg;
-	IBUFDS u_ibufds_clk125(.I(CLK125_P),.IB(CLK125_N),.O(clk125_to_bufg));
-	BUFG u_bufg_clk125(.I(clk125_to_bufg),.O(clk125_o));
+	// IBUFDS u_ibufds_clk125(.I(CLK125_P),.IB(CLK125_N),.O(clk125_to_bufg));
+	// BUFG u_bufg_clk125(.I(clk125_to_bufg),.O(clk125_o)); //by me
 	BUFG u_bufg_clk33(.I(BCLKO),.O(clk33_o));
 	// 33 MHz clock output back to the PLX.
 	OFDDRRSE u_lclk_out(.C0(clk33_o),.C1(~clk33_o),
@@ -77,6 +84,7 @@ module SURF_infrastructure(
 							  .Q(LCLK));
 	// let's just try LVCMOS here.
 	assign CMD = CMD_P;
+	assign locked250 = locked;
 	//IBUFDS u_cmd_ibufds(.I(CMD_P),.IB(CMD_N),.O(CMD));
 	IBUFDS u_ref_ibufds(.I(REF_P),.IB(REF_N),.O(REF));
 	
@@ -90,16 +98,17 @@ module SURF_infrastructure(
 									.D0(1'b1),.D1(1'b0),
 									.CE(1'b1),.R(1'b0),.S(1'b0),
 									.Q(TREF[i]));
-			end else begin : CLK125
-				FDDRRSE u_refp(.C0(clk125_o),.C1(~clk125_o),
-									.D0(1'b1),.D1(1'b0),
-									.CE(1'b1),.R(1'b0),.S(1'b0),
-									.Q(TREF[i]));
-			end
+			end 
+			// else begin : CLK125
+			// 	FDDRRSE u_refp(.C0(clk125_o),.C1(~clk125_o),
+			// 						.D0(1'b1),.D1(1'b0),
+			// 						.CE(1'b1),.R(1'b0),.S(1'b0),
+			// 						.Q(TREF[i]));
+			// end
 			OBUFDS u_refp_obufds(.I(TREF[i]),.O(TREF_P[i]),			
 										.OB(TREF_N[i]));
-			IBUFDS u_hold_ibufds(.I(HOLD_P[i]),.IB(HOLD_N[i]),
-										.O(HOLD[i]));
+			// IBUFDS u_hold_ibufds(.I(HOLD_P[i]),.IB(HOLD_N[i]), //by me
+			// 							.O(HOLD[i]));
 		end
 	endgenerate
 	

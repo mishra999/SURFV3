@@ -1,8 +1,8 @@
 # Output products list for <cs_icon>
-_xmsgs\pn_parser.xmsgs
+_xmsgs/pn_parser.xmsgs
 cs_icon.asy
-cs_icon.constraints\cs_icon.ucf
-cs_icon.constraints\cs_icon.xdc
+cs_icon.constraints/cs_icon.ucf
+cs_icon.constraints/cs_icon.xdc
 cs_icon.gise
 cs_icon.ngc
 cs_icon.sym

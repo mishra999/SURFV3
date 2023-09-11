@@ -18,8 +18,8 @@ module flag_sync(
     output out_clkB
     );
 
-	parameter CLKA="POSEDGE";
-	parameter CLKB="POSEDGE";
+	parameter CLKkA="POSEDGE";
+	parameter CLKkB="POSEDGE";
 
 	reg FlagToggle_clkA;
 	reg [2:0] SyncA_clkB;
@@ -32,7 +32,7 @@ module flag_sync(
 	end
 	
 	generate
-		if (CLKA=="POSEDGE") begin : A_POS_POL
+		if (CLKkA=="POSEDGE") begin : A_POS_POL
 			always @(posedge clkA) if (in_clkA & ~busy_clkA) FlagToggle_clkA <= ~FlagToggle_clkA;
 			always @(posedge clkA) SyncB_clkA <= {SyncB_clkA[0],SyncA_clkB[1]};
 		end else begin : A_NEG_POL
@@ -41,7 +41,7 @@ module flag_sync(
 		end
 	endgenerate
 	generate
-		if (CLKB=="POSEDGE") begin : B_POS_POL
+		if (CLKkB=="POSEDGE") begin : B_POS_POL
 			always @(posedge clkB) SyncA_clkB <= {SyncA_clkB[1:0], FlagToggle_clkA};
 		end else begin : B_NEG_POL
 			always @(negedge clkB) SyncA_clkB <= {SyncA_clkB[1:0], FlagToggle_clkA};
